@@ -18,9 +18,9 @@
 #
 # Changes made by Enabling Languages (09/2021):
 #     * Removed Python2 support.
+#     * Updated for Pytgon 3.9 and 3.10 support
 
 import codecs
-
 
 SURROGATE_IDENTICATOR_INT = 0xED
 SURROGATE_IDENTICATOR_BYTE = b'\xed'

@@ -479,3 +479,6 @@ $RECYCLE.BIN/
 docs/
 notes/
 test_files/
+*.bak
+conf/
+*.xsl

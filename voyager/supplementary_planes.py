@@ -6,10 +6,10 @@
 #
 #   This script has been developed to facilitate importing and exporting
 #   MARC21 records to or from Voyager systems where the Oracle database
-#   set is UTF8, using the encoding CESU-8.
+#   is using CESU-8.
 #
 #   The script is only needed when characters outside the Basic Multilingual Plane
-#   are present in any of the exported records.
+#   are present in the exported records.
 #
 #   The script converts MARC records from CESU-8 to UTF-8 after exporting records, or
 #   from UTF-8 to CESU-8 before importing records.
@@ -18,10 +18,10 @@
 #
 # Usage:
 #   To convert a CESU-8 file to UTF-8
-#     ./supplementary_planes.py -i Bulk_Export.mrc -o Bulk_Export_utf8.mrc
+#     ./supplementary_planes.py -i Bulk_Export.mrc
 #
 #   To convert an UTF-8 file to CESU-8
-#     ./supplementary_planes.py -i Bulk_Import.mrc -o Bulk_Import_cesu8.mrc -r
+#     ./supplementary_planes.py -i Bulk_Import.mrc -r
 #
 # Copyright 2021 Enabling Languages
 #
@@ -44,6 +44,7 @@ try:
     import regex as re
 except ImportError:
     import re
+from lxml import etree
 import codecs
 SCRIPT_DIR = os.path.dirname(os.path.abspath("./cesu8.py"))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
@@ -51,18 +52,25 @@ import cesu8
 
 def main():
     # Command line arguments
-    parser = argparse.ArgumentParser(description='Convert MARC records with SMP characters in MARC-8 and CESU-8 to UTF-8. Currently only supports ADlam in records.')
+    parser = argparse.ArgumentParser(description='Convert MARC records with SMP characters in CESU-8 to UTF-8. Repair and convert MARC-8 records with Adlam and Hanifi RohCurrently only supports ADlam in records.')
 
     # Input file ot be converted
     parser.add_argument('-i', '--input', type=str, required=True, help='File to be converted.')
     # Outputfile
-    parser.add_argument('-o', '--output', type=str, required=False, help='Output file.')
+    # parser.add_argument('-o', '--output', type=str, required=False, help='Output file.')
     # Mode: use CESU-8 (default) or MARC-8 processing
     parser.add_argument('-m', '--mode', type=str, required=False, help='Mode used for processing the MARC record. Values are cesu-8 and marc-8')
     # Reverse (read in a UTF-8 file, output a CESU-8 file. ONly available for CESU-8 mode.)
     parser.add_argument('-r', '--reverse', action="store_true", required=False, help='Reverse (convert UTF-8 to CESU-8)')
     # Parse the argument
     parser.add_argument('-d', '--debug', action="store_true", required=False, help='Display 880 field during processing.')
+    
+    # output formats
+    # b = mrc,  t = mck, x = mcx (MARCXML), p = 
+    parser.add_argument('-b', '--bibframe', action="store_true", required=False, help='Output a nIBFRAME 2.0 RDF file.')
+    parser.add_argument('-t', '--text', action="store_true", required=False, help='Output a text MARC file.')
+    parser.add_argument('-x', '--xml', action="store_true", required=False, help='Output a MARCXML file.')
+    
     # Parse the argument
     args = parser.parse_args()
 
@@ -80,15 +88,18 @@ def main():
         mode = "cesu-8"
 
     in_file = os.path.abspath(args.input)
-
-    if args.output:
-        out_file = os.path.abspath(args.output)
+    filename, file_extension = os.path.splitext(in_file)
+    if reverse == True:
+        out_mrc_file = filename + "_cesu8" + ".mrc"
     else:
-        filename, file_extension = os.path.splitext(in_file)
-        if reverse == True:
-            out_file = filename + "_cesu8" + file_extension
-        else:
-            out_file = filename + "_utf8" + file_extension
+        out_mrc_file = filename + "_utf8" + ".mrc"
+        if args.xml:
+            out_xml_file=filename + "_utf8" + ".mrx"
+        if args.text:
+            out_txt_file = filename + "_utf8" + ".mrk"
+        if args.bibframe:
+            out_rdf_file = filename + "_utf8" + ".rdf"
+    
     if mode == "cesu-8":
         reader = pymarc.MARCReader(open(in_file, 'rb'), force_utf8=False, to_unicode=False)
     else:
@@ -171,13 +182,62 @@ def main():
 
         converted_marc_records.append(r)
 
-    with open(out_file , 'wb') as data:
+    with open(out_mrc_file , 'wb') as data:
         for record in converted_marc_records:
             data.write(record.as_marc())
 
+    #
+    # Convert to MARCXML file
+    #
+    if args.xml:
+        reader2 = pymarc.MARCReader(open(out_mrc_file, 'rb'), force_utf8=False, to_unicode=True)
+        writer2 = pymarc.XMLWriter(open(out_xml_file,'wb'))
+        for record in reader2:
+            #print(record)
+            writer2.write(record)
+        writer2.close()
+        reader2.close()
+
+    #
+    # Convert to a text MARC file (.mrk)
+    #
+
+    if args.text:
+        reader3 = pymarc.MARCReader(open(out_mrc_file, 'rb'), force_utf8=False, to_unicode=True)
+        writer3 = pymarc.TextWriter(open(out_txt_file,'wt'))
+        for record in reader3:
+            #print(record)
+            writer3.write(record)
+        writer3.close()
+        reader3.close()
+
+    #
+    # Convert to Bibframe2 RDF documents
+    #
+
+    if args.bibframe:
+        xslfile = 'xsl/marc2bibframe2.xsl'
+        if os.path.isfile(xslfile):
+            reader4 = pymarc.MARCReader(open(out_mrc_file, 'rb'), force_utf8=False, to_unicode=True)
+            marc_records = []
+            for record in reader4:
+                marc_records.append(record)
+            marc2bibframe2 = etree.XSLT(etree.parse(xslfile))
+            for i in range(len(marc_records)):
+                raw_xml = pymarc.record_to_xml(marc_records[i], namespace=True)
+                marc_xml = etree.XML(raw_xml)
+                bf_rdf_xml = marc2bibframe2(marc_xml)
+                out_rdf_file = filename + "_" + str(i) + "_utf8" + ".rdf"
+                if args.bibframe:
+                    with open(out_rdf_file, 'wb') as doc:
+                        doc.write(etree.tostring(bf_rdf_xml, pretty_print = True))
+                # raw_rdf_xml = etree.tostring(bf_rdf_xml)
+            reader4.close()
+        else:
+            print("Marc2bibframe2 support unavailable. Add marc2bibframe2 to xsl directory.")
 
 # Usage:
-#     ./supplementary_planes.py -i smp_records.mrc -o smp+records_utf8.mrc
+# ./supplementary_planes.py -xtb -i test_files/13155553-Bulk_Export.mrc
 
 if __name__ == '__main__':
     main()
