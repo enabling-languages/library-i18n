@@ -52,7 +52,7 @@ import cesu8
 
 def main():
     # Command line arguments
-    parser = argparse.ArgumentParser(description='Convert MARC records with SMP characters in CESU-8 to UTF-8. Repair and convert MARC-8 records with Adlam and Hanifi RohCurrently only supports ADlam in records.')
+    parser = argparse.ArgumentParser(description='Convert CESU-8 encoded MARC records with SMP characters to UTF-8. Repair and convert MARC-8 records with Adlam and Hanifi Rohingya.')
 
     # Input file ot be converted
     parser.add_argument('-i', '--input', type=str, required=True, help='File to be converted.')
@@ -67,7 +67,8 @@ def main():
     
     # output formats
     # b = mrc,  t = mck, x = mcx (MARCXML), p = 
-    parser.add_argument('-b', '--bibframe', action="store_true", required=False, help='Output a nIBFRAME 2.0 RDF file.')
+    parser.add_argument('-b', '--bibframe', action="store_true", required=False, help='Output a Bibframe 2 RDF XML file.')
+    parser.add_argument('-z', '--rdfturtle', action="store_true", required=False, help='Output a Bibframe 2 RDF Turtle file.')
     parser.add_argument('-t', '--text', action="store_true", required=False, help='Output a text MARC file.')
     parser.add_argument('-x', '--xml', action="store_true", required=False, help='Output a MARCXML file.')
     
@@ -99,6 +100,9 @@ def main():
             out_txt_file = filename + "_utf8" + ".mrk"
         if args.bibframe:
             out_rdf_file = filename + "_utf8" + ".rdf"
+        if args.rdfturtle:
+            out_rdf_file = filename + "_utf8" + ".ttl"
+        
     
     if mode == "cesu-8":
         reader = pymarc.MARCReader(open(in_file, 'rb'), force_utf8=False, to_unicode=False)
@@ -213,9 +217,10 @@ def main():
 
     #
     # Convert to Bibframe2 RDF documents
+    #    http://knowledgelinks.io/presentations/introduction-to-bibcat/topic/marc2bibframe2.html
     #
 
-    if args.bibframe:
+    if args.bibframe or args.rdfturtle:
         xslfile = 'xsl/marc2bibframe2.xsl'
         if os.path.isfile(xslfile):
             reader4 = pymarc.MARCReader(open(out_mrc_file, 'rb'), force_utf8=False, to_unicode=True)
@@ -227,11 +232,18 @@ def main():
                 raw_xml = pymarc.record_to_xml(marc_records[i], namespace=True)
                 marc_xml = etree.XML(raw_xml)
                 bf_rdf_xml = marc2bibframe2(marc_xml)
-                out_rdf_file = filename + "_" + str(i) + "_utf8" + ".rdf"
                 if args.bibframe:
+                    out_rdf_file = filename + "_" + str(i) + "_utf8" + ".rdf"
                     with open(out_rdf_file, 'wb') as doc:
                         doc.write(etree.tostring(bf_rdf_xml, pretty_print = True))
-                # raw_rdf_xml = etree.tostring(bf_rdf_xml)
+                if args.rdfturtle:
+                    import rdflib
+                    out_ttl_file = filename + "_" + str(i) + "_utf8" + ".ttl"
+                    raw_rdf_xml = etree.tostring(bf_rdf_xml)
+                    bf_rdf = rdflib.Graph()
+                    bf_rdf.parse(data=raw_rdf_xml, format='xml')
+                    with open(out_ttl_file, 'w') as doc:
+                        doc.write(bf_rdf.serialize(format='turtle'))
             reader4.close()
         else:
             print("Marc2bibframe2 support unavailable. Add marc2bibframe2 to xsl directory.")
