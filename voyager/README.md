@@ -6,8 +6,7 @@
 voyager$ ./supplementary_planes.py -h
 usage: supplementary_planes.py [-h] -i INPUT [-m MODE] [-r] [-d] [-b] [-z] [-t] [-x]
 
-Convert CESU-8 encoded MARC records with SMP characters to UTF-8. Repair and convert MARC-8 records with Adlam and
-Hanifi Rohingya.
+Convert CESU-8 encoded MARC records with SMP characters to UTF-8. Repair and convert MARC-8 records with Adlam and Hanifi Rohingya.
 
 optional arguments:
   -h, --help            show this help message and exit
