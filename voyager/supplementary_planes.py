@@ -60,6 +60,15 @@ def xsl_transformation(xslfile, xmlfile = None, xmlstring = None, params={}):
     result = transform(xml_contents, **params)
     return result
 
+rdf_formats = {
+    "turtle": (".ttl", "text/turtle", "Turtle"),
+    "nt": (".nt", "application/n-triples", "N-Triples"),
+    "nquads": (".nq", "application/n-quads", "N-Quads"),
+    "json-ld": (".jsonld", "application/ld+jso", "JSON-LD"),
+    "n3": (".n3", "text/n3;charset=utf-8", "Notation3"),
+    "trix": (".xml", "text/xml", "TriX (Triples in XML) ")
+}
+
 def main():
     # Command line arguments
     parser = argparse.ArgumentParser(description='Convert CESU-8 encoded MARC records with SMP characters to UTF-8. Repair and convert MARC-8 records with Adlam and Hanifi Rohingya.')
@@ -78,10 +87,10 @@ def main():
     # output formats
     # b = mrc,  t = mck, x = mcx (MARCXML), p = 
     parser.add_argument('-b', '--bibframe', action="store_true", required=False, help='Output a Bibframe 2 RDF XML file.')
-    parser.add_argument('-z', '--rdfturtle', action="store_true", required=False, help='Output a Bibframe 2 RDF Turtle file.')
+    parser.add_argument('-f', '--rdfformat', type=str, required=False, help='Specify RDF serialisation format for Bibframe 2 file.')
     parser.add_argument('-t', '--text', action="store_true", required=False, help='Output a text MARC file.')
     parser.add_argument('-x', '--xml', action="store_true", required=False, help='Output a MARCXML file.')
-    
+
     # Parse the argument
     args = parser.parse_args()
 
@@ -98,11 +107,9 @@ def main():
     else:
         mode = "cesu-8"
 
-    print(args.xml, args.text, args.bibframe, args.rdfturtle)
-
     bfout = "individual"
 
-    if bfout == "collection" and (args.bibframe or args.rdfturtle) and not args.xml:
+    if bfout == "collection" and (args.bibframe or args.rdfformat) and not args.xml:
         args.xml = True
 
     in_file = os.path.abspath(args.input)
@@ -117,13 +124,17 @@ def main():
             out_txt_file = filename + "_utf8" + ".mrk"
         if args.bibframe:
             out_rdf_file = filename + "_utf8" + ".rdf"
-        if args.rdfturtle:
-            out_rdf_file = filename + "_utf8" + ".ttl"
+        
     
     if mode == "cesu-8":
         reader = pymarc.MARCReader(open(in_file, 'rb'), force_utf8=False, to_unicode=False)
     else:
         reader = pymarc.MARCReader(open(in_file, 'rb'), force_utf8=False, to_unicode=True)
+
+    if args.rdfformat and args.rdfformat in rdf_formats:
+            rdf_format = args.rdfformat
+    else:
+        rdf_format = ''
 
     converted_marc_records = []
 
@@ -248,7 +259,7 @@ def main():
     #    http://knowledgelinks.io/presentations/introduction-to-bibcat/topic/marc2bibframe2.html
     #
 
-    if args.bibframe or args.rdfturtle:
+    if args.bibframe or args.rdfformat:
         xslfile = 'xsl/marc2bibframe2.xsl'
         if os.path.isfile(xslfile):
             reader4 = pymarc.MARCReader(open(out_mrc_file, 'rb'), force_utf8=False, to_unicode=True)
@@ -270,17 +281,17 @@ def main():
                             bibframe_file = etree.tostring(bf_rdf_xml, pretty_print = True,encoding="Unicode")
                             #bibframe_file = html.unescape(bibframe_file)
                             doc.write(bibframe_file)
-                    if args.rdfturtle:
+                    if rdf_format:
                         import rdflib
                         if len(marc_records) == 1:
-                            out_ttl_file = filename + "_utf8" + ".ttl"
+                            out_ttl_file = filename + "_utf8" + rdf_formats[rdf_format][0]
                         else:
-                            out_ttl_file = filename + "_" + str(i) + "_utf8" + ".ttl"
+                            out_ttl_file = filename + "_" + str(i) + "_utf8" + rdf_formats[rdf_format][0]
                         raw_rdf_xml = etree.tostring(bf_rdf_xml)
                         bf_rdf = rdflib.Graph()
                         bf_rdf.parse(data=raw_rdf_xml, format='xml')
                         with open(out_ttl_file, 'w') as doc:
-                            doc.write(bf_rdf.serialize(format='turtle'))
+                            doc.write(bf_rdf.serialize(format=rdf_format))
             elif bfout == "collection" and os.path.isfile(out_xml_file):
                 bibframe_file = xsl_transformation(xslfile=xslfile, xmlfile=out_xml_file)
                 #bibframe_file = html.unescape(bibframe_file)
