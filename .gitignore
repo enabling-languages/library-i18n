@@ -482,3 +482,4 @@ test_files/
 *.bak
 conf/
 *.xsl
+tests/

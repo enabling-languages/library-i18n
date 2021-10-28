@@ -50,6 +50,16 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath("./cesu8.py"))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 import cesu8
 
+def xsl_transformation(xslfile, xmlfile = None, xmlstring = None, params={}):
+    xslt_tree = etree.parse(xslfile)
+    transform = etree.XSLT(xslt_tree)
+    xml_contents = xmlstring
+    if not xml_contents:
+        if xmlfile:
+            xml_contents = etree.parse(xmlfile)
+    result = transform(xml_contents, **params)
+    return result
+
 def main():
     # Command line arguments
     parser = argparse.ArgumentParser(description='Convert CESU-8 encoded MARC records with SMP characters to UTF-8. Repair and convert MARC-8 records with Adlam and Hanifi Rohingya.')
@@ -88,6 +98,13 @@ def main():
     else:
         mode = "cesu-8"
 
+    print(args.xml, args.text, args.bibframe, args.rdfturtle)
+
+    bfout = "individual"
+
+    if bfout == "collection" and (args.bibframe or args.rdfturtle) and not args.xml:
+        args.xml = True
+
     in_file = os.path.abspath(args.input)
     filename, file_extension = os.path.splitext(in_file)
     if reverse == True:
@@ -102,7 +119,6 @@ def main():
             out_rdf_file = filename + "_utf8" + ".rdf"
         if args.rdfturtle:
             out_rdf_file = filename + "_utf8" + ".ttl"
-        
     
     if mode == "cesu-8":
         reader = pymarc.MARCReader(open(in_file, 'rb'), force_utf8=False, to_unicode=False)
@@ -141,7 +157,8 @@ def main():
                 for s in r['041'].get_subfields('a', 'h', 'j'):
                     lang.append(s)
             ful = True if "ful" in lang else False
-            rhg = True if "rhg" in lang else False
+            rhg = True if "rhg" or "inc" in lang else False
+            ara = True if "ara" in lang else False
             if ful:
                 for f in r.get_fields('880'):
                     if f['a'] and ("&#xe" in f['a']):
@@ -163,6 +180,17 @@ def main():
                         f['b'] = html.unescape(f['b'])
                     if f['c'] and ("&#x0d" in f['c']):
                         f['c'] = re.sub(r'&#x0d', '&#x10d', f['c'])
+                        f['c'] = html.unescape(f['c'])
+            if ara:
+                for f in r.get_fields('880'):
+                    if f['a'] and ("&#x2" in f['a']):
+                        f['a'] = re.sub(r'&#x2', '&#x12', f['a'])
+                        f['a'] = html.unescape(f['a'])
+                    if f['b'] and ("&#x2" in f['b']):
+                        f['b'] = re.sub(r'&#x2', '&#x12', f['b'])
+                        f['b'] = html.unescape(f['b'])
+                    if f['c'] and ("&#x2" in f['c']):
+                        f['c'] = re.sub(r'&#x2', '&#x12', f['c'])
                         f['c'] = html.unescape(f['c'])
 
         if debug:
@@ -228,22 +256,36 @@ def main():
             for record in reader4:
                 marc_records.append(record)
             marc2bibframe2 = etree.XSLT(etree.parse(xslfile))
-            for i in range(len(marc_records)):
-                raw_xml = pymarc.record_to_xml(marc_records[i], namespace=True)
-                marc_xml = etree.XML(raw_xml)
-                bf_rdf_xml = marc2bibframe2(marc_xml)
-                if args.bibframe:
-                    out_rdf_file = filename + "_" + str(i) + "_utf8" + ".rdf"
-                    with open(out_rdf_file, 'wb') as doc:
-                        doc.write(etree.tostring(bf_rdf_xml, pretty_print = True))
-                if args.rdfturtle:
-                    import rdflib
-                    out_ttl_file = filename + "_" + str(i) + "_utf8" + ".ttl"
-                    raw_rdf_xml = etree.tostring(bf_rdf_xml)
-                    bf_rdf = rdflib.Graph()
-                    bf_rdf.parse(data=raw_rdf_xml, format='xml')
-                    with open(out_ttl_file, 'w') as doc:
-                        doc.write(bf_rdf.serialize(format='turtle'))
+            if bfout == "individual":
+                for i in range(len(marc_records)):
+                    raw_xml = pymarc.record_to_xml(marc_records[i], namespace=True)
+                    marc_xml = etree.XML(raw_xml)
+                    bf_rdf_xml = marc2bibframe2(marc_xml)
+                    if args.bibframe:
+                        if len(marc_records) == 1:
+                            out_rdf_file = filename + "_utf8" + ".rdf"
+                        else:
+                            out_rdf_file = filename + "_" + str(i) + "_utf8" + ".rdf"
+                        with open(out_rdf_file, 'w') as doc:
+                            bibframe_file = etree.tostring(bf_rdf_xml, pretty_print = True,encoding="Unicode")
+                            #bibframe_file = html.unescape(bibframe_file)
+                            doc.write(bibframe_file)
+                    if args.rdfturtle:
+                        import rdflib
+                        if len(marc_records) == 1:
+                            out_ttl_file = filename + "_utf8" + ".ttl"
+                        else:
+                            out_ttl_file = filename + "_" + str(i) + "_utf8" + ".ttl"
+                        raw_rdf_xml = etree.tostring(bf_rdf_xml)
+                        bf_rdf = rdflib.Graph()
+                        bf_rdf.parse(data=raw_rdf_xml, format='xml')
+                        with open(out_ttl_file, 'w') as doc:
+                            doc.write(bf_rdf.serialize(format='turtle'))
+            elif bfout == "collection" and os.path.isfile(out_xml_file):
+                bibframe_file = xsl_transformation(xslfile=xslfile, xmlfile=out_xml_file)
+                #bibframe_file = html.unescape(bibframe_file)
+                with open(out_rdf_file, 'w') as doc:
+                    doc.write(etree.tostring(bibframe_file, pretty_print = True, encoding='Unicode'))
             reader4.close()
         else:
             print("Marc2bibframe2 support unavailable. Add marc2bibframe2 to xsl directory.")
