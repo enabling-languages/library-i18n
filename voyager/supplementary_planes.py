@@ -16,13 +16,6 @@
 #
 #   Batch exports from Voyager wll be in the encoding used in the Oracle DB.
 #
-# Usage:
-#   To convert a CESU-8 file to UTF-8
-#     ./supplementary_planes.py -i Bulk_Export.mrc
-#
-#   To convert an UTF-8 file to CESU-8
-#     ./supplementary_planes.py -i Bulk_Import.mrc -r
-#
 # Copyright 2021 Enabling Languages
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,11 +32,12 @@
 #
 ##########################################
 
-import pymarc, argparse, os, sys, html
+import pymarc, argparse, os, sys, html, json
 try:
     import regex as re
 except ImportError:
     import re
+import rdflib
 from lxml import etree
 import codecs
 SCRIPT_DIR = os.path.dirname(os.path.abspath("./cesu8.py"))
@@ -60,6 +54,15 @@ def xsl_transformation(xslfile, xmlfile = None, xmlstring = None, params={}):
     result = transform(xml_contents, **params)
     return result
 
+def removekey(d, key):
+    r = dict(d)
+    del r[key]
+    return r
+
+# Supported RDF file formats.
+# Dictionary key is format value accepted by value is a 
+# tuple consisting of file extension, mimetype and label 
+# for the format.
 rdf_formats = {
     "turtle": (".ttl", "text/turtle", "Turtle"),
     "nt": (".nt", "application/n-triples", "N-Triples"),
@@ -72,27 +75,32 @@ rdf_formats = {
 def main():
     # Command line arguments
     parser = argparse.ArgumentParser(description='Convert CESU-8 encoded MARC records with SMP characters to UTF-8. Repair and convert MARC-8 records with Adlam and Hanifi Rohingya.')
-
-    # Input file ot be converted
+    # Input file (Binary MARC file *.mrc) to be converted
     parser.add_argument('-i', '--input', type=str, required=True, help='File to be converted.')
-    # Outputfile
-    # parser.add_argument('-o', '--output', type=str, required=False, help='Output file.')
     # Mode: use CESU-8 (default) or MARC-8 processing
-    parser.add_argument('-m', '--mode', type=str, required=False, help='Mode used for processing the MARC record. Values are cesu-8 and marc-8')
+    parser.add_argument('-m', '--mode', type=str, required=False, help='Mode used for processing the MARC record. Valid values: cesu-8, marc-8')
     # Reverse (read in a UTF-8 file, output a CESU-8 file. ONly available for CESU-8 mode.)
     parser.add_argument('-r', '--reverse', action="store_true", required=False, help='Reverse (convert UTF-8 to CESU-8)')
-    # Parse the argument
+    # Parse the argument, minimal debugging information on conversion of 880 fields.
     parser.add_argument('-d', '--debug', action="store_true", required=False, help='Display 880 field during processing.')
+    # Output formats
+    parser.add_argument('-t', '--text', action="store_true", required=False, help='Output a text MARC (*.mrk) file.')
+    parser.add_argument('-x', '--xml', action="store_true", required=False, help='Output a MARCXML file (*.mrx).')
+    parser.add_argument('-b', '--bibframe', action="store_true", required=False, help='Output a Bibframe 2 RDF XML file (*.rdf).')
+    parser.add_argument('-f', '--rdfformat', type=str, required=False, help='Specify RDF serialisation format for Bibframe 2 file. Valid values: turtle, nt, nquads, json-ld, n3, trix.')
     
-    # output formats
-    # b = mrc,  t = mck, x = mcx (MARCXML), p = 
-    parser.add_argument('-b', '--bibframe', action="store_true", required=False, help='Output a Bibframe 2 RDF XML file.')
-    parser.add_argument('-f', '--rdfformat', type=str, required=False, help='Specify RDF serialisation format for Bibframe 2 file.')
-    parser.add_argument('-t', '--text', action="store_true", required=False, help='Output a text MARC file.')
-    parser.add_argument('-x', '--xml', action="store_true", required=False, help='Output a MARCXML file.')
-
     # Parse the argument
     args = parser.parse_args()
+
+    jconfigfile = os.path.abspath("conf.json")
+    #if os.path.isfile(configfile):
+    print(jconfigfile)
+    print("Config loop")
+    with open(jconfigfile, "r") as f:
+        jconfig = f.read()
+    config = json.loads(jconfig)
+    print(str(config))
+    print(type(config))
 
     # Process arguments
     debug = False
@@ -107,7 +115,21 @@ def main():
     else:
         mode = "cesu-8"
 
-    bfout = "individual"
+    bfout = ""
+    if config and "bfout" in config:
+            bfout = config["bfout"]
+    else:
+        bfout = "individual"
+
+    params = removekey(config, "bfout")
+    if bool(params):
+        for k, v in params.items():
+            print(f'Key: {k}, Value: {v}')
+    else:
+        print("No paramters for marc2bibframe2")
+    print(str(config))
+
+    print("Bfout: ", bfout)
 
     if bfout == "collection" and (args.bibframe or args.rdfformat) and not args.xml:
         args.xml = True
@@ -125,7 +147,6 @@ def main():
         if args.bibframe:
             out_rdf_file = filename + "_utf8" + ".rdf"
         
-    
     if mode == "cesu-8":
         reader = pymarc.MARCReader(open(in_file, 'rb'), force_utf8=False, to_unicode=False)
     else:
@@ -282,7 +303,6 @@ def main():
                             #bibframe_file = html.unescape(bibframe_file)
                             doc.write(bibframe_file)
                     if rdf_format:
-                        import rdflib
                         if len(marc_records) == 1:
                             out_ttl_file = filename + "_utf8" + rdf_formats[rdf_format][0]
                         else:
@@ -302,7 +322,14 @@ def main():
             print("Marc2bibframe2 support unavailable. Add marc2bibframe2 to xsl directory.")
 
 # Usage:
-# ./supplementary_planes.py -xtb -i test_files/13155553-Bulk_Export.mrc
+#   To convert a CESU-8 encoded MARC file to an UTF-8 MARC file:
+#       ./supplementary_planes.py -i test_files/13155553-Bulk_Export.mrc
+#
+#   To generate a UTF-8 MARCXML file and an UTF-8 MARC file:
+#       ./supplementary_planes.py -x -i test_files/13155553-Bulk_Export.mrc
+#
+#   To generate a Bibframe2 RDF/XML file and an UTF-8 MARC file:
+#       ./supplementary_planes.py -xb -i test_files/13155553-Bulk_Export.mrc
 
 if __name__ == '__main__':
     main()

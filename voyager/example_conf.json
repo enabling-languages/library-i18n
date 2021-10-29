@@ -1,0 +1,8 @@
+{
+    "bfout": "individual",
+    "baseuri": "http://example.org/",
+    "idfield": "001",
+    "idsource": "",
+    "localfields": false,
+    "serialization": "rdfxml"
+}
