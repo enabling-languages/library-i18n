@@ -93,14 +93,10 @@ def main():
     args = parser.parse_args()
 
     jconfigfile = os.path.abspath("conf.json")
-    #if os.path.isfile(configfile):
-    print(jconfigfile)
-    print("Config loop")
-    with open(jconfigfile, "r") as f:
-        jconfig = f.read()
-    config = json.loads(jconfig)
-    print(str(config))
-    print(type(config))
+    if os.path.isfile(configfile):
+        with open(jconfigfile, "r") as f:
+            jconfig = f.read()
+        config = json.loads(jconfig)
 
     # Process arguments
     debug = False
@@ -121,15 +117,10 @@ def main():
     else:
         bfout = "individual"
 
-    params = removekey(config, "bfout")
-    if bool(params):
-        for k, v in params.items():
-            print(f'Key: {k}, Value: {v}')
-    else:
-        print("No paramters for marc2bibframe2")
-    print(str(config))
-
-    print("Bfout: ", bfout)
+    if config:
+        params = removekey(config, "bfout")
+        if not bool(params):
+            params = {}
 
     if bfout == "collection" and (args.bibframe or args.rdfformat) and not args.xml:
         args.xml = True
