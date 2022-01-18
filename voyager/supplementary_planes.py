@@ -93,10 +93,12 @@ def main():
     args = parser.parse_args()
 
     jconfigfile = os.path.abspath("conf.json")
-    if os.path.isfile(configfile):
+    if os.path.isfile(jconfigfile):
         with open(jconfigfile, "r") as f:
             jconfig = f.read()
         config = json.loads(jconfig)
+    # else:
+    #     config = {"bfout": "individual"}
 
     # Process arguments
     debug = False
@@ -119,8 +121,8 @@ def main():
 
     if config:
         params = removekey(config, "bfout")
-        if not bool(params):
-            params = {}
+    if not bool(params):
+        params = {}
 
     if bfout == "collection" and (args.bibframe or args.rdfformat) and not args.xml:
         args.xml = True
