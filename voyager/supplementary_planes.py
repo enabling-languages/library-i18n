@@ -14,7 +14,7 @@
 #   The script converts MARC records from CESU-8 to UTF-8 after exporting records, or
 #   from UTF-8 to CESU-8 before importing records.
 #
-#   Batch exports from Voyager wll be in the encoding used in the Oracle DB.
+#   Batch exports from Voyager will be in the encoding used in the Oracle DB.
 #
 # Copyright 2021 Enabling Languages
 #
@@ -78,7 +78,7 @@ def main():
     # Input file (Binary MARC file *.mrc) to be converted
     parser.add_argument('-i', '--input', type=str, required=True, help='File to be converted.')
     # Mode: use CESU-8 (default) or MARC-8 processing
-    parser.add_argument('-m', '--mode', type=str, required=False, help='Mode used for processing the MARC record. Valid values: cesu-8, marc-8')
+    parser.add_argument('-m', '--mode', type=str, required=False, help='Mode used for processing the MARC record. Valid values: cesu-8, marc-8, utf-8')
     # Reverse (read in a UTF-8 file, output a CESU-8 file. ONly available for CESU-8 mode.)
     parser.add_argument('-r', '--reverse', action="store_true", required=False, help='Reverse (convert UTF-8 to CESU-8)')
     # Parse the argument, minimal debugging information on conversion of 880 fields.
@@ -92,7 +92,7 @@ def main():
     # Parse the argument
     args = parser.parse_args()
 
-    jconfigfile = os.path.abspath("conf.json")
+    jconfigfile = os.path.abspath("./conf.json")
     if os.path.isfile(jconfigfile):
         with open(jconfigfile, "r") as f:
             jconfig = f.read()
@@ -100,11 +100,10 @@ def main():
     # else:
     #     config = {"bfout": "individual"}
 
-    # Process arguments
+    # Process CLI arguments
     debug = False
     if args.debug:
         debug = True
-
     reverse = False
     if args.reverse:
         reverse = True
@@ -132,17 +131,26 @@ def main():
     if reverse == True:
         out_mrc_file = filename + "_cesu8" + ".mrc"
     else:
-        out_mrc_file = filename + "_utf8" + ".mrc"
-        if args.xml:
-            out_xml_file=filename + "_utf8" + ".mrx"
-        if args.text:
-            out_txt_file = filename + "_utf8" + ".mrk"
-        if args.bibframe:
-            out_rdf_file = filename + "_utf8" + ".rdf"
-        
+        if mode != "utf-8":
+            out_mrc_file = filename + "_utf8" + ".mrc"
+            if args.xml:
+                out_xml_file=filename + "_utf8" + ".mrx"
+            if args.text:
+                out_txt_file = filename + "_utf8" + ".mrk"
+            if args.bibframe:
+                out_rdf_file = filename + "_utf8" + ".rdf"
+        else:
+            out_mrc_file = filename + ".mrc"
+            if args.xml:
+                out_xml_file=filename + ".mrx"
+            if args.text:
+                out_txt_file = filename + ".mrk"
+            if args.bibframe:
+                out_rdf_file = filename + ".rdf"
+
     if mode == "cesu-8":
         reader = pymarc.MARCReader(open(in_file, 'rb'), force_utf8=False, to_unicode=False)
-    else:
+    elif mode != "utf-8":
         reader = pymarc.MARCReader(open(in_file, 'rb'), force_utf8=False, to_unicode=True)
 
     if args.rdfformat and args.rdfformat in rdf_formats:
@@ -150,98 +158,99 @@ def main():
     else:
         rdf_format = ''
 
-    converted_marc_records = []
-
-    for r in reader:
-        if debug:
-            print("\n")
-            print(r.leader)
-            if r['880']:
-                print(r['880'])
-            print("\n")
-        if mode == "cesu-8" and reverse == False:
-            for f in r.get_fields('880'):
-                if f['a']:
-                    f['a'] = f['a'].decode("cesu-8").encode("utf-8")
-                if f['b']:
-                    f['b'] = f['b'].decode("cesu-8").encode("utf-8")
-                if f['c']:
-                    f['c'] = f['c'].decode("cesu-8").encode("utf-8")
-        elif mode == "cesu-8" and reverse == True:
-            for f in r.get_fields('880'):
-                if f['a']:
-                    f['a'] = f['a'].decode("utf-8").encode("cesu-8")
-                if f['b']:
-                    f['b'] = f['b'].decode("utf-8").encode("cesu-8")
-                if f['c']:
-                    f['c'] = f['c'].decode("utf-8").encode("cesu-8")
-        elif mode == "marc-8":
-            r.leader = r.leader[:9] + 'a' + r.leader[10:]
-            lang = [r['008'].value()[35:38]]
-            if r["041"]:
-                for s in r['041'].get_subfields('a', 'h', 'j'):
-                    lang.append(s)
-            ful = True if "ful" in lang else False
-            rhg = True if "rhg" or "inc" in lang else False
-            ara = True if "ara" in lang else False
-            if ful:
-                for f in r.get_fields('880'):
-                    if f['a'] and ("&#xe" in f['a']):
-                        f['a'] = re.sub(r'&#xe', '&#x1e', f['a'])
-                        f['a'] = html.unescape(f['a'])
-                    if f['b'] and ("&#xe" in f['b']):
-                        f['b'] = re.sub(r'&#xe', '&#x1e', f['b'])
-                        f['b'] = html.unescape(f['b'])
-                    if f['c'] and ("&#xe" in f['c']):
-                        f['c'] = re.sub(r'&#xe', '&#x1e', f['c'])
-                        f['c'] = html.unescape(f['c'])
-            if rhg:
-                for f in r.get_fields('880'):
-                    if f['a'] and ("&#x0d" in f['a']):
-                        f['a'] = re.sub(r'&#x0d', '&#x10d', f['a'])
-                        f['a'] = html.unescape(f['a'])
-                    if f['b'] and ("&#x0d" in f['b']):
-                        f['b'] = re.sub(r'&#x0d', '&#x10d', f['b'])
-                        f['b'] = html.unescape(f['b'])
-                    if f['c'] and ("&#x0d" in f['c']):
-                        f['c'] = re.sub(r'&#x0d', '&#x10d', f['c'])
-                        f['c'] = html.unescape(f['c'])
-            if ara:
-                for f in r.get_fields('880'):
-                    if f['a'] and ("&#x2" in f['a']):
-                        f['a'] = re.sub(r'&#x2', '&#x12', f['a'])
-                        f['a'] = html.unescape(f['a'])
-                    if f['b'] and ("&#x2" in f['b']):
-                        f['b'] = re.sub(r'&#x2', '&#x12', f['b'])
-                        f['b'] = html.unescape(f['b'])
-                    if f['c'] and ("&#x2" in f['c']):
-                        f['c'] = re.sub(r'&#x2', '&#x12', f['c'])
-                        f['c'] = html.unescape(f['c'])
-
-        if debug:
-            print(r.leader)
-            if r['880']:
-                print(r['880'])
+    
+    if mode != "utf-8":
+        converted_marc_records = []
+        for r in reader:
+            if debug:
+                print("\n")
+                print(r.leader)
+                if r['880']:
+                    print(r['880'])
+                print("\n")
             if mode == "cesu-8" and reverse == False:
-                if r['880']['a']:
-                    print(r['880']['a'].decode("utf-8"))
-                if r['880']['b']:
-                    print(r['880']['b'].decode("utf-8"))
-                if r['880']['c']:
-                    print(r['880']['c'].decode("utf-8"))
+                for f in r.get_fields('880'):
+                    if f['a']:
+                        f['a'] = f['a'].decode("cesu-8").encode("utf-8")
+                    if f['b']:
+                        f['b'] = f['b'].decode("cesu-8").encode("utf-8")
+                    if f['c']:
+                        f['c'] = f['c'].decode("cesu-8").encode("utf-8")
             elif mode == "cesu-8" and reverse == True:
-                if r['880']['a']:
-                    print(r['880']['a'].decode("cesu-8"))
-                if r['880']['b']:
-                    print(r['880']['b'].decode("cesu-8"))
-                if r['880']['c']:
-                    print(r['880']['c'].decode("cesu-8"))
+                for f in r.get_fields('880'):
+                    if f['a']:
+                        f['a'] = f['a'].decode("utf-8").encode("cesu-8")
+                    if f['b']:
+                        f['b'] = f['b'].decode("utf-8").encode("cesu-8")
+                    if f['c']:
+                        f['c'] = f['c'].decode("utf-8").encode("cesu-8")
+            elif mode == "marc-8":
+                r.leader = r.leader[:9] + 'a' + r.leader[10:]
+                lang = [r['008'].value()[35:38]]
+                if r["041"]:
+                    for s in r['041'].get_subfields('a', 'h', 'j'):
+                        lang.append(s)
+                ful = True if "ful" in lang else False
+                rhg = True if "rhg" or "inc" in lang else False
+                ara = True if "ara" in lang else False
+                if ful:
+                    for f in r.get_fields('880'):
+                        if f['a'] and ("&#xe" in f['a']):
+                            f['a'] = re.sub(r'&#xe', '&#x1e', f['a'])
+                            f['a'] = html.unescape(f['a'])
+                        if f['b'] and ("&#xe" in f['b']):
+                            f['b'] = re.sub(r'&#xe', '&#x1e', f['b'])
+                            f['b'] = html.unescape(f['b'])
+                        if f['c'] and ("&#xe" in f['c']):
+                            f['c'] = re.sub(r'&#xe', '&#x1e', f['c'])
+                            f['c'] = html.unescape(f['c'])
+                if rhg:
+                    for f in r.get_fields('880'):
+                        if f['a'] and ("&#x0d" in f['a']):
+                            f['a'] = re.sub(r'&#x0d', '&#x10d', f['a'])
+                            f['a'] = html.unescape(f['a'])
+                        if f['b'] and ("&#x0d" in f['b']):
+                            f['b'] = re.sub(r'&#x0d', '&#x10d', f['b'])
+                            f['b'] = html.unescape(f['b'])
+                        if f['c'] and ("&#x0d" in f['c']):
+                            f['c'] = re.sub(r'&#x0d', '&#x10d', f['c'])
+                            f['c'] = html.unescape(f['c'])
+                if ara:
+                    for f in r.get_fields('880'):
+                        if f['a'] and ("&#x2" in f['a']):
+                            f['a'] = re.sub(r'&#x2', '&#x12', f['a'])
+                            f['a'] = html.unescape(f['a'])
+                        if f['b'] and ("&#x2" in f['b']):
+                            f['b'] = re.sub(r'&#x2', '&#x12', f['b'])
+                            f['b'] = html.unescape(f['b'])
+                        if f['c'] and ("&#x2" in f['c']):
+                            f['c'] = re.sub(r'&#x2', '&#x12', f['c'])
+                            f['c'] = html.unescape(f['c'])
 
-        converted_marc_records.append(r)
+            if debug:
+                print(r.leader)
+                if r['880']:
+                    print(r['880'])
+                if mode == "cesu-8" and reverse == False:
+                    if r['880']['a']:
+                        print(r['880']['a'].decode("utf-8"))
+                    if r['880']['b']:
+                        print(r['880']['b'].decode("utf-8"))
+                    if r['880']['c']:
+                        print(r['880']['c'].decode("utf-8"))
+                elif mode == "cesu-8" and reverse == True:
+                    if r['880']['a']:
+                        print(r['880']['a'].decode("cesu-8"))
+                    if r['880']['b']:
+                        print(r['880']['b'].decode("cesu-8"))
+                    if r['880']['c']:
+                        print(r['880']['c'].decode("cesu-8"))
 
-    with open(out_mrc_file , 'wb') as data:
-        for record in converted_marc_records:
-            data.write(record.as_marc())
+            converted_marc_records.append(r)
+
+        with open(out_mrc_file , 'wb') as data:
+            for record in converted_marc_records:
+                data.write(record.as_marc())
 
     #
     # Convert to MARCXML file
@@ -318,11 +327,14 @@ def main():
 #   To convert a CESU-8 encoded MARC file to an UTF-8 MARC file:
 #       ./supplementary_planes.py -i test_files/13155553-Bulk_Export.mrc
 #
-#   To generate a UTF-8 MARCXML file and an UTF-8 MARC file:
+#   To generate a UTF-8 MARCXML file and a UTF-8 MARC file from a CESU-8 e:
 #       ./supplementary_planes.py -x -i test_files/13155553-Bulk_Export.mrc
 #
 #   To generate a Bibframe2 RDF/XML file and an UTF-8 MARC file:
 #       ./supplementary_planes.py -xb -i test_files/13155553-Bulk_Export.mrc
+#
+#   To generate bibframe RDF files and MARCXML files from a UTF-8 encoded MARC file:
+#       ./supplementary_planes.py -m utf-8 -xbf json-ld -i ../data/lao.mrc
 
 if __name__ == '__main__':
     main()

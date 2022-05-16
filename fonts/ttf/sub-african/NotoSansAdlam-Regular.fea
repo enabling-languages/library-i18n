@@ -1,0 +1,1595 @@
+languagesystem DFLT dflt;
+languagesystem adlm dflt;
+
+
+# GSUB 
+
+
+lookup aaltAccessAllAlternatesinAdlamlookup0 {
+  lookupflag 0;
+    sub \u1E922.fina by \u1E900.fina ;
+    sub \u1E922.init by \u1E900.init ;
+    sub \u1E922.medi by \u1E900.medi ;
+    sub \u1E944 by \u1E944.case ;
+    sub \u1E926.fina by \u1E904.fina ;
+    sub \u1E926.init by \u1E904.init ;
+    sub \u1E926.medi by \u1E904.medi ;
+    sub \u1E929.fina by \u1E907.fina ;
+    sub \u1E929.init by \u1E907.init ;
+    sub \u1E929.medi by \u1E907.medi ;
+    sub \u1E937.fina by \u1E915.fina ;
+    sub \u1E937.init by \u1E915.init ;
+    sub \u1E937.medi by \u1E915.medi ;
+    sub \u1E923.fina by \u1E901.fina ;
+    sub \u1E923.init by \u1E901.init ;
+    sub \u1E923.medi by \u1E901.medi ;
+    sub \u1E92F.fina by \u1E90D.fina ;
+    sub \u1E92F.init by \u1E90D.init ;
+    sub \u1E92F.medi by \u1E90D.medi ;
+    sub \u1E92B.fina by \u1E909.fina ;
+    sub \u1E92B.init by \u1E909.init ;
+    sub \u1E92B.medi by \u1E909.medi ;
+    sub \u1E92C.fina by \u1E90A.fina ;
+    sub \u1E92C.init by \u1E90A.init ;
+    sub \u1E92C.medi by \u1E90A.medi ;
+    sub \u1E93A.fina by \u1E918.fina ;
+    sub \u1E93A.init by \u1E918.init ;
+    sub \u1E93A.medi by \u1E918.medi ;
+    sub \u1E940.fina by \u1E91E.fina ;
+    sub \u1E940.init by \u1E91E.init ;
+    sub \u1E940.medi by \u1E91E.medi ;
+    sub \u1E946 by \u1E946.case ;
+    sub \u1E938.fina by \u1E916.fina ;
+    sub \u1E938.init by \u1E916.init ;
+    sub \u1E938.medi by \u1E916.medi ;
+    sub \u1E92D.fina by \u1E90B.fina ;
+    sub \u1E92D.init by \u1E90B.init ;
+    sub \u1E92D.medi by \u1E90B.medi ;
+    sub \u1E936.fina by \u1E914.fina ;
+    sub \u1E936.init by \u1E914.init ;
+    sub \u1E936.medi by \u1E914.medi ;
+    sub \u1E933.fina by \u1E911.fina ;
+    sub \u1E933.init by \u1E911.init ;
+    sub \u1E933.medi by \u1E911.medi ;
+    sub \u1E93F.fina by \u1E91D.fina ;
+    sub \u1E93F.init by \u1E91D.init ;
+    sub \u1E93F.medi by \u1E91D.medi ;
+    sub \u1E942.fina by \u1E920.fina ;
+    sub \u1E942.init by \u1E920.init ;
+    sub \u1E942.medi by \u1E920.medi ;
+    sub \u1E924.fina by \u1E902.fina ;
+    sub \u1E924.init by \u1E902.init ;
+    sub \u1E924.medi by \u1E902.medi ;
+    sub \u1E925.fina by \u1E903.fina ;
+    sub \u1E925.init by \u1E903.init ;
+    sub \u1E925.medi by \u1E903.medi ;
+    sub \u1E93D.fina by \u1E91B.fina ;
+    sub \u1E93D.init by \u1E91B.init ;
+    sub \u1E93D.medi by \u1E91B.medi ;
+    sub \u1E932.fina by \u1E910.fina ;
+    sub \u1E932.init by \u1E910.init ;
+    sub \u1E932.medi by \u1E910.medi ;
+    sub \u1E93B.fina by \u1E919.fina ;
+    sub \u1E93B.init by \u1E919.init ;
+    sub \u1E93B.medi by \u1E919.medi ;
+    sub \u1E92E.fina by \u1E90C.fina ;
+    sub \u1E92E.init by \u1E90C.init ;
+    sub \u1E92E.medi by \u1E90C.medi ;
+    sub \u1E928.fina by \u1E906.fina ;
+    sub \u1E928.init by \u1E906.init ;
+    sub \u1E928.medi by \u1E906.medi ;
+    sub \u1E939.fina by \u1E917.fina ;
+    sub \u1E939.init by \u1E917.init ;
+    sub \u1E939.medi by \u1E917.medi ;
+    sub \u1E92A.fina by \u1E908.fina ;
+    sub \u1E92A.init by \u1E908.init ;
+    sub \u1E92A.medi by \u1E908.medi ;
+    sub \u1E943.fina by \u1E921.fina ;
+    sub \u1E943.init by \u1E921.init ;
+    sub \u1E943.medi by \u1E921.medi ;
+    sub \u1E927.fina by \u1E905.fina ;
+    sub \u1E927.init by \u1E905.init ;
+    sub \u1E927.medi by \u1E905.medi ;
+    sub \u1E93C.fina by \u1E91A.fina ;
+    sub \u1E93C.init by \u1E91A.init ;
+    sub \u1E93C.medi by \u1E91A.medi ;
+    sub \u1E935.fina by \u1E913.fina ;
+    sub \u1E935.init by \u1E913.init ;
+    sub \u1E935.medi by \u1E913.medi ;
+    sub \u1E93E.fina by \u1E91C.fina ;
+    sub \u1E93E.init by \u1E91C.init ;
+    sub \u1E93E.medi by \u1E91C.medi ;
+    sub \u1E945 by \u1E945.case ;
+    sub \u1E931.fina by \u1E90F.fina ;
+    sub \u1E931.init by \u1E90F.init ;
+    sub \u1E931.medi by \u1E90F.medi ;
+    sub \u1E934.fina by \u1E912.fina ;
+    sub \u1E934.init by \u1E912.init ;
+    sub \u1E934.medi by \u1E912.medi ;
+    sub \u1E930.fina by \u1E90E.fina ;
+    sub \u1E930.init by \u1E90E.init ;
+    sub \u1E930.medi by \u1E90E.medi ;
+    sub \u1E941.fina by \u1E91F.fina ;
+    sub \u1E941.init by \u1E91F.init ;
+    sub \u1E941.medi by \u1E91F.medi ;
+} aaltAccessAllAlternatesinAdlamlookup0;
+
+lookup aaltAccessAllAlternatesinAdlamlookup1 {
+  lookupflag 0;
+    sub \u1E900 from [\u1E900.fina \u1E900.init \u1E900.medi ];
+    sub \u1E904 from [\u1E904.fina \u1E904.init \u1E904.medi ];
+    sub \u1E907 from [\u1E907.fina \u1E907.init \u1E907.medi ];
+    sub \u1E915 from [\u1E915.fina \u1E915.init \u1E915.medi ];
+    sub \u1E901 from [\u1E901.fina \u1E901.init \u1E901.medi ];
+    sub \u1E90D from [\u1E90D.fina \u1E90D.init \u1E90D.medi ];
+    sub \u1E909 from [\u1E909.fina \u1E909.init \u1E909.medi ];
+    sub \u1E90A from [\u1E90A.fina \u1E90A.init \u1E90A.medi ];
+    sub \u1E918 from [\u1E918.fina \u1E918.init \u1E918.medi ];
+    sub \u1E91E from [\u1E91E.fina \u1E91E.init \u1E91E.medi ];
+    sub \u1E916 from [\u1E916.fina \u1E916.init \u1E916.medi ];
+    sub \u1E90B from [\u1E90B.fina \u1E90B.init \u1E90B.medi ];
+    sub \u1E914 from [\u1E914.fina \u1E914.init \u1E914.medi ];
+    sub \u1E911 from [\u1E911.fina \u1E911.init \u1E911.medi ];
+    sub \u1E91D from [\u1E91D.fina \u1E91D.init \u1E91D.medi ];
+    sub \u1E920 from [\u1E920.fina \u1E920.init \u1E920.medi ];
+    sub \u1E902 from [\u1E902.fina \u1E902.init \u1E902.medi ];
+    sub \u1E903 from [\u1E903.fina \u1E903.init \u1E903.medi ];
+    sub \u1E91B from [\u1E91B.fina \u1E91B.init \u1E91B.medi ];
+    sub \u1E910 from [\u1E910.fina \u1E910.init \u1E910.medi ];
+    sub \u1E919 from [\u1E919.fina \u1E919.init \u1E919.medi ];
+    sub \u1E90C from [\u1E90C.fina \u1E90C.init \u1E90C.medi ];
+    sub \u1E906 from [\u1E906.fina \u1E906.init \u1E906.medi ];
+    sub \u1E917 from [\u1E917.fina \u1E917.init \u1E917.medi ];
+    sub \u1E908 from [\u1E908.fina \u1E908.init \u1E908.medi ];
+    sub \u1E921 from [\u1E921.fina \u1E921.init \u1E921.medi ];
+    sub \u1E905 from [\u1E905.fina \u1E905.init \u1E905.medi ];
+    sub \u1E91A from [\u1E91A.fina \u1E91A.init \u1E91A.medi ];
+    sub \u1E913 from [\u1E913.fina \u1E913.init \u1E913.medi ];
+    sub \u1E91C from [\u1E91C.fina \u1E91C.init \u1E91C.medi ];
+    sub \u1E90F from [\u1E90F.fina \u1E90F.init \u1E90F.medi ];
+    sub \u1E912 from [\u1E912.fina \u1E912.init \u1E912.medi ];
+    sub \u1E90E from [\u1E90E.fina \u1E90E.init \u1E90E.medi ];
+    sub \u1E91F from [\u1E91F.fina \u1E91F.init \u1E91F.medi ];
+    sub \u1E922 from [\u1E900 \u1E922.fina \u1E922.init \u1E922.medi ];
+    sub \apostropheadlam from [\apostropheadlam.fina \apostropheadlam.init \apostropheadlam.medi ];
+    sub \u1E926 from [\u1E904 \u1E926.fina \u1E926.init \u1E926.medi ];
+    sub \u1E929 from [\u1E907 \u1E929.fina \u1E929.init \u1E929.medi ];
+    sub \u1E937 from [\u1E915 \u1E937.fina \u1E937.init \u1E937.medi ];
+    sub \u1E923 from [\u1E901 \u1E923.fina \u1E923.init \u1E923.medi ];
+    sub \u1E92F from [\u1E90D \u1E92F.fina \u1E92F.init \u1E92F.medi ];
+    sub \u1E92B from [\u1E909 \u1E92B.fina \u1E92B.init \u1E92B.medi ];
+    sub \u1E92C from [\u1E90A \u1E92C.fina \u1E92C.init \u1E92C.medi ];
+    sub \u1E93A from [\u1E918 \u1E93A.fina \u1E93A.init \u1E93A.medi ];
+    sub \u1E940 from [\u1E91E \u1E940.fina \u1E940.init \u1E940.medi ];
+    sub \u1E938 from [\u1E916 \u1E938.fina \u1E938.init \u1E938.medi ];
+    sub \u1E92D from [\u1E90B \u1E92D.fina \u1E92D.init \u1E92D.medi ];
+    sub \u1E936 from [\u1E914 \u1E936.fina \u1E936.init \u1E936.medi ];
+    sub \u1E933 from [\u1E911 \u1E933.fina \u1E933.init \u1E933.medi ];
+    sub \u1E93F from [\u1E91D \u1E93F.fina \u1E93F.init \u1E93F.medi ];
+    sub \u1E942 from [\u1E920 \u1E942.fina \u1E942.init \u1E942.medi ];
+    sub \u1E924 from [\u1E902 \u1E924.fina \u1E924.init \u1E924.medi ];
+    sub \u1E925 from [\u1E903 \u1E925.fina \u1E925.init \u1E925.medi ];
+    sub \u1E93D from [\u1E91B \u1E93D.fina \u1E93D.init \u1E93D.medi ];
+    sub \u1E932 from [\u1E910 \u1E932.fina \u1E932.init \u1E932.medi ];
+    sub \u1E93B from [\u1E919 \u1E93B.fina \u1E93B.init \u1E93B.medi ];
+    sub \u1E92E from [\u1E90C \u1E92E.fina \u1E92E.init \u1E92E.medi ];
+    sub \u1E928 from [\u1E906 \u1E928.fina \u1E928.init \u1E928.medi ];
+    sub \u1E939 from [\u1E917 \u1E939.fina \u1E939.init \u1E939.medi ];
+    sub \u1E92A from [\u1E908 \u1E92A.fina \u1E92A.init \u1E92A.medi ];
+    sub \u1E943 from [\u1E921 \u1E943.fina \u1E943.init \u1E943.medi ];
+    sub \u1E927 from [\u1E905 \u1E927.fina \u1E927.init \u1E927.medi ];
+    sub \u1E93C from [\u1E91A \u1E93C.fina \u1E93C.init \u1E93C.medi ];
+    sub \u1E935 from [\u1E913 \u1E935.fina \u1E935.init \u1E935.medi ];
+    sub \u1E93E from [\u1E91C \u1E93E.fina \u1E93E.init \u1E93E.medi ];
+    sub \u1E931 from [\u1E90F \u1E931.fina \u1E931.init \u1E931.medi ];
+    sub \u1E934 from [\u1E912 \u1E934.fina \u1E934.init \u1E934.medi ];
+    sub \u1E930 from [\u1E90E \u1E930.fina \u1E930.init \u1E930.medi ];
+    sub \u1E941 from [\u1E91F \u1E941.fina \u1E941.init \u1E941.medi ];
+} aaltAccessAllAlternatesinAdlamlookup1;
+
+lookup SingleSubstitutionlookup3 {
+  lookupflag 0;
+    sub \u1E944 by \u1E944.case ;
+    sub \u1E946 by \u1E946.case ;
+    sub \u1E94A by \u1E94A.below ;
+    sub \u1E945 by \u1E945.case ;
+} SingleSubstitutionlookup3;
+
+lookup ccmpGlyphCompositionDecompositioninAdlamlookup2 {
+  lookupflag 0;
+    sub [\u1E900 \u1E900.fina \u1E900.init \u1E900.medi \u1E904 \u1E904.fina 
+	\u1E904.init \u1E904.medi \u1E907 \u1E907.fina \u1E907.init 
+	\u1E907.medi \u1E915 \u1E915.fina \u1E915.init \u1E915.medi \u1E901 
+	\u1E901.fina \u1E901.init \u1E901.medi \u1E90D \u1E90D.fina 
+	\u1E90D.init \u1E90D.medi \u1E909 \u1E909.fina \u1E909.init 
+	\u1E909.medi \u1E90A \u1E90A.fina \u1E90A.init \u1E90A.medi \u1E918 
+	\u1E918.fina \u1E918.init \u1E918.medi \u1E91E \u1E91E.fina 
+	\u1E91E.init \u1E91E.medi \u1E916 \u1E916.fina \u1E916.init 
+	\u1E916.medi \u1E90B \u1E90B.fina \u1E90B.init \u1E90B.medi \u1E914 
+	\u1E914.fina \u1E914.init \u1E914.medi \u1E911 \u1E911.fina 
+	\u1E911.init \u1E911.medi \u1E91D \u1E91D.fina \u1E91D.init 
+	\u1E91D.medi \u1E920 \u1E920.fina \u1E920.init \u1E920.medi \u1E902 
+	\u1E902.fina \u1E902.init \u1E902.medi \u1E903 \u1E903.fina 
+	\u1E903.init \u1E903.medi \u1E91B \u1E91B.fina \u1E91B.init 
+	\u1E91B.medi \u1E910 \u1E910.fina \u1E910.init \u1E910.medi \u1E919 
+	\u1E919.fina \u1E919.init \u1E919.medi \u1E90C \u1E90C.fina 
+	\u1E90C.init \u1E90C.medi \u1E906 \u1E906.fina \u1E906.init 
+	\u1E906.medi \u1E917 \u1E917.fina \u1E917.init \u1E917.medi \u1E908 
+	\u1E908.fina \u1E908.init \u1E908.medi \u1E921 \u1E921.fina 
+	\u1E921.init \u1E921.medi \u1E905 \u1E905.fina \u1E905.init 
+	\u1E905.medi \u1E91A \u1E91A.fina \u1E91A.init \u1E91A.medi \u1E913 
+	\u1E913.fina \u1E913.init \u1E913.medi \u1E91C \u1E91C.fina 
+	\u1E91C.init \u1E91C.medi \u1E90F \u1E90F.fina \u1E90F.init 
+	\u1E90F.medi \u1E912 \u1E912.fina \u1E912.init \u1E912.medi \u1E90E 
+	\u1E90E.fina \u1E90E.init \u1E90E.medi \u1E91F \u1E91F.fina 
+	\u1E91F.init \u1E91F.medi ] [\u1E944 \u1E946 \u1E945 ]'lookup SingleSubstitutionlookup3  ;
+    sub [\u1E900 \u1E904 \u1E907 \u1E915 \u1E901 \u1E90D \u1E909 \u1E90A \u1E918 \u1E91E 
+	\u1E916 \u1E90B \u1E914 \u1E911 \u1E91D \u1E920 \u1E902 \u1E903 \u1E91B 
+	\u1E910 \u1E919 \u1E90C \u1E906 \u1E917 \u1E908 \u1E921 \u1E905 \u1E91A 
+	\u1E913 \u1E91C \u1E90F \u1E912 \u1E90E \u1E91F \u1E922 
+	\apostropheadlam \u1E926 \u1E929 \u1E937 \u1E923 \u1E92F \u1E92B 
+	\u1E92C \u1E93A \u1E940 \u1E938 \u1E92D \u1E936 \u1E933 \u1E93F \u1E942 
+	\u1E924 \u1E925 \u1E93D \u1E932 \u1E93B \u1E92E \u1E928 \u1E939 \u1E92A 
+	\u1E943 \u1E927 \u1E93C \u1E935 \u1E93E \u1E931 \u1E934 \u1E930 \u1E941 ] [\u1E944 \u1E944.case \u1E948 \u1E949 \u1E946 \u1E946.case \u1E947 \u1E945 
+	\u1E945.case ] [\u1E94A ]'lookup SingleSubstitutionlookup3  ;
+    sub [\u1E900 \u1E904 \u1E907 \u1E915 \u1E901 \u1E90D \u1E909 \u1E90A \u1E918 \u1E91E 
+	\u1E916 \u1E90B \u1E914 \u1E911 \u1E91D \u1E920 \u1E902 \u1E903 \u1E91B 
+	\u1E910 \u1E919 \u1E90C \u1E906 \u1E917 \u1E908 \u1E921 \u1E905 \u1E91A 
+	\u1E913 \u1E91C \u1E90F \u1E912 \u1E90E \u1E91F \u1E922 
+	\apostropheadlam \u1E926 \u1E929 \u1E937 \u1E923 \u1E92F \u1E92B 
+	\u1E92C \u1E93A \u1E940 \u1E938 \u1E92D \u1E936 \u1E933 \u1E93F \u1E942 
+	\u1E924 \u1E925 \u1E93D \u1E932 \u1E93B \u1E92E \u1E928 \u1E939 \u1E92A 
+	\u1E943 \u1E927 \u1E93C \u1E935 \u1E93E \u1E931 \u1E934 \u1E930 \u1E941 ] [\u1E94A ]' [\u1E944 \u1E944.case \u1E948 \u1E949 \u1E946 \u1E946.case \u1E947 \u1E945 
+	\u1E945.case ]  by [\u1E94A.below ];
+} ccmpGlyphCompositionDecompositioninAdlamlookup2;
+
+lookup initInitialFormsinAdlamlookup5 {
+  lookupflag 0;
+    sub \u1E900 by \u1E900.init ;
+    sub \u1E904 by \u1E904.init ;
+    sub \u1E907 by \u1E907.init ;
+    sub \u1E915 by \u1E915.init ;
+    sub \u1E901 by \u1E901.init ;
+    sub \u1E90D by \u1E90D.init ;
+    sub \u1E909 by \u1E909.init ;
+    sub \u1E90A by \u1E90A.init ;
+    sub \u1E918 by \u1E918.init ;
+    sub \u1E91E by \u1E91E.init ;
+    sub \u1E916 by \u1E916.init ;
+    sub \u1E90B by \u1E90B.init ;
+    sub \u1E914 by \u1E914.init ;
+    sub \u1E911 by \u1E911.init ;
+    sub \u1E91D by \u1E91D.init ;
+    sub \u1E920 by \u1E920.init ;
+    sub \u1E902 by \u1E902.init ;
+    sub \u1E903 by \u1E903.init ;
+    sub \u1E91B by \u1E91B.init ;
+    sub \u1E910 by \u1E910.init ;
+    sub \u1E919 by \u1E919.init ;
+    sub \u1E90C by \u1E90C.init ;
+    sub \u1E906 by \u1E906.init ;
+    sub \u1E917 by \u1E917.init ;
+    sub \u1E908 by \u1E908.init ;
+    sub \u1E921 by \u1E921.init ;
+    sub \u1E905 by \u1E905.init ;
+    sub \u1E91A by \u1E91A.init ;
+    sub \u1E913 by \u1E913.init ;
+    sub \u1E91C by \u1E91C.init ;
+    sub \u1E90F by \u1E90F.init ;
+    sub \u1E912 by \u1E912.init ;
+    sub \u1E90E by \u1E90E.init ;
+    sub \u1E91F by \u1E91F.init ;
+    sub \u1E922 by \u1E922.init ;
+    sub \apostropheadlam by \apostropheadlam.init ;
+    sub \u1E926 by \u1E926.init ;
+    sub \u1E929 by \u1E929.init ;
+    sub \u1E937 by \u1E937.init ;
+    sub \u1E923 by \u1E923.init ;
+    sub \u1E92F by \u1E92F.init ;
+    sub \u1E92B by \u1E92B.init ;
+    sub \u1E92C by \u1E92C.init ;
+    sub \u1E93A by \u1E93A.init ;
+    sub \u1E940 by \u1E940.init ;
+    sub \u1E938 by \u1E938.init ;
+    sub \u1E92D by \u1E92D.init ;
+    sub \u1E936 by \u1E936.init ;
+    sub \u1E933 by \u1E933.init ;
+    sub \u1E93F by \u1E93F.init ;
+    sub \u1E942 by \u1E942.init ;
+    sub \u1E924 by \u1E924.init ;
+    sub \u1E925 by \u1E925.init ;
+    sub \u1E93D by \u1E93D.init ;
+    sub \u1E932 by \u1E932.init ;
+    sub \u1E93B by \u1E93B.init ;
+    sub \u1E92E by \u1E92E.init ;
+    sub \u1E928 by \u1E928.init ;
+    sub \u1E939 by \u1E939.init ;
+    sub \u1E92A by \u1E92A.init ;
+    sub \u1E943 by \u1E943.init ;
+    sub \u1E927 by \u1E927.init ;
+    sub \u1E93C by \u1E93C.init ;
+    sub \u1E935 by \u1E935.init ;
+    sub \u1E93E by \u1E93E.init ;
+    sub \u1E931 by \u1E931.init ;
+    sub \u1E934 by \u1E934.init ;
+    sub \u1E930 by \u1E930.init ;
+    sub \u1E941 by \u1E941.init ;
+} initInitialFormsinAdlamlookup5;
+
+lookup mediMedialFormsinAdlamlookup6 {
+  lookupflag 0;
+    sub \u1E900 by \u1E900.medi ;
+    sub \u1E904 by \u1E904.medi ;
+    sub \u1E907 by \u1E907.medi ;
+    sub \u1E915 by \u1E915.medi ;
+    sub \u1E901 by \u1E901.medi ;
+    sub \u1E90D by \u1E90D.medi ;
+    sub \u1E909 by \u1E909.medi ;
+    sub \u1E90A by \u1E90A.medi ;
+    sub \u1E918 by \u1E918.medi ;
+    sub \u1E91E by \u1E91E.medi ;
+    sub \u1E916 by \u1E916.medi ;
+    sub \u1E90B by \u1E90B.medi ;
+    sub \u1E914 by \u1E914.medi ;
+    sub \u1E911 by \u1E911.medi ;
+    sub \u1E91D by \u1E91D.medi ;
+    sub \u1E920 by \u1E920.medi ;
+    sub \u1E902 by \u1E902.medi ;
+    sub \u1E903 by \u1E903.medi ;
+    sub \u1E91B by \u1E91B.medi ;
+    sub \u1E910 by \u1E910.medi ;
+    sub \u1E919 by \u1E919.medi ;
+    sub \u1E90C by \u1E90C.medi ;
+    sub \u1E906 by \u1E906.medi ;
+    sub \u1E917 by \u1E917.medi ;
+    sub \u1E908 by \u1E908.medi ;
+    sub \u1E921 by \u1E921.medi ;
+    sub \u1E905 by \u1E905.medi ;
+    sub \u1E91A by \u1E91A.medi ;
+    sub \u1E913 by \u1E913.medi ;
+    sub \u1E91C by \u1E91C.medi ;
+    sub \u1E90F by \u1E90F.medi ;
+    sub \u1E912 by \u1E912.medi ;
+    sub \u1E90E by \u1E90E.medi ;
+    sub \u1E91F by \u1E91F.medi ;
+    sub \u1E922 by \u1E922.medi ;
+    sub \apostropheadlam by \apostropheadlam.medi ;
+    sub \u1E926 by \u1E926.medi ;
+    sub \u1E929 by \u1E929.medi ;
+    sub \u1E937 by \u1E937.medi ;
+    sub \u1E923 by \u1E923.medi ;
+    sub \u1E92F by \u1E92F.medi ;
+    sub \u1E92B by \u1E92B.medi ;
+    sub \u1E92C by \u1E92C.medi ;
+    sub \u1E93A by \u1E93A.medi ;
+    sub \u1E940 by \u1E940.medi ;
+    sub \u1E938 by \u1E938.medi ;
+    sub \u1E92D by \u1E92D.medi ;
+    sub \u1E936 by \u1E936.medi ;
+    sub \u1E933 by \u1E933.medi ;
+    sub \u1E93F by \u1E93F.medi ;
+    sub \u1E942 by \u1E942.medi ;
+    sub \u1E924 by \u1E924.medi ;
+    sub \u1E925 by \u1E925.medi ;
+    sub \u1E93D by \u1E93D.medi ;
+    sub \u1E932 by \u1E932.medi ;
+    sub \u1E93B by \u1E93B.medi ;
+    sub \u1E92E by \u1E92E.medi ;
+    sub \u1E928 by \u1E928.medi ;
+    sub \u1E939 by \u1E939.medi ;
+    sub \u1E92A by \u1E92A.medi ;
+    sub \u1E943 by \u1E943.medi ;
+    sub \u1E927 by \u1E927.medi ;
+    sub \u1E93C by \u1E93C.medi ;
+    sub \u1E935 by \u1E935.medi ;
+    sub \u1E93E by \u1E93E.medi ;
+    sub \u1E931 by \u1E931.medi ;
+    sub \u1E934 by \u1E934.medi ;
+    sub \u1E930 by \u1E930.medi ;
+    sub \u1E941 by \u1E941.medi ;
+} mediMedialFormsinAdlamlookup6;
+
+lookup finaTerminalFormsinAdlamlookup7 {
+  lookupflag 0;
+    sub \u1E900 by \u1E900.fina ;
+    sub \u1E904 by \u1E904.fina ;
+    sub \u1E907 by \u1E907.fina ;
+    sub \u1E915 by \u1E915.fina ;
+    sub \u1E901 by \u1E901.fina ;
+    sub \u1E90D by \u1E90D.fina ;
+    sub \u1E909 by \u1E909.fina ;
+    sub \u1E90A by \u1E90A.fina ;
+    sub \u1E918 by \u1E918.fina ;
+    sub \u1E91E by \u1E91E.fina ;
+    sub \u1E916 by \u1E916.fina ;
+    sub \u1E90B by \u1E90B.fina ;
+    sub \u1E914 by \u1E914.fina ;
+    sub \u1E911 by \u1E911.fina ;
+    sub \u1E91D by \u1E91D.fina ;
+    sub \u1E920 by \u1E920.fina ;
+    sub \u1E902 by \u1E902.fina ;
+    sub \u1E903 by \u1E903.fina ;
+    sub \u1E91B by \u1E91B.fina ;
+    sub \u1E910 by \u1E910.fina ;
+    sub \u1E919 by \u1E919.fina ;
+    sub \u1E90C by \u1E90C.fina ;
+    sub \u1E906 by \u1E906.fina ;
+    sub \u1E917 by \u1E917.fina ;
+    sub \u1E908 by \u1E908.fina ;
+    sub \u1E921 by \u1E921.fina ;
+    sub \u1E905 by \u1E905.fina ;
+    sub \u1E91A by \u1E91A.fina ;
+    sub \u1E913 by \u1E913.fina ;
+    sub \u1E91C by \u1E91C.fina ;
+    sub \u1E90F by \u1E90F.fina ;
+    sub \u1E912 by \u1E912.fina ;
+    sub \u1E90E by \u1E90E.fina ;
+    sub \u1E91F by \u1E91F.fina ;
+    sub \u1E922 by \u1E922.fina ;
+    sub \apostropheadlam by \apostropheadlam.fina ;
+    sub \u1E926 by \u1E926.fina ;
+    sub \u1E929 by \u1E929.fina ;
+    sub \u1E937 by \u1E937.fina ;
+    sub \u1E923 by \u1E923.fina ;
+    sub \u1E92F by \u1E92F.fina ;
+    sub \u1E92B by \u1E92B.fina ;
+    sub \u1E92C by \u1E92C.fina ;
+    sub \u1E93A by \u1E93A.fina ;
+    sub \u1E940 by \u1E940.fina ;
+    sub \u1E938 by \u1E938.fina ;
+    sub \u1E92D by \u1E92D.fina ;
+    sub \u1E936 by \u1E936.fina ;
+    sub \u1E933 by \u1E933.fina ;
+    sub \u1E93F by \u1E93F.fina ;
+    sub \u1E942 by \u1E942.fina ;
+    sub \u1E924 by \u1E924.fina ;
+    sub \u1E925 by \u1E925.fina ;
+    sub \u1E93D by \u1E93D.fina ;
+    sub \u1E932 by \u1E932.fina ;
+    sub \u1E93B by \u1E93B.fina ;
+    sub \u1E92E by \u1E92E.fina ;
+    sub \u1E928 by \u1E928.fina ;
+    sub \u1E939 by \u1E939.fina ;
+    sub \u1E92A by \u1E92A.fina ;
+    sub \u1E943 by \u1E943.fina ;
+    sub \u1E927 by \u1E927.fina ;
+    sub \u1E93C by \u1E93C.fina ;
+    sub \u1E935 by \u1E935.fina ;
+    sub \u1E93E by \u1E93E.fina ;
+    sub \u1E931 by \u1E931.fina ;
+    sub \u1E934 by \u1E934.fina ;
+    sub \u1E930 by \u1E930.fina ;
+    sub \u1E941 by \u1E941.fina ;
+} finaTerminalFormsinAdlamlookup7;
+
+lookup caseCaseSensitiveFormsinAdlamlookup8 {
+  lookupflag 0;
+    sub \u1E922 by \u1E900 ;
+    sub \u1E922.fina by \u1E900.fina ;
+    sub \u1E922.init by \u1E900.init ;
+    sub \u1E922.medi by \u1E900.medi ;
+    sub \u1E944 by \u1E944.case ;
+    sub \u1E926 by \u1E904 ;
+    sub \u1E926.fina by \u1E904.fina ;
+    sub \u1E926.init by \u1E904.init ;
+    sub \u1E926.medi by \u1E904.medi ;
+    sub \u1E929 by \u1E907 ;
+    sub \u1E929.fina by \u1E907.fina ;
+    sub \u1E929.init by \u1E907.init ;
+    sub \u1E929.medi by \u1E907.medi ;
+    sub \u1E937 by \u1E915 ;
+    sub \u1E937.fina by \u1E915.fina ;
+    sub \u1E937.init by \u1E915.init ;
+    sub \u1E937.medi by \u1E915.medi ;
+    sub \u1E923 by \u1E901 ;
+    sub \u1E923.fina by \u1E901.fina ;
+    sub \u1E923.init by \u1E901.init ;
+    sub \u1E923.medi by \u1E901.medi ;
+    sub \u1E92F by \u1E90D ;
+    sub \u1E92F.fina by \u1E90D.fina ;
+    sub \u1E92F.init by \u1E90D.init ;
+    sub \u1E92F.medi by \u1E90D.medi ;
+    sub \u1E92B by \u1E909 ;
+    sub \u1E92B.fina by \u1E909.fina ;
+    sub \u1E92B.init by \u1E909.init ;
+    sub \u1E92B.medi by \u1E909.medi ;
+    sub \u1E92C by \u1E90A ;
+    sub \u1E92C.fina by \u1E90A.fina ;
+    sub \u1E92C.init by \u1E90A.init ;
+    sub \u1E92C.medi by \u1E90A.medi ;
+    sub \u1E93A by \u1E918 ;
+    sub \u1E93A.fina by \u1E918.fina ;
+    sub \u1E93A.init by \u1E918.init ;
+    sub \u1E93A.medi by \u1E918.medi ;
+    sub \u1E940 by \u1E91E ;
+    sub \u1E940.fina by \u1E91E.fina ;
+    sub \u1E940.init by \u1E91E.init ;
+    sub \u1E940.medi by \u1E91E.medi ;
+    sub \u1E946 by \u1E946.case ;
+    sub \u1E938 by \u1E916 ;
+    sub \u1E938.fina by \u1E916.fina ;
+    sub \u1E938.init by \u1E916.init ;
+    sub \u1E938.medi by \u1E916.medi ;
+    sub \u1E92D by \u1E90B ;
+    sub \u1E92D.fina by \u1E90B.fina ;
+    sub \u1E92D.init by \u1E90B.init ;
+    sub \u1E92D.medi by \u1E90B.medi ;
+    sub \u1E936 by \u1E914 ;
+    sub \u1E936.fina by \u1E914.fina ;
+    sub \u1E936.init by \u1E914.init ;
+    sub \u1E936.medi by \u1E914.medi ;
+    sub \u1E933 by \u1E911 ;
+    sub \u1E933.fina by \u1E911.fina ;
+    sub \u1E933.init by \u1E911.init ;
+    sub \u1E933.medi by \u1E911.medi ;
+    sub \u1E93F by \u1E91D ;
+    sub \u1E93F.fina by \u1E91D.fina ;
+    sub \u1E93F.init by \u1E91D.init ;
+    sub \u1E93F.medi by \u1E91D.medi ;
+    sub \u1E942 by \u1E920 ;
+    sub \u1E942.fina by \u1E920.fina ;
+    sub \u1E942.init by \u1E920.init ;
+    sub \u1E942.medi by \u1E920.medi ;
+    sub \u1E924 by \u1E902 ;
+    sub \u1E924.fina by \u1E902.fina ;
+    sub \u1E924.init by \u1E902.init ;
+    sub \u1E924.medi by \u1E902.medi ;
+    sub \u1E925 by \u1E903 ;
+    sub \u1E925.fina by \u1E903.fina ;
+    sub \u1E925.init by \u1E903.init ;
+    sub \u1E925.medi by \u1E903.medi ;
+    sub \u1E93D by \u1E91B ;
+    sub \u1E93D.fina by \u1E91B.fina ;
+    sub \u1E93D.init by \u1E91B.init ;
+    sub \u1E93D.medi by \u1E91B.medi ;
+    sub \u1E932 by \u1E910 ;
+    sub \u1E932.fina by \u1E910.fina ;
+    sub \u1E932.init by \u1E910.init ;
+    sub \u1E932.medi by \u1E910.medi ;
+    sub \u1E93B by \u1E919 ;
+    sub \u1E93B.fina by \u1E919.fina ;
+    sub \u1E93B.init by \u1E919.init ;
+    sub \u1E93B.medi by \u1E919.medi ;
+    sub \u1E92E by \u1E90C ;
+    sub \u1E92E.fina by \u1E90C.fina ;
+    sub \u1E92E.init by \u1E90C.init ;
+    sub \u1E92E.medi by \u1E90C.medi ;
+    sub \u1E928 by \u1E906 ;
+    sub \u1E928.fina by \u1E906.fina ;
+    sub \u1E928.init by \u1E906.init ;
+    sub \u1E928.medi by \u1E906.medi ;
+    sub \u1E939 by \u1E917 ;
+    sub \u1E939.fina by \u1E917.fina ;
+    sub \u1E939.init by \u1E917.init ;
+    sub \u1E939.medi by \u1E917.medi ;
+    sub \u1E92A by \u1E908 ;
+    sub \u1E92A.fina by \u1E908.fina ;
+    sub \u1E92A.init by \u1E908.init ;
+    sub \u1E92A.medi by \u1E908.medi ;
+    sub \u1E943 by \u1E921 ;
+    sub \u1E943.fina by \u1E921.fina ;
+    sub \u1E943.init by \u1E921.init ;
+    sub \u1E943.medi by \u1E921.medi ;
+    sub \u1E927 by \u1E905 ;
+    sub \u1E927.fina by \u1E905.fina ;
+    sub \u1E927.init by \u1E905.init ;
+    sub \u1E927.medi by \u1E905.medi ;
+    sub \u1E93C by \u1E91A ;
+    sub \u1E93C.fina by \u1E91A.fina ;
+    sub \u1E93C.init by \u1E91A.init ;
+    sub \u1E93C.medi by \u1E91A.medi ;
+    sub \u1E935 by \u1E913 ;
+    sub \u1E935.fina by \u1E913.fina ;
+    sub \u1E935.init by \u1E913.init ;
+    sub \u1E935.medi by \u1E913.medi ;
+    sub \u1E93E by \u1E91C ;
+    sub \u1E93E.fina by \u1E91C.fina ;
+    sub \u1E93E.init by \u1E91C.init ;
+    sub \u1E93E.medi by \u1E91C.medi ;
+    sub \u1E945 by \u1E945.case ;
+    sub \u1E931 by \u1E90F ;
+    sub \u1E931.fina by \u1E90F.fina ;
+    sub \u1E931.init by \u1E90F.init ;
+    sub \u1E931.medi by \u1E90F.medi ;
+    sub \u1E934 by \u1E912 ;
+    sub \u1E934.fina by \u1E912.fina ;
+    sub \u1E934.init by \u1E912.init ;
+    sub \u1E934.medi by \u1E912.medi ;
+    sub \u1E930 by \u1E90E ;
+    sub \u1E930.fina by \u1E90E.fina ;
+    sub \u1E930.init by \u1E90E.init ;
+    sub \u1E930.medi by \u1E90E.medi ;
+    sub \u1E941 by \u1E91F ;
+    sub \u1E941.fina by \u1E91F.fina ;
+    sub \u1E941.init by \u1E91F.init ;
+    sub \u1E941.medi by \u1E91F.medi ;
+} caseCaseSensitiveFormsinAdlamlookup8;
+
+feature aalt {
+
+ script DFLT;
+     language dflt ;
+      lookup aaltAccessAllAlternatesinAdlamlookup0;
+      lookup aaltAccessAllAlternatesinAdlamlookup1;
+
+ script adlm;
+     language dflt ;
+      lookup aaltAccessAllAlternatesinAdlamlookup0;
+      lookup aaltAccessAllAlternatesinAdlamlookup1;
+} aalt;
+
+feature ccmp {
+
+ script adlm;
+     language dflt ;
+      lookup ccmpGlyphCompositionDecompositioninAdlamlookup2;
+} ccmp;
+
+feature init {
+
+ script adlm;
+     language dflt ;
+      lookup initInitialFormsinAdlamlookup5;
+} init;
+
+feature medi {
+
+ script adlm;
+     language dflt ;
+      lookup mediMedialFormsinAdlamlookup6;
+} medi;
+
+feature fina {
+
+ script adlm;
+     language dflt ;
+      lookup finaTerminalFormsinAdlamlookup7;
+} fina;
+
+feature case {
+
+ script adlm;
+     language dflt ;
+      lookup caseCaseSensitiveFormsinAdlamlookup8;
+} case;
+
+# GPOS 
+
+
+lookup kernHorizontalKerninginAdlamlookup0 {
+  lookupflag IgnoreMarks;
+    pos \u1E911.init \u1E938.medi  <-20 0 -20 0>;
+    pos \u1E911.init \u1E938.fina  <-20 0 -20 0>;
+    pos \u1E902.init \u1E938.medi  <-10 0 -10 0>;
+    pos \u1E902.init \u1E938.fina  <-10 0 -10 0>;
+    pos \.notdef \u1E930.medi  <-35 0 -35 0>;
+    pos \.notdef \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E900 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E900 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E900.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E900.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E900.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E900.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E900.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E900.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E904 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E904 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E904.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E904.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E904.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E904.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E904.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E904.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E907 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E907 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E907.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E907.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E907.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E907.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E907.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E907.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \CR \u1E930.medi  <-35 0 -35 0>;
+    pos \CR \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E915 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E915 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E915.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E915.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E915.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E915.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E915.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E915.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E901 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E901 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E901.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E901.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E901.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E901.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E901.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E901.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90D \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90D \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90D.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90D.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90D.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90D.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90D.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90D.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E909 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E909 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E909.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E909.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E909.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E909.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E909.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E909.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90A \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90A \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90A.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90A.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90A.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90A.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90A.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90A.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E918 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E918 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E918.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E918.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E918.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E918.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E918.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E918.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91E \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91E \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91E.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91E.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91E.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91E.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91E.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91E.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E916 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E916 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E916.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E916.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E916.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E916.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E916.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E916.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90B \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90B \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90B.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90B.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90B.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90B.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90B.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90B.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E914 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E914 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E914.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E914.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E914.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E914.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E914.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E914.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E911 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E911 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E911.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E911.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E911.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E911.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E911.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E911.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91D \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91D \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91D.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91D.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91D.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91D.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91D.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91D.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E920 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E920 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E920.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E920.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E920.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E920.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E920.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E920.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E902 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E902 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E902.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E902.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E902.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E902.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E902.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E902.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E903 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E903 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E903.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E903.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E903.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E903.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E903.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E903.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \NULL \u1E930.medi  <-35 0 -35 0>;
+    pos \NULL \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91B \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91B \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91B.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91B.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91B.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91B.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91B.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91B.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E910 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E910 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E910.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E910.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E910.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E910.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E910.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E910.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E919 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E919 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E919.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E919.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E919.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E919.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E919.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E919.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90C \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90C \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90C.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90C.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90C.init \u1E916.medi  <20 0 20 0>;
+    pos \u1E90C.init \u1E916.fina  <20 0 20 0>;
+    pos \u1E90C.medi \u1E916.medi  <20 0 20 0>;
+    pos \u1E90C.medi \u1E916.fina  <20 0 20 0>;
+    pos \u1E906 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E906 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E906.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E906.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E906.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E906.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E906.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E906.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E917 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E917 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E917.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E917.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E917.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E917.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E917.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E917.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E908 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E908 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E908.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E908.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E908.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E908.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E908.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E908.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E921 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E921 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E921.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E921.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E921.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E921.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E921.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E921.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E905 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E905 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E905.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E905.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E905.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E905.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E905.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E905.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91A \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91A \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91A.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91A.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91A.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91A.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91A.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91A.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E913 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E913 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E913.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E913.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E913.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E913.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E913.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E913.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91C \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91C \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91C.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91C.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91C.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91C.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91C.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91C.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90F \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90F \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90F.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90F.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90F.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90F.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90F.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90F.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E912 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E912 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E912.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E912.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E912.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E912.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E912.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E912.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90E \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90E \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90E.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E90E.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E90E.init \u1E916.medi  <20 0 20 0>;
+    pos \u1E90E.init \u1E916.fina  <20 0 20 0>;
+    pos \u1E90E.medi \u1E916.medi  <20 0 20 0>;
+    pos \u1E90E.medi \u1E916.fina  <20 0 20 0>;
+    pos \u1E91F \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91F \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91F.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91F.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91F.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91F.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E91F.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E91F.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \uni2015 \u1E930.medi  <-35 0 -35 0>;
+    pos \uni2015 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E922 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E922 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E922.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E922.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E922.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E922.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E922.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E922.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E944 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E944 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E944.case \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E944.case \u1E930.fina  <-35 0 -35 0>;
+    pos \ampersand \u1E930.medi  <-35 0 -35 0>;
+    pos \ampersand \u1E930.fina  <-35 0 -35 0>;
+    pos \apostropheadlam \u1E930.medi  <-35 0 -35 0>;
+    pos \apostropheadlam \u1E930.fina  <-35 0 -35 0>;
+    pos \apostropheadlam.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \apostropheadlam.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \apostropheadlam.init \u1E930.medi  <-35 0 -35 0>;
+    pos \apostropheadlam.init \u1E930.fina  <-35 0 -35 0>;
+    pos \apostropheadlam.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \apostropheadlam.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \asciicircum \u1E930.medi  <-35 0 -35 0>;
+    pos \asciicircum \u1E930.fina  <-35 0 -35 0>;
+    pos \asterisk \u1E930.medi  <-35 0 -35 0>;
+    pos \asterisk \u1E930.fina  <-35 0 -35 0>;
+    pos \at \u1E930.medi  <-35 0 -35 0>;
+    pos \at \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E926 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E926 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E926.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E926.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E926.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E926.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E926.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E926.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \backslash \u1E930.medi  <-35 0 -35 0>;
+    pos \backslash \u1E930.fina  <-35 0 -35 0>;
+    pos \bar \u1E930.medi  <-35 0 -35 0>;
+    pos \bar \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E929 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E929 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E929.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E929.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E929.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E929.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E929.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E929.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \braceleft \u1E930.medi  <-35 0 -35 0>;
+    pos \braceleft \u1E930.fina  <-35 0 -35 0>;
+    pos \braceright \u1E930.medi  <-35 0 -35 0>;
+    pos \braceright \u1E930.fina  <-35 0 -35 0>;
+    pos \bracketleft \u1E930.medi  <-35 0 -35 0>;
+    pos \bracketleft \u1E930.fina  <-35 0 -35 0>;
+    pos \bracketright \u1E930.medi  <-35 0 -35 0>;
+    pos \bracketright \u1E930.fina  <-35 0 -35 0>;
+    pos \bullet \u1E930.medi  <-35 0 -35 0>;
+    pos \bullet \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E937 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E937 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E937.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E937.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E937.init \u1E930.medi  <-40 0 -40 0>;
+    pos \u1E937.init \u1E930.fina  <-40 0 -40 0>;
+    pos \u1E937.medi \u1E930.medi  <-40 0 -40 0>;
+    pos \u1E937.medi \u1E930.fina  <-40 0 -40 0>;
+    pos \colon \u1E930.medi  <-35 0 -35 0>;
+    pos \colon \u1E930.fina  <-35 0 -35 0>;
+    pos \comma \u1E930.medi  <-35 0 -35 0>;
+    pos \comma \u1E930.fina  <-35 0 -35 0>;
+    pos \uni2E41 \u1E930.medi  <-35 0 -35 0>;
+    pos \uni2E41 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E948 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E948 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E923 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E923 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E923.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E923.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E923.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E923.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E923.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E923.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \dagger \u1E930.medi  <-35 0 -35 0>;
+    pos \dagger \u1E930.fina  <-35 0 -35 0>;
+    pos \daggerdbl \u1E930.medi  <-35 0 -35 0>;
+    pos \daggerdbl \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92F \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92F \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92F.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92F.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92F.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92F.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92F.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92F.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \dollar \u1E930.medi  <-35 0 -35 0>;
+    pos \dollar \u1E930.fina  <-35 0 -35 0>;
+    pos \uni25CC \u1E930.medi  <-35 0 -35 0>;
+    pos \uni25CC \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92B \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92B \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92B.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92B.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92B.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92B.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92B.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92B.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E958 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E958 \u1E930.fina  <-35 0 -35 0>;
+    pos \ellipsis \u1E930.medi  <-35 0 -35 0>;
+    pos \ellipsis \u1E930.fina  <-35 0 -35 0>;
+    pos \emdash \u1E930.medi  <-35 0 -35 0>;
+    pos \emdash \u1E930.fina  <-35 0 -35 0>;
+    pos \endash \u1E930.medi  <-35 0 -35 0>;
+    pos \endash \u1E930.fina  <-35 0 -35 0>;
+    pos \equal \u1E930.medi  <-35 0 -35 0>;
+    pos \equal \u1E930.fina  <-35 0 -35 0>;
+    pos \exclam \u1E930.medi  <-35 0 -35 0>;
+    pos \exclam \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E95E \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E95E \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92C \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92C \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92C.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92C.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92C.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92C.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92C.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92C.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E955 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E955 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E954 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E954 \u1E930.fina  <-35 0 -35 0>;
+    pos \fraction \u1E930.medi  <-35 0 -35 0>;
+    pos \fraction \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93A \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93A \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93A.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93A.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93A.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93A.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93A.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93A.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E940 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E940 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E940.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E940.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E940.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E940.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E940.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E940.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E949 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E949 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E946 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E946 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E946.case \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E946.case \u1E930.fina  <-35 0 -35 0>;
+    pos \greater \u1E930.medi  <-35 0 -35 0>;
+    pos \greater \u1E930.fina  <-35 0 -35 0>;
+    pos \guillemotleft \u1E930.medi  <-35 0 -35 0>;
+    pos \guillemotleft \u1E930.fina  <-35 0 -35 0>;
+    pos \guillemotright \u1E930.medi  <-35 0 -35 0>;
+    pos \guillemotright \u1E930.fina  <-35 0 -35 0>;
+    pos \guilsinglleft \u1E930.medi  <-35 0 -35 0>;
+    pos \guilsinglleft \u1E930.fina  <-35 0 -35 0>;
+    pos \guilsinglright \u1E930.medi  <-35 0 -35 0>;
+    pos \guilsinglright \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E938 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E938 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E938.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E938.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E938.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E938.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E938.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E938.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E947 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E947 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E94A \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E94A \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E94A.below \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E94A.below \u1E930.fina  <-35 0 -35 0>;
+    pos \hyphen \u1E930.medi  <-35 0 -35 0>;
+    pos \hyphen \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92D \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92D \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92D.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92D.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92D.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92D.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92D.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92D.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E936 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E936 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E936.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E936.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E936.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E936.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E936.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E936.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E933 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E933 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E933.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E933.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E933.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E933.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E933.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E933.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \uni0640 \u1E930.medi  <-35 0 -35 0>;
+    pos \uni0640 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93F \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93F \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93F.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93F.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93F.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93F.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93F.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93F.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E942 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E942 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E942.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E942.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E942.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E942.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E942.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E942.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E924 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E924 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E924.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E924.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E924.init \u1E924.medi  <-20 0 -20 0>;
+    pos \u1E924.init \u1E924.fina  <-20 0 -20 0>;
+    pos \u1E924.init \u1E930.medi  <-20 0 -20 0>;
+    pos \u1E924.init \u1E930.fina  <-20 0 -20 0>;
+    pos \u1E924.medi \u1E924.medi  <-20 0 -20 0>;
+    pos \u1E924.medi \u1E924.fina  <-20 0 -20 0>;
+    pos \u1E924.medi \u1E930.medi  <-20 0 -20 0>;
+    pos \u1E924.medi \u1E930.fina  <-20 0 -20 0>;
+    pos \uni2E28 \u1E930.medi  <-35 0 -35 0>;
+    pos \uni2E28 \u1E930.fina  <-35 0 -35 0>;
+    pos \less \u1E930.medi  <-35 0 -35 0>;
+    pos \less \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E925 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E925 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E925.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E925.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E925.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E925.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E925.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E925.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \uni00A0 \u1E930.medi  <-35 0 -35 0>;
+    pos \uni00A0 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93D \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93D \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93D.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93D.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93D.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93D.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93D.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93D.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E959 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E959 \u1E930.fina  <-35 0 -35 0>;
+    pos \numbersign \u1E930.medi  <-35 0 -35 0>;
+    pos \numbersign \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E932 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E932 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E932.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E932.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E932.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E932.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E932.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E932.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93B \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93B \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93B.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93B.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93B.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93B.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93B.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93B.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92E \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92E \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92E.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92E.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92E.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92E.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92E.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92E.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E951 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E951 \u1E930.fina  <-35 0 -35 0>;
+    pos \parenleft \u1E930.medi  <-35 0 -35 0>;
+    pos \parenleft \u1E930.fina  <-35 0 -35 0>;
+    pos \parenright \u1E930.medi  <-35 0 -35 0>;
+    pos \parenright \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E928 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E928 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E928.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E928.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E928.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E928.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E928.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E928.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \percent \u1E930.medi  <-35 0 -35 0>;
+    pos \percent \u1E930.fina  <-35 0 -35 0>;
+    pos \period \u1E930.medi  <-35 0 -35 0>;
+    pos \period \u1E930.fina  <-35 0 -35 0>;
+    pos \perthousand \u1E930.medi  <-35 0 -35 0>;
+    pos \perthousand \u1E930.fina  <-35 0 -35 0>;
+    pos \plus \u1E930.medi  <-35 0 -35 0>;
+    pos \plus \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E939 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E939 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E939.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E939.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E939.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E939.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E939.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E939.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \question \u1E930.medi  <-35 0 -35 0>;
+    pos \question \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E95F \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E95F \u1E930.fina  <-35 0 -35 0>;
+    pos \uni061F \u1E930.medi  <-35 0 -35 0>;
+    pos \uni061F \u1E930.fina  <-35 0 -35 0>;
+    pos \quotedbl \u1E930.medi  <-35 0 -35 0>;
+    pos \quotedbl \u1E930.fina  <-35 0 -35 0>;
+    pos \quotedblbase \u1E930.medi  <-35 0 -35 0>;
+    pos \quotedblbase \u1E930.fina  <-35 0 -35 0>;
+    pos \quotedblleft \u1E930.medi  <-35 0 -35 0>;
+    pos \quotedblleft \u1E930.fina  <-35 0 -35 0>;
+    pos \quotedblright \u1E930.medi  <-35 0 -35 0>;
+    pos \quotedblright \u1E930.fina  <-35 0 -35 0>;
+    pos \quoteleft \u1E930.medi  <-35 0 -35 0>;
+    pos \quoteleft \u1E930.fina  <-35 0 -35 0>;
+    pos \quotereversed \u1E930.medi  <-35 0 -35 0>;
+    pos \quotereversed \u1E930.fina  <-35 0 -35 0>;
+    pos \quoteright \u1E930.medi  <-35 0 -35 0>;
+    pos \quoteright \u1E930.fina  <-35 0 -35 0>;
+    pos \quotesinglbase \u1E930.medi  <-35 0 -35 0>;
+    pos \quotesinglbase \u1E930.fina  <-35 0 -35 0>;
+    pos \quotesingle \u1E930.medi  <-35 0 -35 0>;
+    pos \quotesingle \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92A \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92A \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92A.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92A.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92A.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92A.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E92A.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E92A.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \uni204F \u1E930.medi  <-35 0 -35 0>;
+    pos \uni204F \u1E930.fina  <-35 0 -35 0>;
+    pos \uni2E29 \u1E930.medi  <-35 0 -35 0>;
+    pos \uni2E29 \u1E930.fina  <-35 0 -35 0>;
+    pos \semicolon \u1E930.medi  <-35 0 -35 0>;
+    pos \semicolon \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E957 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E957 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E943 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E943 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E943.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E943.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E943.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E943.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E943.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E943.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E927 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E927 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E927.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E927.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E927.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E927.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E927.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E927.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E956 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E956 \u1E930.fina  <-35 0 -35 0>;
+    pos \slash \u1E930.medi  <-35 0 -35 0>;
+    pos \slash \u1E930.fina  <-35 0 -35 0>;
+    pos \space \u1E930.medi  <-35 0 -35 0>;
+    pos \space \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E953 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E953 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93C \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93C \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93C.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93C.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93C.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93C.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93C.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93C.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E952 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E952 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E935 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E935 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E935.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E935.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E935.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E935.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E935.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E935.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \underscore \u1E930.medi  <-35 0 -35 0>;
+    pos \underscore \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93E \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93E \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93E.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93E.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93E.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93E.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E93E.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E93E.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E945 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E945 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E945.case \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E945.case \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E931 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E931 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E931.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E931.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E931.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E931.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E931.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E931.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E934 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E934 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E934.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E934.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E934.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E934.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E934.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E934.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E930 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E930 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E930.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E930.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E930.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E930.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E930.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E930.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E941 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E941 \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E941.fina \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E941.fina \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E941.init \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E941.init \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E941.medi \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E941.medi \u1E930.fina  <-35 0 -35 0>;
+    pos \u1E950 \u1E930.medi  <-35 0 -35 0>;
+    pos \u1E950 \u1E930.fina  <-35 0 -35 0>;
+} kernHorizontalKerninginAdlamlookup0;
+
+lookup markMarkPositioninginAdlamlookup1 {
+  lookupflag 0;
+  markClass [\u1E944 ] <anchor 20 612> @Anchor0;
+  markClass [\u1E944.case ] <anchor 196 744> @Anchor0;
+  markClass [\u1E948 ] <anchor 181 470> @Anchor1;
+  markClass [\u1E946 ] <anchor 244 460> @Anchor1;
+  markClass [\u1E946.case ] <anchor 262 638> @Anchor1;
+  markClass [\u1E947 ] <anchor 203 460> @Anchor1;
+  markClass [\u1E94A ] <anchor 86 470> @Anchor1;
+  markClass [\u1E945 ] <anchor 221 460> @Anchor1;
+  markClass [\u1E949 ] <anchor 224 470> @Anchor2;
+  markClass [\u1E94A.below ] <anchor 86 7> @Anchor3;
+  markClass [\u1E945.case ] <anchor 130 380> @Anchor4;
+  pos base [\u1E900 \u1E900.fina \u1E900.init \u1E900.medi \u1E90F \u1E90F.fina \u1E90F.init \u1E90F.medi ] <anchor 365 663> mark @Anchor2
+	<anchor 351 663> mark @Anchor1
+	<anchor 320 745> mark @Anchor0;
+  pos base [\u1E904 \u1E904.fina \u1E904.init \u1E904.medi ] <anchor 375 663> mark @Anchor1;
+  pos base [\u1E907 \u1E907.fina \u1E907.init \u1E907.medi \u1E910 \u1E910.fina \u1E910.init \u1E910.medi ] <anchor 339 663> mark @Anchor1;
+  pos base [\u1E915 \u1E915.fina \u1E915.init \u1E915.medi ] <anchor 362 663> mark @Anchor1;
+  pos base [\u1E901 \u1E901.fina \u1E901.init \u1E901.medi \u1E903 \u1E903.fina \u1E903.init \u1E903.medi ] <anchor 309 663> mark @Anchor2
+	<anchor 304 663> mark @Anchor1;
+  pos base [\u1E90D \u1E90D.fina \u1E90D.init \u1E90D.medi \u1E911 \u1E911.fina \u1E911.init \u1E911.medi ] <anchor 352 663> mark @Anchor1;
+  pos base [\u1E909 \u1E909.fina \u1E909.init \u1E909.medi ] <anchor 435 557> mark @Anchor4
+	<anchor 377 0> mark @Anchor3
+	<anchor 373 666> mark @Anchor1;
+  pos base [\u1E90A \u1E90A.fina \u1E90A.init \u1E90A.medi ] <anchor 343 663> mark @Anchor1;
+  pos base [\u1E918 \u1E918.fina \u1E918.init \u1E918.medi ] <anchor 330 663> mark @Anchor2
+	<anchor 317 663> mark @Anchor1;
+  pos base [\u1E91E \u1E91E.fina \u1E91E.init \u1E91E.medi ] <anchor 366 663> mark @Anchor1;
+  pos base [\u1E916 \u1E916.fina \u1E916.init \u1E916.medi ] <anchor 327 663> mark @Anchor2
+	<anchor 331 663> mark @Anchor1;
+  pos base [\u1E90B \u1E90B.fina \u1E90B.init \u1E90B.medi ] <anchor 459 557> mark @Anchor4;
+  pos base [\u1E914 \u1E914.fina \u1E914.init \u1E914.medi ] <anchor 448 0> mark @Anchor3
+	<anchor 464 665> mark @Anchor2
+	<anchor 473 665> mark @Anchor1;
+  pos base [\u1E91D \u1E91D.fina \u1E91D.init \u1E91D.medi ] <anchor 441 663> mark @Anchor1;
+  pos base [\u1E920 \u1E920.fina \u1E920.init \u1E920.medi ] <anchor 359 666> mark @Anchor1;
+  pos base [\u1E902 \u1E902.fina \u1E902.init \u1E902.medi ] <anchor 373 663> mark @Anchor1;
+  pos base [\u1E91B \u1E91B.fina \u1E91B.init \u1E91B.medi ] <anchor 392 663> mark @Anchor1;
+  pos base [\u1E919 \u1E919.fina \u1E919.init \u1E919.medi ] <anchor 367 663> mark @Anchor1;
+  pos base [\u1E90C \u1E90C.init ] <anchor 409 557> mark @Anchor4
+	<anchor 359 0> mark @Anchor3
+	<anchor 374 663> mark @Anchor1;
+  pos base [\u1E90C.fina \u1E90C.medi ] <anchor 399 557> mark @Anchor4
+	<anchor 349 0> mark @Anchor3
+	<anchor 364 663> mark @Anchor1;
+  pos base [\u1E906 \u1E906.fina \u1E906.init \u1E906.medi ] <anchor 328 663> mark @Anchor1;
+  pos base [\u1E917 \u1E917.fina \u1E917.init \u1E917.medi ] <anchor 436 666> mark @Anchor1;
+  pos base [\u1E908 \u1E908.fina \u1E908.init \u1E908.medi ] <anchor 369 663> mark @Anchor1;
+  pos base [\u1E921 \u1E921.fina \u1E921.init \u1E921.medi \u1E91F \u1E91F.fina \u1E91F.init \u1E91F.medi ] <anchor 450 663> mark @Anchor1;
+  pos base [\u1E905 \u1E905.fina \u1E905.init \u1E905.medi ] <anchor 447 0> mark @Anchor3
+	<anchor 457 663> mark @Anchor2
+	<anchor 447 663> mark @Anchor1;
+  pos base [\u1E91A \u1E91A.fina \u1E91A.init \u1E91A.medi ] <anchor 467 666> mark @Anchor2
+	<anchor 471 666> mark @Anchor1;
+  pos base [\u1E913 \u1E913.fina \u1E913.init \u1E913.medi ] <anchor 464 548> mark @Anchor4;
+  pos base [\u1E91C \u1E91C.fina \u1E91C.init \u1E91C.medi ] <anchor 350 663> mark @Anchor1;
+  pos base [\u1E912 \u1E912.init ] <anchor 271 663> mark @Anchor1;
+  pos base [\u1E912.fina \u1E912.medi ] <anchor 291 663> mark @Anchor1;
+  pos base [\u1E90E \u1E90E.fina \u1E90E.init \u1E90E.medi ] <anchor 345 663> mark @Anchor1;
+  pos base [\u1E922 \u1E922.fina \u1E922.init \u1E922.medi ] <anchor 343 565> mark @Anchor2
+	<anchor 356 565> mark @Anchor1
+	<anchor 110 597> mark @Anchor0;
+  pos base [\u1E926 \u1E926.fina \u1E926.init \u1E926.medi ] <anchor 419 597> mark @Anchor1;
+  pos base [\u1E929 \u1E929.fina \u1E929.init \u1E929.medi ] <anchor 292 581> mark @Anchor1;
+  pos base [\u1E937 \u1E937.fina \u1E937.init \u1E937.medi ] <anchor 363 565> mark @Anchor1;
+  pos base [\u1E923 \u1E923.fina \u1E923.medi ] <anchor 289 565> mark @Anchor2
+	<anchor 300 565> mark @Anchor1;
+  pos base [\u1E923.init ] <anchor 279 620> mark @Anchor2
+	<anchor 289 620> mark @Anchor1;
+  pos base [\u1E92F \u1E92F.fina \u1E92F.init \u1E92F.medi ] <anchor 358 640> mark @Anchor1;
+  pos base [\u1E92B \u1E92B.fina \u1E92B.init \u1E92B.medi ] <anchor 333 0> mark @Anchor3
+	<anchor 340 565> mark @Anchor1;
+  pos base [\u1E92C \u1E92C.fina \u1E92C.init \u1E92C.medi ] <anchor 331 565> mark @Anchor1;
+  pos base [\u1E93A \u1E93A.fina \u1E93A.init \u1E93A.medi ] <anchor 291 615> mark @Anchor2
+	<anchor 294 640> mark @Anchor1;
+  pos base [\u1E940 \u1E940.fina \u1E940.init \u1E940.medi ] <anchor 291 581> mark @Anchor1;
+  pos base [\u1E938 \u1E938.fina \u1E938.init \u1E938.medi \u1E932 \u1E932.fina \u1E932.init \u1E932.medi ] <anchor 271 565> mark @Anchor2
+	<anchor 268 565> mark @Anchor1;
+  pos base [\u1E92D \u1E92D.fina \u1E92D.init ] <anchor 361 565> mark @Anchor1;
+  pos base [\u1E92D.medi ] <anchor 374 640> mark @Anchor1;
+  pos base [\u1E936 \u1E936.fina \u1E936.init \u1E936.medi ] <anchor 419 0> mark @Anchor3
+	<anchor 423 566> mark @Anchor2
+	<anchor 425 566> mark @Anchor1;
+  pos base [\u1E933 \u1E933.fina \u1E933.init \u1E933.medi ] <anchor 287 565> mark @Anchor1;
+  pos base [\u1E93F \u1E93F.fina \u1E93F.init \u1E93F.medi ] <anchor 350 565> mark @Anchor1;
+  pos base [\u1E942 ] <anchor 346 562> mark @Anchor1;
+  pos base [\u1E942.fina ] <anchor 349 562> mark @Anchor1;
+  pos base [\u1E942.init \u1E942.medi ] <anchor 343 562> mark @Anchor1;
+  pos base [\u1E924 \u1E924.fina ] <anchor 281 565> mark @Anchor1;
+  pos base [\u1E924.init \u1E924.medi ] <anchor 291 565> mark @Anchor1;
+  pos base [\u1E925 \u1E925.fina \u1E925.init \u1E925.medi ] <anchor 282 562> mark @Anchor1;
+  pos base [\u1E93D \u1E93D.fina \u1E93D.init \u1E93D.medi ] <anchor 333 563> mark @Anchor1;
+  pos base [\u1E93B \u1E93B.fina \u1E93B.init \u1E93B.medi ] <anchor 329 565> mark @Anchor1;
+  pos base [\u1E92E \u1E92E.init ] <anchor 332 0> mark @Anchor3
+	<anchor 342 565> mark @Anchor1;
+  pos base [\u1E92E.fina \u1E92E.medi ] <anchor 331 0> mark @Anchor3
+	<anchor 332 562> mark @Anchor1;
+  pos base [\u1E928 \u1E928.fina \u1E928.init \u1E928.medi ] <anchor 290 565> mark @Anchor1;
+  pos base [\u1E939 \u1E939.fina \u1E939.init \u1E939.medi ] <anchor 338 620> mark @Anchor1;
+  pos base [\u1E92A \u1E92A.init ] <anchor 357 640> mark @Anchor1;
+  pos base [\u1E92A.fina \u1E92A.medi ] <anchor 357 585> mark @Anchor1;
+  pos base [\u1E943 \u1E943.fina \u1E943.init \u1E943.medi ] <anchor 407 0> mark @Anchor3
+	<anchor 407 590> mark @Anchor1;
+  pos base [\u1E927 \u1E927.fina \u1E927.init \u1E927.medi ] <anchor 445 2> mark @Anchor3
+	<anchor 447 565> mark @Anchor2
+	<anchor 443 565> mark @Anchor1;
+  pos base [\u1E93C \u1E93C.fina \u1E93C.init \u1E93C.medi ] <anchor 405 565> mark @Anchor2
+	<anchor 418 565> mark @Anchor1;
+  pos base [\u1E935 \u1E935.fina \u1E935.init \u1E935.medi ] <anchor 375 565> mark @Anchor1;
+  pos base [\u1E93E \u1E93E.fina \u1E93E.init \u1E93E.medi ] <anchor 305 563> mark @Anchor1;
+  pos base [\u1E931 \u1E931.fina \u1E931.init \u1E931.medi ] <anchor 305 568> mark @Anchor1;
+  pos base [\u1E934 \u1E934.fina \u1E934.init \u1E934.medi ] <anchor 246 565> mark @Anchor1;
+  pos base [\u1E930 \u1E930.fina \u1E930.init \u1E930.medi ] <anchor 346 565> mark @Anchor1;
+  pos base [\u1E941 \u1E941.fina \u1E941.init \u1E941.medi ] <anchor 386 565> mark @Anchor1;
+} markMarkPositioninginAdlamlookup1;
+
+feature kern {
+
+ script DFLT;
+     language dflt ;
+      lookup kernHorizontalKerninginAdlamlookup0;
+
+ script adlm;
+     language dflt ;
+      lookup kernHorizontalKerninginAdlamlookup0;
+} kern;
+
+feature mark {
+
+ script DFLT;
+     language dflt ;
+      lookup markMarkPositioninginAdlamlookup1;
+
+ script adlm;
+     language dflt ;
+      lookup markMarkPositioninginAdlamlookup1;
+} mark;
+
+@GDEF_Simple = [\u1E900 \u1E900.fina \u1E900.init \u1E900.medi \u1E904 
+	\u1E904.fina \u1E904.init \u1E904.medi \u1E907 \u1E907.fina \u1E907.init 
+	\u1E907.medi \CR \u1E915 \u1E915.fina \u1E915.init \u1E915.medi \u1E901 
+	\u1E901.fina \u1E901.init \u1E901.medi \u1E90D \u1E90D.fina \u1E90D.init 
+	\u1E90D.medi \u1E909 \u1E909.fina \u1E909.init \u1E909.medi \u1E90A 
+	\u1E90A.fina \u1E90A.init \u1E90A.medi \u1E918 \u1E918.fina \u1E918.init 
+	\u1E918.medi \u1E91E \u1E91E.fina \u1E91E.init \u1E91E.medi \u1E916 
+	\u1E916.fina \u1E916.init \u1E916.medi \u1E90B \u1E90B.fina \u1E90B.init 
+	\u1E90B.medi \u1E914 \u1E914.fina \u1E914.init \u1E914.medi \u1E911 
+	\u1E911.fina \u1E911.init \u1E911.medi \u1E91D \u1E91D.fina \u1E91D.init 
+	\u1E91D.medi \u1E920 \u1E920.fina \u1E920.init \u1E920.medi \u1E902 
+	\u1E902.fina \u1E902.init \u1E902.medi \u1E903 \u1E903.fina \u1E903.init 
+	\u1E903.medi \NULL \u1E91B \u1E91B.fina \u1E91B.init \u1E91B.medi \u1E910 
+	\u1E910.fina \u1E910.init \u1E910.medi \u1E919 \u1E919.fina \u1E919.init 
+	\u1E919.medi \u1E90C \u1E90C.fina \u1E90C.init \u1E90C.medi \u1E906 
+	\u1E906.fina \u1E906.init \u1E906.medi \u1E917 \u1E917.fina \u1E917.init 
+	\u1E917.medi \u1E908 \u1E908.fina \u1E908.init \u1E908.medi \u1E921 
+	\u1E921.fina \u1E921.init \u1E921.medi \u1E905 \u1E905.fina \u1E905.init 
+	\u1E905.medi \u1E91A \u1E91A.fina \u1E91A.init \u1E91A.medi \u1E913 
+	\u1E913.fina \u1E913.init \u1E913.medi \u1E91C \u1E91C.fina \u1E91C.init 
+	\u1E91C.medi \u1E90F \u1E90F.fina \u1E90F.init \u1E90F.medi \u1E912 
+	\u1E912.fina \u1E912.init \u1E912.medi \u1E90E \u1E90E.fina \u1E90E.init 
+	\u1E90E.medi \u1E91F \u1E91F.fina \u1E91F.init \u1E91F.medi \uni2015 \u1E922 
+	\u1E922.fina \u1E922.init \u1E922.medi \ampersand \apostropheadlam 
+	\apostropheadlam.fina \apostropheadlam.init \apostropheadlam.medi 
+	\asciicircum \asterisk \at \u1E926 \u1E926.fina \u1E926.init \u1E926.medi 
+	\backslash \bar \u1E929 \u1E929.fina \u1E929.init \u1E929.medi \braceleft 
+	\braceright \bracketleft \bracketright \bullet \u1E937 \u1E937.fina 
+	\u1E937.init \u1E937.medi \colon \comma \uni2E41 \u1E923 \u1E923.fina 
+	\u1E923.init \u1E923.medi \dagger \daggerdbl \u1E92F \u1E92F.fina \u1E92F.init 
+	\u1E92F.medi \dollar \uni25CC \u1E92B \u1E92B.fina \u1E92B.init \u1E92B.medi 
+	\u1E958 \ellipsis \emdash \endash \equal \exclam \u1E95E \u1E92C \u1E92C.fina 
+	\u1E92C.init \u1E92C.medi \u1E955 \u1E954 \fraction \u1E93A \u1E93A.fina 
+	\u1E93A.init \u1E93A.medi \u1E940 \u1E940.fina \u1E940.init \u1E940.medi 
+	\greater \guillemotleft \guillemotright \guilsinglleft \guilsinglright 
+	\u1E938 \u1E938.fina \u1E938.init \u1E938.medi \hyphen \u1E92D \u1E92D.fina 
+	\u1E92D.init \u1E92D.medi \u1E936 \u1E936.fina \u1E936.init \u1E936.medi 
+	\u1E933 \u1E933.fina \u1E933.init \u1E933.medi \uni0640 \u1E93F \u1E93F.fina 
+	\u1E93F.init \u1E93F.medi \u1E942 \u1E942.fina \u1E942.init \u1E942.medi 
+	\u1E924 \u1E924.fina \u1E924.init \u1E924.medi \uni2E28 \less \u1E925 
+	\u1E925.fina \u1E925.init \u1E925.medi \uni00A0 \u1E93D \u1E93D.fina 
+	\u1E93D.init \u1E93D.medi \u1E959 \numbersign \u1E932 \u1E932.fina 
+	\u1E932.init \u1E932.medi \u1E93B \u1E93B.fina \u1E93B.init \u1E93B.medi 
+	\u1E92E \u1E92E.fina \u1E92E.init \u1E92E.medi \u1E951 \parenleft \parenright 
+	\u1E928 \u1E928.fina \u1E928.init \u1E928.medi \percent \period \perthousand 
+	\plus \u1E939 \u1E939.fina \u1E939.init \u1E939.medi \question \u1E95F \uni061F 
+	\quotedbl \quotedblbase \quotedblleft \quotedblright \quoteleft 
+	\quotereversed \quoteright \quotesinglbase \quotesingle \u1E92A \u1E92A.fina 
+	\u1E92A.init \u1E92A.medi \uni204F \uni2E29 \semicolon \u1E957 \u1E943 
+	\u1E943.fina \u1E943.init \u1E943.medi \u1E927 \u1E927.fina \u1E927.init 
+	\u1E927.medi \u1E956 \slash \space \u1E953 \u1E93C \u1E93C.fina \u1E93C.init 
+	\u1E93C.medi \u1E952 \u1E935 \u1E935.fina \u1E935.init \u1E935.medi 
+	\underscore \u1E93E \u1E93E.fina \u1E93E.init \u1E93E.medi \u1E931 
+	\u1E931.fina \u1E931.init \u1E931.medi \u1E934 \u1E934.fina \u1E934.init 
+	\u1E934.medi \u1E930 \u1E930.fina \u1E930.init \u1E930.medi \u1E941 
+	\u1E941.fina \u1E941.init \u1E941.medi \u1E950 ];
+@GDEF_Mark = [\u1E944 \u1E944.case \u1E948 \u1E949 \u1E946 \u1E946.case \u1E947 
+	\u1E94A \u1E94A.below \u1E945 \u1E945.case ];
+
+table GDEF {
+  GlyphClassDef @GDEF_Simple, , @GDEF_Mark, ;
+
+} GDEF;
+

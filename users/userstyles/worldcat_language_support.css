@@ -1,0 +1,12 @@
+#bibdata, #details {font-family: "Gentium Plus";}
+.vernacular {direction: auto;}
+
+/*
+ * Language and script specific rules
+ *
+ */
+
+/* Arabic */
+.vernacular:lang("ar") {direction: rtl; font-family: "Scheherazade New", Amiri;}
+/* Persian */
+.vernacular:lang("fa") {direction: rtl; font-family: "Scheherazade New", Amiri;}

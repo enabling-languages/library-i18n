@@ -1,0 +1,588 @@
+# GDEF Mark Attachment Classes
+@MarkClass1=[\gravecomb \acutecomb \circumflexcomb \macroncomb \overlinecomb 
+	\dotaccentcomb \dieresiscomb \dotbelowcomb \dbloverlinecomb 
+	\breveinverteddoublecomb \doublecircumflexcomb \nicomb-coptic 
+	\spiritusaspercomb \spiritusleniscomb \macronlefthalfcomb 
+	\macronrighthalfcomb \conjoiningmacroncomb \u102E0 
+	\overlinecomb.small \overlinecomb.medium \overlinecomb.large 
+	\overlinecomb.xlarge \overlinecomb.xxlarge \overlinecomb.small.cap 
+	\overlinecomb.medium.cap \overlinecomb.large.cap 
+	\overlinecomb.xlarge.cap \overlinecomb.xxlarge.cap 
+	\overlinecomb.cap \dbloverlinecomb.cap \conjoiningmacroncomb.cap 
+	\dbloverlinecomb.large.cap \conjoiningmacroncomb.large.cap 
+	\macronlefthalfcomb.cap \macronrighthalfcomb.cap 
+	\dbloverlinecomb.medium.cap \conjoiningmacroncomb.medium.cap 
+	\dbloverlinecomb.small.cap \conjoiningmacroncomb.small.cap 
+	\dbloverlinecomb.xlarge.cap \conjoiningmacroncomb.xlarge.cap 
+	\dbloverlinecomb.xxlarge.cap \conjoiningmacroncomb.xxlarge.cap 
+	\dbloverlinecomb.large \conjoiningmacroncomb.large 
+	\dbloverlinecomb.medium \conjoiningmacroncomb.medium 
+	\dbloverlinecomb.small \conjoiningmacroncomb.small 
+	\dbloverlinecomb.xlarge \conjoiningmacroncomb.xlarge 
+	\dbloverlinecomb.xxlarge \conjoiningmacroncomb.xxlarge 
+	\doublemacroncomb ];
+
+# GDEF Mark Attachment Sets
+@MarkSet0=[\dotbelowcomb \u102E0 ];
+@MarkSet1=[\gravecomb \acutecomb \circumflexcomb \macroncomb \overlinecomb 
+	\dotaccentcomb \dieresiscomb \dbloverlinecomb \nicomb-coptic 
+	\spiritusaspercomb \spiritusleniscomb \conjoiningmacroncomb 
+	\overlinecomb.small \overlinecomb.medium \overlinecomb.large 
+	\overlinecomb.xlarge \overlinecomb.xxlarge \dbloverlinecomb.large 
+	\conjoiningmacroncomb.large \dbloverlinecomb.medium 
+	\conjoiningmacroncomb.medium \dbloverlinecomb.small 
+	\conjoiningmacroncomb.small \dbloverlinecomb.xlarge 
+	\conjoiningmacroncomb.xlarge \dbloverlinecomb.xxlarge 
+	\conjoiningmacroncomb.xxlarge \breveinvertedcomb \doublemacroncomb ];
+
+languagesystem DFLT dflt;
+languagesystem copt dflt;
+
+
+# GSUB 
+
+
+lookup SingleSubstitutionlookup1 {
+  lookupflag 0;
+    sub \overlinecomb by \overlinecomb.small ;
+    sub \dbloverlinecomb by \dbloverlinecomb.small ;
+    sub \conjoiningmacroncomb by \conjoiningmacroncomb.small ;
+} SingleSubstitutionlookup1;
+
+lookup SingleSubstitutionlookup2 {
+  lookupflag 0;
+    sub \overlinecomb by \overlinecomb.medium ;
+    sub \dbloverlinecomb by \dbloverlinecomb.medium ;
+    sub \conjoiningmacroncomb by \conjoiningmacroncomb.medium ;
+} SingleSubstitutionlookup2;
+
+lookup SingleSubstitutionlookup3 {
+  lookupflag 0;
+    sub \overlinecomb by \overlinecomb.large ;
+    sub \dbloverlinecomb by \dbloverlinecomb.large ;
+    sub \conjoiningmacroncomb by \conjoiningmacroncomb.large ;
+} SingleSubstitutionlookup3;
+
+lookup SingleSubstitutionlookup4 {
+  lookupflag 0;
+    sub \overlinecomb by \overlinecomb.xlarge ;
+    sub \dbloverlinecomb by \dbloverlinecomb.xlarge ;
+    sub \conjoiningmacroncomb by \conjoiningmacroncomb.xlarge ;
+} SingleSubstitutionlookup4;
+
+lookup SingleSubstitutionlookup5 {
+  lookupflag 0;
+    sub \overlinecomb by \overlinecomb.xxlarge ;
+    sub \dbloverlinecomb by \dbloverlinecomb.xxlarge ;
+    sub \conjoiningmacroncomb by \conjoiningmacroncomb.xxlarge ;
+} SingleSubstitutionlookup5;
+
+lookup ccmpGlyphCompositionDecompositioninCopticlookup0 {
+  lookupflag 0;
+    @cc0_match_1 = [\overlinecomb ];
+    @cc0_match_2 = [\dbloverlinecomb ];
+    @cc0_match_3 = [\conjoiningmacroncomb ];
+    @cc0_back_1 = [\Fei-coptic \Khei-coptic \gangia-coptic \Shima-coptic \Alfa-coptic 
+	\Vida-coptic \dalda-coptic \Eie-coptic \Hate-coptic \hate-coptic 
+	\mi-coptic \ni-coptic \Pi-coptic \Sima-coptic \fi-coptic \psi-coptic 
+	\AlefDialectP-coptic \Cryptogrammiceie-coptic \dialectPni-coptic 
+	\cryptogrammicni-coptic \oouOld-coptic \Sampi-coptic \DjaOld-coptic 
+	\djaOld-coptic \shimaOld-coptic \Shima-nubian \shima-nubian 
+	\nyi-nubian \Wau-nubian \piro-coptic \tauro-coptic \khiro-coptic 
+	\gangiaCryptogrammic-coptic \KheiBohairic-coptic \u102E2 \u102EB 
+	\u102ED \u102F4 \u102F7 \u102FA ];
+    @cc0_back_2 = [\gamma-coptic \sou-coptic \zata-coptic \laula-coptic \ksi-coptic 
+	\dialectpkapa-coptic \sheiOld-coptic \EshOld-coptic \eshOld-coptic 
+	\haLshaped-coptic \HatOld-coptic \hatOld-coptic \ngi-nubian 
+	\onehalf-coptic \u102E1 \u102E4 \u102E5 \u102E7 \u102E8 \u102E9 \u102EC 
+	\u102EF \u102F0 \u102F3 \u102F5 \u102F6 \u102F8 \u102F9 \u102FB ];
+    @cc0_back_3 = [\shei-coptic \Gangia-coptic \Dalda-coptic \Thethe-coptic \Mi-coptic 
+	\Ni-coptic \O-coptic \Fi-coptic \Psi-coptic \oou-coptic 
+	\Cryptogrammicni-coptic \OouOld-coptic \sheiCrossed-coptic 
+	\ShimaOld-coptic \Nyi-nubian \miro-coptic \stauros-coptic 
+	\SheiCryptogrammic-coptic \GangiaCryptogrammic-coptic \u102F2 ];
+    @cc0_back_4 = [\Shei-coptic \Oou-coptic \SheiCrossed-coptic \shimasima-coptic ];
+    @cc0_back_5 = [\Iauda-coptic \iauda-coptic \u102EA ];
+    sub @cc0_back_5 @cc0_match_1'lookup SingleSubstitutionlookup1  ;
+    sub @cc0_back_2 @cc0_match_1'lookup SingleSubstitutionlookup2  ;
+    sub @cc0_back_1 @cc0_match_1'lookup SingleSubstitutionlookup3  ;
+    sub @cc0_back_3 @cc0_match_1'lookup SingleSubstitutionlookup4  ;
+    sub @cc0_back_4 @cc0_match_1'lookup SingleSubstitutionlookup5  ;
+    sub @cc0_back_5 @cc0_match_2'lookup SingleSubstitutionlookup1  ;
+    sub @cc0_back_2 @cc0_match_2'lookup SingleSubstitutionlookup2  ;
+    sub @cc0_back_1 @cc0_match_2'lookup SingleSubstitutionlookup3  ;
+    sub @cc0_back_3 @cc0_match_2'lookup SingleSubstitutionlookup4  ;
+    sub @cc0_back_4 @cc0_match_2'lookup SingleSubstitutionlookup5  ;
+    sub @cc0_back_5 @cc0_match_3'lookup SingleSubstitutionlookup1  ;
+    sub @cc0_back_2 @cc0_match_3'lookup SingleSubstitutionlookup2  ;
+    sub @cc0_back_1 @cc0_match_3'lookup SingleSubstitutionlookup3  ;
+    sub @cc0_back_3 @cc0_match_3'lookup SingleSubstitutionlookup4  ;
+    sub @cc0_back_4 @cc0_match_3'lookup SingleSubstitutionlookup5  ;
+} ccmpGlyphCompositionDecompositioninCopticlookup0;
+
+lookup SingleSubstitutionlookup6 {
+  lookupflag IgnoreBaseGlyphs IgnoreLigatures MarkAttachmentType @MarkClass1;
+    sub \overlinecomb by \overlinecomb.cap ;
+    sub \dbloverlinecomb by \dbloverlinecomb.cap ;
+    sub \macronlefthalfcomb by \macronlefthalfcomb.cap ;
+    sub \macronrighthalfcomb by \macronrighthalfcomb.cap ;
+    sub \conjoiningmacroncomb by \conjoiningmacroncomb.cap ;
+    sub \overlinecomb.small by \overlinecomb.small.cap ;
+    sub \overlinecomb.medium by \overlinecomb.medium.cap ;
+    sub \overlinecomb.large by \overlinecomb.large.cap ;
+    sub \overlinecomb.xlarge by \overlinecomb.xlarge.cap ;
+    sub \overlinecomb.xxlarge by \overlinecomb.xxlarge.cap ;
+    sub \dbloverlinecomb.large by \dbloverlinecomb.large.cap ;
+    sub \conjoiningmacroncomb.large by \conjoiningmacroncomb.large.cap ;
+    sub \dbloverlinecomb.medium by \dbloverlinecomb.medium.cap ;
+    sub \conjoiningmacroncomb.medium by \conjoiningmacroncomb.medium.cap ;
+    sub \dbloverlinecomb.small by \dbloverlinecomb.small.cap ;
+    sub \conjoiningmacroncomb.small by \conjoiningmacroncomb.small.cap ;
+    sub \dbloverlinecomb.xlarge by \dbloverlinecomb.xlarge.cap ;
+    sub \conjoiningmacroncomb.xlarge by \conjoiningmacroncomb.xlarge.cap ;
+    sub \dbloverlinecomb.xxlarge by \dbloverlinecomb.xxlarge.cap ;
+    sub \conjoiningmacroncomb.xxlarge by \conjoiningmacroncomb.xxlarge.cap ;
+} SingleSubstitutionlookup6;
+
+lookup ccmpGlyphCompositionDecompositioninCopticlookup7 {
+  lookupflag 0;
+    sub [\Shei-coptic \Fei-coptic \Khei-coptic \Hori-coptic \Gangia-coptic 
+	\Shima-coptic \Dei-coptic \dei-coptic \Alfa-coptic \Vida-coptic 
+	\Gamma-coptic \Dalda-coptic \Eie-coptic \Sou-coptic \Zata-coptic 
+	\Hate-coptic \Thethe-coptic \Iauda-coptic \Kapa-coptic \Laula-coptic 
+	\Mi-coptic \Ni-coptic \Ksi-coptic \O-coptic \Pi-coptic \Ro-coptic 
+	\Sima-coptic \Tau-coptic \Ua-coptic \Fi-coptic \fi-coptic \Khi-coptic 
+	\Psi-coptic \Oou-coptic \AlefDialectP-coptic \AinOld-coptic 
+	\Cryptogrammiceie-coptic \dialectPkapa-coptic \dialectPni-coptic 
+	\Cryptogrammicni-coptic \OouOld-coptic \Sampi-coptic 
+	\SheiCrossed-coptic \sheiCrossed-coptic \SheiOld-coptic 
+	\EshOld-coptic \KheiAkhmimic-coptic \HoriDialectP-coptic 
+	\HoriOld-coptic \HaOld-coptic \HaLshaped-coptic \HeiOld-coptic 
+	\heiOld-coptic \HatOld-coptic \GangiaOld-coptic \DjaOld-coptic 
+	\ShimaOld-coptic \Shima-nubian \shima-nubian \Ngi-nubian \Nyi-nubian 
+	\Wau-nubian \SheiCryptogrammic-coptic \GangiaCryptogrammic-coptic 
+	\KheiBohairic-coptic \kheiBohairic-coptic ] [\overlinecomb \dbloverlinecomb \macronlefthalfcomb \macronrighthalfcomb 
+	\conjoiningmacroncomb \overlinecomb.small \overlinecomb.medium 
+	\overlinecomb.large \overlinecomb.xlarge \overlinecomb.xxlarge 
+	\dbloverlinecomb.large \conjoiningmacroncomb.large 
+	\dbloverlinecomb.medium \conjoiningmacroncomb.medium 
+	\dbloverlinecomb.small \conjoiningmacroncomb.small 
+	\dbloverlinecomb.xlarge \conjoiningmacroncomb.xlarge 
+	\dbloverlinecomb.xxlarge \conjoiningmacroncomb.xxlarge ]'lookup SingleSubstitutionlookup6  ;
+} ccmpGlyphCompositionDecompositioninCopticlookup7;
+
+lookup ccmpGlyphCompositionDecompositioninCopticlookup8 {
+  lookupflag IgnoreBaseGlyphs IgnoreLigatures MarkAttachmentType @MarkClass1;
+    sub [\overlinecomb.small.cap \overlinecomb.medium.cap \overlinecomb.large.cap 
+	\overlinecomb.xlarge.cap \overlinecomb.xxlarge.cap 
+	\overlinecomb.cap \dbloverlinecomb.cap \conjoiningmacroncomb.cap 
+	\dbloverlinecomb.large.cap \conjoiningmacroncomb.large.cap 
+	\macronlefthalfcomb.cap \macronrighthalfcomb.cap 
+	\dbloverlinecomb.medium.cap \conjoiningmacroncomb.medium.cap 
+	\dbloverlinecomb.small.cap \conjoiningmacroncomb.small.cap 
+	\dbloverlinecomb.xlarge.cap \conjoiningmacroncomb.xlarge.cap 
+	\dbloverlinecomb.xxlarge.cap \conjoiningmacroncomb.xxlarge.cap ] [\overlinecomb \dbloverlinecomb \macronlefthalfcomb \macronrighthalfcomb 
+	\conjoiningmacroncomb \overlinecomb.small \overlinecomb.medium 
+	\overlinecomb.large \overlinecomb.xlarge \overlinecomb.xxlarge 
+	\dbloverlinecomb.large \conjoiningmacroncomb.large 
+	\dbloverlinecomb.medium \conjoiningmacroncomb.medium 
+	\dbloverlinecomb.small \conjoiningmacroncomb.small 
+	\dbloverlinecomb.xlarge \conjoiningmacroncomb.xlarge 
+	\dbloverlinecomb.xxlarge \conjoiningmacroncomb.xxlarge ]'lookup SingleSubstitutionlookup6  ;
+} ccmpGlyphCompositionDecompositioninCopticlookup8;
+
+lookup ccmpGlyphCompositionDecompositioninCopticlookup9 {
+  lookupflag IgnoreBaseGlyphs IgnoreLigatures MarkAttachmentType @MarkClass1;
+    reversesub [\overlinecomb \dbloverlinecomb \macronlefthalfcomb \macronrighthalfcomb 
+	\conjoiningmacroncomb \overlinecomb.small \overlinecomb.medium 
+	\overlinecomb.large \overlinecomb.xlarge \overlinecomb.xxlarge 
+	\dbloverlinecomb.large \conjoiningmacroncomb.large 
+	\dbloverlinecomb.medium \conjoiningmacroncomb.medium 
+	\dbloverlinecomb.small \conjoiningmacroncomb.small 
+	\dbloverlinecomb.xlarge \conjoiningmacroncomb.xlarge 
+	\dbloverlinecomb.xxlarge \conjoiningmacroncomb.xxlarge ]' [\overlinecomb.small.cap \overlinecomb.medium.cap \overlinecomb.large.cap 
+	\overlinecomb.xlarge.cap \overlinecomb.xxlarge.cap 
+	\overlinecomb.cap \dbloverlinecomb.cap \conjoiningmacroncomb.cap 
+	\dbloverlinecomb.large.cap \conjoiningmacroncomb.large.cap 
+	\macronlefthalfcomb.cap \macronrighthalfcomb.cap 
+	\dbloverlinecomb.medium.cap \conjoiningmacroncomb.medium.cap 
+	\dbloverlinecomb.small.cap \conjoiningmacroncomb.small.cap 
+	\dbloverlinecomb.xlarge.cap \conjoiningmacroncomb.xlarge.cap 
+	\dbloverlinecomb.xxlarge.cap \conjoiningmacroncomb.xxlarge.cap ]  by [\overlinecomb.cap \dbloverlinecomb.cap \macronlefthalfcomb.cap 
+	\macronrighthalfcomb.cap \conjoiningmacroncomb.cap 
+	\overlinecomb.small.cap \overlinecomb.medium.cap 
+	\overlinecomb.large.cap \overlinecomb.xlarge.cap 
+	\overlinecomb.xxlarge.cap \dbloverlinecomb.large.cap 
+	\conjoiningmacroncomb.large.cap \dbloverlinecomb.medium.cap 
+	\conjoiningmacroncomb.medium.cap \dbloverlinecomb.small.cap 
+	\conjoiningmacroncomb.small.cap \dbloverlinecomb.xlarge.cap 
+	\conjoiningmacroncomb.xlarge.cap \dbloverlinecomb.xxlarge.cap 
+	\conjoiningmacroncomb.xxlarge.cap ];
+} ccmpGlyphCompositionDecompositioninCopticlookup9;
+
+lookup ccmpGlyphCompositionDecompositioninCopticlookup10 {
+  lookupflag 0;
+    sub  \numbermark-ar' \u102E5   by \numbermark-ar.extrawide;
+    sub \u102E5  \numbermark-ar'   by \numbermark-ar.extrawide;
+} ccmpGlyphCompositionDecompositioninCopticlookup10;
+
+feature ccmp {
+
+ script DFLT;
+     language dflt ;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup0;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup7;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup8;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup9;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup10;
+
+ script copt;
+     language dflt ;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup0;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup7;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup8;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup9;
+      lookup ccmpGlyphCompositionDecompositioninCopticlookup10;
+} ccmp;
+
+# GPOS 
+
+
+lookup markMarkPositioninginCopticlookup0 {
+  lookupflag 0;
+  markClass [\gravecomb \acutecomb ] <anchor -303 603> @Anchor0;
+  markClass [\circumflexcomb \dotaccentcomb ] <anchor 0 603> @Anchor0;
+  markClass [\macroncomb ] <anchor -313 585> @Anchor0;
+  markClass [\dieresiscomb ] <anchor -123 603> @Anchor0;
+  markClass [\nicomb-coptic ] <anchor -489 603> @Anchor0;
+  markClass [\spiritusaspercomb \spiritusleniscomb ] <anchor -318 554> @Anchor0;
+  markClass [\breveinvertedcomb ] <anchor 0 536> @Anchor0;
+  markClass [\overlinecomb \overlinecomb.small \overlinecomb.medium \overlinecomb.large \overlinecomb.xlarge \overlinecomb.xxlarge ] <anchor 0 810> @Anchor1;
+  markClass [\dbloverlinecomb \dbloverlinecomb.large \dbloverlinecomb.medium \dbloverlinecomb.small \dbloverlinecomb.xlarge \dbloverlinecomb.xxlarge ] <anchor 0 603> @Anchor1;
+  markClass [\conjoiningmacroncomb \conjoiningmacroncomb.large \conjoiningmacroncomb.medium \conjoiningmacroncomb.small \conjoiningmacroncomb.xlarge \conjoiningmacroncomb.xxlarge ] <anchor 0 585> @Anchor1;
+  markClass [\dotbelowcomb ] <anchor 48 24> @Anchor2;
+  markClass [\u102E0 ] <anchor 0 0> @Anchor2;
+  markClass [\breveinverteddoublecomb \doublecircumflexcomb ] <anchor 0 603> @Anchor3;
+  markClass [\macronlefthalfcomb \doublemacroncomb ] <anchor 0 585> @Anchor3;
+  markClass [\macronrighthalfcomb ] <anchor 0 585> @Anchor4;
+  markClass [\overlinecomb.small.cap \overlinecomb.medium.cap \overlinecomb.large.cap \overlinecomb.xlarge.cap \overlinecomb.xxlarge.cap \overlinecomb.cap \dbloverlinecomb.cap \conjoiningmacroncomb.cap \dbloverlinecomb.large.cap \conjoiningmacroncomb.large.cap \dbloverlinecomb.medium.cap \conjoiningmacroncomb.medium.cap \dbloverlinecomb.small.cap \conjoiningmacroncomb.small.cap \dbloverlinecomb.xlarge.cap \conjoiningmacroncomb.xlarge.cap \dbloverlinecomb.xxlarge.cap \conjoiningmacroncomb.xxlarge.cap ] <anchor 0 810> @Anchor5;
+  markClass [\macronlefthalfcomb.cap ] <anchor 0 810> @Anchor6;
+  markClass [\macronrighthalfcomb.cap ] <anchor 0 810> @Anchor7;
+  pos base [\Shei-coptic \u102E2 \u102FA ] <anchor 512 810> mark @Anchor5
+	<anchor 322 0> mark @Anchor2
+	<anchor 532 810> mark @Anchor1
+	<anchor 512 810> mark @Anchor0;
+  pos base [\shei-coptic \fei-coptic \khei-coptic \hori-coptic \gangia-coptic \shima-coptic \dei-coptic \alfa-coptic \vida-coptic \gamma-coptic \dalda-coptic \eie-coptic \sou-coptic \zata-coptic \hate-coptic \thethe-coptic \iauda-coptic \kapa-coptic \laula-coptic \mi-coptic \ni-coptic \ksi-coptic \o-coptic \pi-coptic \ro-coptic \sima-coptic \tau-coptic \ua-coptic \fi-coptic \khi-coptic \psi-coptic \oou-coptic \alefDialectP-coptic \ainOld-coptic \cryptogrammiceie-coptic \dialectpkapa-coptic \dialectpni-coptic \cryptogrammicni-coptic \oouOld-coptic \sampi-coptic \sheiCrossed-coptic \sheiOld-coptic \eshOld-coptic \kheiAkhmimic-coptic \horiDialectP-coptic \horiOld-coptic \haOld-coptic \haLshaped-coptic \heiOld-coptic \hatOld-coptic \gangiaOld-coptic \djaOld-coptic \shimaOld-coptic \shima-nubian \ngi-nubian \nyi-nubian \wau-nubian \sheiCryptogrammic-coptic \gangiaCryptogrammic-coptic \kheiBohairic-coptic \u102F4 ] <anchor 0 810> mark @Anchor7
+	<anchor 816 810> mark @Anchor6
+	<anchor 407 810> mark @Anchor5
+	<anchor 0 603> mark @Anchor4
+	<anchor 816 603> mark @Anchor3
+	<anchor 273 0> mark @Anchor2
+	<anchor 419 603> mark @Anchor1
+	<anchor 407 603> mark @Anchor0;
+  pos base [\Fei-coptic \piro-coptic \tauro-coptic \khiro-coptic ] <anchor 380 810> mark @Anchor5
+	<anchor 316 0> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 380 810> mark @Anchor0;
+  pos base [\Khei-coptic \Sampi-coptic ] <anchor 341 810> mark @Anchor5
+	<anchor 241 -220> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 341 810> mark @Anchor0;
+  pos base [\Hori-coptic ] <anchor 288 810> mark @Anchor5
+	<anchor 295 -108> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 288 810> mark @Anchor0;
+  pos base [\Gangia-coptic \miro-coptic \stauros-coptic ] <anchor 449 810> mark @Anchor5
+	<anchor 451 0> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 449 810> mark @Anchor0;
+  pos base [\Shima-coptic \Mi-coptic ] <anchor 371 810> mark @Anchor5
+	<anchor 370 0> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 371 810> mark @Anchor0;
+  pos base [\Dei-coptic \Ro-coptic ] <anchor 302 810> mark @Anchor5
+	<anchor 306 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\Alfa-coptic ] <anchor 314 810> mark @Anchor5
+	<anchor 273 0> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 361 810> mark @Anchor0;
+  pos base [\Vida-coptic \Sima-coptic \KheiBohairic-coptic ] <anchor 317 810> mark @Anchor5
+	<anchor 312 0> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 312 810> mark @Anchor0;
+  pos base [\Gamma-coptic \HaLshaped-coptic ] <anchor 261 810> mark @Anchor5
+	<anchor 273 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\Dalda-coptic ] <anchor 356 810> mark @Anchor5
+	<anchor 415 0> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 415 810> mark @Anchor0;
+  pos base [\Eie-coptic \AlefDialectP-coptic \Cryptogrammiceie-coptic \dialectPni-coptic ] <anchor 322 810> mark @Anchor5
+	<anchor 400 0> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 361 810> mark @Anchor0;
+  pos base [\Sou-coptic ] <anchor 278 810> mark @Anchor5
+	<anchor 273 -49> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\Zata-coptic \Laula-coptic \Ksi-coptic \dialectPkapa-coptic \Ngi-nubian ] <anchor 273 810> mark @Anchor5
+	<anchor 273 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\Hate-coptic \Pi-coptic \dottedCircle ] <anchor 366 810> mark @Anchor5
+	<anchor 366 0> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 361 810> mark @Anchor0;
+  pos base [\Thethe-coptic \O-coptic ] <anchor 390 810> mark @Anchor5
+	<anchor 410 0> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 415 810> mark @Anchor0;
+  pos base [\Iauda-coptic ] <anchor 141 810> mark @Anchor5
+	<anchor 146 0> mark @Anchor2
+	<anchor 161 810> mark @Anchor1
+	<anchor 156 810> mark @Anchor0;
+  pos base [\Kapa-coptic \HaOld-coptic ] <anchor 307 810> mark @Anchor5
+	<anchor 312 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\Ni-coptic \GangiaCryptogrammic-coptic ] <anchor 378 810> mark @Anchor5
+	<anchor 361 0> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 415 810> mark @Anchor0;
+  pos base [\Tau-coptic ] <anchor 305 810> mark @Anchor5
+	<anchor 302 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\Ua-coptic ] <anchor 284 810> mark @Anchor5
+	<anchor 283 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\Fi-coptic ] <anchor 402 810> mark @Anchor5
+	<anchor 400 0> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 415 810> mark @Anchor0;
+  pos base [\Khi-coptic \HoriDialectP-coptic \HoriOld-coptic ] <anchor 292 810> mark @Anchor5
+	<anchor 273 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\Psi-coptic ] <anchor 415 810> mark @Anchor5
+	<anchor 415 0> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 415 810> mark @Anchor0;
+  pos base [\Oou-coptic ] <anchor 515 810> mark @Anchor5
+	<anchor 512 0> mark @Anchor2
+	<anchor 532 810> mark @Anchor1
+	<anchor 532 810> mark @Anchor0;
+  pos base [\AinOld-coptic ] <anchor 275 810> mark @Anchor5
+	<anchor 307 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\Cryptogrammicni-coptic \OouOld-coptic ] <anchor 395 810> mark @Anchor5
+	<anchor 395 0> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 390 810> mark @Anchor0;
+  pos base [\SheiCrossed-coptic ] <anchor 517 1093> mark @Anchor5
+	<anchor 345 0> mark @Anchor2
+	<anchor 532 1098> mark @Anchor1
+	<anchor 513 1093> mark @Anchor0;
+  pos base [\SheiOld-coptic \HeiOld-coptic ] <anchor 283 810> mark @Anchor5
+	<anchor 250 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 283 810> mark @Anchor0;
+  pos base [\EshOld-coptic \u102E5 \u102E6 ] <anchor 219 810> mark @Anchor5
+	<anchor 225 0> mark @Anchor2
+	<anchor 258 810> mark @Anchor1
+	<anchor 263 810> mark @Anchor0;
+  pos base [\KheiAkhmimic-coptic ] <anchor 312 810> mark @Anchor5
+	<anchor 390 -84> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 302 810> mark @Anchor0;
+  pos base [\HatOld-coptic ] <anchor 195 810> mark @Anchor5
+	<anchor 195 -147> mark @Anchor2
+	<anchor 258 810> mark @Anchor1
+	<anchor 195 810> mark @Anchor0;
+  pos base [\GangiaOld-coptic ] <anchor 297 810> mark @Anchor5
+	<anchor 390 0> mark @Anchor2
+	<anchor 307 810> mark @Anchor1
+	<anchor 214 810> mark @Anchor0;
+  pos base [\DjaOld-coptic ] <anchor 363 810> mark @Anchor5
+	<anchor 361 0> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 361 810> mark @Anchor0;
+  pos base [\ShimaOld-coptic ] <anchor 405 810> mark @Anchor5
+	<anchor 429 0> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 400 810> mark @Anchor0;
+  pos base [\Shima-nubian ] <anchor 300 810> mark @Anchor5
+	<anchor 312 0> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 341 810> mark @Anchor0;
+  pos base [\Nyi-nubian ] <anchor 410 810> mark @Anchor5
+	<anchor 407 -137> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 390 810> mark @Anchor0;
+  pos base [\Wau-nubian ] <anchor 329 810> mark @Anchor5
+	<anchor 312 -137> mark @Anchor2
+	<anchor 371 810> mark @Anchor1
+	<anchor 341 810> mark @Anchor0;
+  pos base [\kai-coptic ] <anchor 307 603> mark @Anchor1;
+  pos base [\shimasima-coptic ] <anchor 532 603> mark @Anchor1;
+  pos base [\SheiCryptogrammic-coptic ] <anchor 400 810> mark @Anchor5
+	<anchor 412 0> mark @Anchor2
+	<anchor 419 810> mark @Anchor1
+	<anchor 415 810> mark @Anchor0;
+  pos base [\onehalf-coptic ] <anchor 173 603> mark @Anchor1;
+  pos base [\u102E1 \u102E4 ] <anchor 166 0> mark @Anchor2
+	<anchor 184 603> mark @Anchor1;
+  pos base [\u102E3 ] <anchor 365 0> mark @Anchor2
+	<anchor 439 603> mark @Anchor1;
+  pos base [\u102E7 ] <anchor 193 0> mark @Anchor2
+	<anchor 192 603> mark @Anchor1;
+  pos base [\u102E8 \u102E9 ] <anchor 204 0> mark @Anchor2
+	<anchor 217 603> mark @Anchor1;
+  pos base [\u102EA ] <anchor 177 0> mark @Anchor2
+	<anchor 138 603> mark @Anchor1;
+  pos base [\u102EB ] <anchor 349 0> mark @Anchor2
+	<anchor 336 603> mark @Anchor1;
+  pos base [\u102EC \u102F8 ] <anchor 166 -98> mark @Anchor2
+	<anchor 203 603> mark @Anchor1;
+  pos base [\u102ED ] <anchor 322 -147> mark @Anchor2
+	<anchor 321 603> mark @Anchor1;
+  pos base [\u102EE \u102EF ] <anchor 214 0> mark @Anchor2
+	<anchor 267 603> mark @Anchor1;
+  pos base [\u102F0 \u102F6 ] <anchor 263 0> mark @Anchor2
+	<anchor 252 603> mark @Anchor1;
+  pos base [\u102F1 ] <anchor 268 0> mark @Anchor2
+	<anchor 273 603> mark @Anchor1;
+  pos base [\u102F2 ] <anchor 166 -147> mark @Anchor2
+	<anchor 387 603> mark @Anchor1;
+  pos base [\u102F3 ] <anchor 252 0> mark @Anchor2
+	<anchor 248 603> mark @Anchor1;
+  pos base [\u102F5 ] <anchor 236 0> mark @Anchor2
+	<anchor 217 603> mark @Anchor1;
+  pos base [\u102F7 ] <anchor 333 -147> mark @Anchor2
+	<anchor 315 603> mark @Anchor1;
+  pos base [\u102F9 ] <anchor 257 0> mark @Anchor2
+	<anchor 253 603> mark @Anchor1;
+  pos base [\u102FB ] <anchor 279 0> mark @Anchor2
+	<anchor 256 603> mark @Anchor1;
+} markMarkPositioninginCopticlookup0;
+
+lookup mkmkMarktoMarkinCopticlookup1 {
+  lookupflag UseMarkFilteringSet @MarkSet0;
+  markClass [\dotbelowcomb ] <anchor 48 24> @Anchor8;
+  markClass [\u102E0 ] <anchor 0 0> @Anchor8;
+  pos mark [\u102E0 ] <anchor 0 -137> mark @Anchor8;
+} mkmkMarktoMarkinCopticlookup1;
+
+lookup mkmkMarktoMarkinCopticlookup2 {
+  lookupflag UseMarkFilteringSet @MarkSet1;
+  markClass [\gravecomb \acutecomb ] <anchor -303 603> @Anchor9;
+  markClass [\circumflexcomb \dotaccentcomb ] <anchor 0 603> @Anchor9;
+  markClass [\macroncomb ] <anchor -313 585> @Anchor9;
+  markClass [\dieresiscomb ] <anchor -123 603> @Anchor9;
+  markClass [\nicomb-coptic ] <anchor -489 603> @Anchor9;
+  markClass [\spiritusaspercomb \spiritusleniscomb ] <anchor -318 554> @Anchor9;
+  markClass [\breveinvertedcomb ] <anchor 0 536> @Anchor9;
+  pos mark [\macroncomb ] <anchor -313 781> mark @Anchor9;
+  pos mark [\overlinecomb \overlinecomb.small \overlinecomb.medium \overlinecomb.large \overlinecomb.xlarge \overlinecomb.xxlarge ] <anchor 0 976> mark @Anchor9;
+  pos mark [\dbloverlinecomb \dbloverlinecomb.large \dbloverlinecomb.medium \dbloverlinecomb.small \dbloverlinecomb.xlarge \dbloverlinecomb.xxlarge ] <anchor 0 810> mark @Anchor9;
+  pos mark [\conjoiningmacroncomb \conjoiningmacroncomb.large \conjoiningmacroncomb.medium \conjoiningmacroncomb.small \conjoiningmacroncomb.xlarge \conjoiningmacroncomb.xxlarge ] <anchor 0 781> mark @Anchor9;
+  pos mark [\breveinvertedcomb ] <anchor 2 740> mark @Anchor9;
+  pos mark [\doublemacroncomb ] <anchor 2 676> mark @Anchor9;
+} mkmkMarktoMarkinCopticlookup2;
+
+feature mark {
+
+ script DFLT;
+     language dflt ;
+      lookup markMarkPositioninginCopticlookup0;
+
+ script copt;
+     language dflt ;
+      lookup markMarkPositioninginCopticlookup0;
+} mark;
+
+feature mkmk {
+
+ script DFLT;
+     language dflt ;
+      lookup mkmkMarktoMarkinCopticlookup1;
+      lookup mkmkMarktoMarkinCopticlookup2;
+
+ script copt;
+     language dflt ;
+      lookup mkmkMarktoMarkinCopticlookup1;
+      lookup mkmkMarktoMarkinCopticlookup2;
+} mkmk;
+#Mark attachment classes (defined in GDEF, used in lookupflags)
+@MarkClass1 = [ gravecomb acutecomb circumflexcomb macroncomb overlinecomb dotaccentcomb dieresiscomb dotbelowcomb dbloverlinecomb breveinverteddoublecomb doublecircumflexcomb nicomb-coptic spiritusaspercomb spiritusleniscomb macronlefthalfcomb macronrighthalfcomb conjoiningmacroncomb u102E0 overlinecomb.small overlinecomb.medium overlinecomb.large overlinecomb.xlarge overlinecomb.xxlarge overlinecomb.small.cap overlinecomb.medium.cap overlinecomb.large.cap overlinecomb.xlarge.cap overlinecomb.xxlarge.cap overlinecomb.cap dbloverlinecomb.cap conjoiningmacroncomb.cap dbloverlinecomb.large.cap conjoiningmacroncomb.large.cap macronlefthalfcomb.cap macronrighthalfcomb.cap dbloverlinecomb.medium.cap conjoiningmacroncomb.medium.cap dbloverlinecomb.small.cap conjoiningmacroncomb.small.cap dbloverlinecomb.xlarge.cap conjoiningmacroncomb.xlarge.cap dbloverlinecomb.xxlarge.cap conjoiningmacroncomb.xxlarge.cap dbloverlinecomb.large conjoiningmacroncomb.large dbloverlinecomb.medium conjoiningmacroncomb.medium dbloverlinecomb.small conjoiningmacroncomb.small dbloverlinecomb.xlarge conjoiningmacroncomb.xlarge dbloverlinecomb.xxlarge conjoiningmacroncomb.xxlarge doublemacroncomb ];
+
+@GDEF_Simple = [\NULL \CR \space \hyphen \nbspace \numeral-greek 
+	\lowernumeral-greek \Shei-coptic \shei-coptic \Fei-coptic \fei-coptic 
+	\Khei-coptic \khei-coptic \Hori-coptic \hori-coptic \Gangia-coptic 
+	\gangia-coptic \Shima-coptic \shima-coptic \Dei-coptic \dei-coptic 
+	\Alfa-coptic \alfa-coptic \Vida-coptic \vida-coptic \Gamma-coptic 
+	\gamma-coptic \Dalda-coptic \dalda-coptic \Eie-coptic \eie-coptic \Sou-coptic 
+	\sou-coptic \Zata-coptic \zata-coptic \Hate-coptic \hate-coptic 
+	\Thethe-coptic \thethe-coptic \Iauda-coptic \iauda-coptic \Kapa-coptic 
+	\kapa-coptic \Laula-coptic \laula-coptic \Mi-coptic \mi-coptic \Ni-coptic 
+	\ni-coptic \Ksi-coptic \ksi-coptic \O-coptic \o-coptic \Pi-coptic \pi-coptic 
+	\Ro-coptic \ro-coptic \Sima-coptic \sima-coptic \Tau-coptic \tau-coptic 
+	\Ua-coptic \ua-coptic \Fi-coptic \fi-coptic \Khi-coptic \khi-coptic 
+	\Psi-coptic \psi-coptic \Oou-coptic \oou-coptic \AlefDialectP-coptic 
+	\alefDialectP-coptic \AinOld-coptic \ainOld-coptic \Cryptogrammiceie-coptic 
+	\cryptogrammiceie-coptic \dialectPkapa-coptic \dialectpkapa-coptic 
+	\dialectPni-coptic \dialectpni-coptic \Cryptogrammicni-coptic 
+	\cryptogrammicni-coptic \OouOld-coptic \oouOld-coptic \Sampi-coptic 
+	\sampi-coptic \SheiCrossed-coptic \sheiCrossed-coptic \SheiOld-coptic 
+	\sheiOld-coptic \EshOld-coptic \eshOld-coptic \KheiAkhmimic-coptic 
+	\kheiAkhmimic-coptic \HoriDialectP-coptic \horiDialectP-coptic 
+	\HoriOld-coptic \horiOld-coptic \HaOld-coptic \haOld-coptic 
+	\HaLshaped-coptic \haLshaped-coptic \HeiOld-coptic \heiOld-coptic 
+	\HatOld-coptic \hatOld-coptic \GangiaOld-coptic \gangiaOld-coptic 
+	\DjaOld-coptic \djaOld-coptic \ShimaOld-coptic \shimaOld-coptic 
+	\Shima-nubian \shima-nubian \Ngi-nubian \ngi-nubian \Nyi-nubian \nyi-nubian 
+	\Wau-nubian \wau-nubian \kai-coptic \miro-coptic \piro-coptic \stauros-coptic 
+	\tauro-coptic \khiro-coptic \shimasima-coptic \SheiCryptogrammic-coptic 
+	\sheiCryptogrammic-coptic \GangiaCryptogrammic-coptic 
+	\gangiaCryptogrammic-coptic \KheiBohairic-coptic \kheiBohairic-coptic 
+	\fullstop-nubian \directquestion-nubian \indirectquestion-nubian 
+	\versedivider-nubian \onehalf-coptic \fullstop-coptic 
+	\morphologicaldivider-coptic \u102E1 \u102E2 \u102E3 \u102E4 \u102E5 \u102E6 
+	\u102E7 \u102E8 \u102E9 \u102EA \u102EB \u102EC \u102ED \u102EE \u102EF \u102F0 
+	\u102F1 \u102F2 \u102F3 \u102F4 \u102F5 \u102F6 \u102F7 \u102F8 \u102F9 \u102FA 
+	\u102FB \hyphentwo \dottedCircle \colon \comma \doubleobliquehyphen 
+	\fivedotpunctuation \fourdotpunctuation \numbermark-ar 
+	\numbermark-ar.extrawide \numbermark-ar.semiwide \numbermark-ar.wide 
+	\period \periodcentered \raisedcomma \raiseddot \semicolon \swungdash 
+	\threedotpunctuation ];
+@GDEF_Mark = [\gravecomb \acutecomb \circumflexcomb \macroncomb \overlinecomb 
+	\dotaccentcomb \dieresiscomb \dotbelowcomb \dbloverlinecomb 
+	\breveinverteddoublecomb \doublecircumflexcomb \nicomb-coptic 
+	\spiritusaspercomb \spiritusleniscomb \macronlefthalfcomb 
+	\macronrighthalfcomb \conjoiningmacroncomb \u102E0 \overlinecomb.small 
+	\overlinecomb.medium \overlinecomb.large \overlinecomb.xlarge 
+	\overlinecomb.xxlarge \overlinecomb.small.cap \overlinecomb.medium.cap 
+	\overlinecomb.large.cap \overlinecomb.xlarge.cap \overlinecomb.xxlarge.cap 
+	\overlinecomb.cap \dbloverlinecomb.cap \conjoiningmacroncomb.cap 
+	\dbloverlinecomb.large.cap \conjoiningmacroncomb.large.cap 
+	\macronlefthalfcomb.cap \macronrighthalfcomb.cap 
+	\dbloverlinecomb.medium.cap \conjoiningmacroncomb.medium.cap 
+	\dbloverlinecomb.small.cap \conjoiningmacroncomb.small.cap 
+	\dbloverlinecomb.xlarge.cap \conjoiningmacroncomb.xlarge.cap 
+	\dbloverlinecomb.xxlarge.cap \conjoiningmacroncomb.xxlarge.cap 
+	\dbloverlinecomb.large \conjoiningmacroncomb.large \dbloverlinecomb.medium 
+	\conjoiningmacroncomb.medium \dbloverlinecomb.small 
+	\conjoiningmacroncomb.small \dbloverlinecomb.xlarge 
+	\conjoiningmacroncomb.xlarge \dbloverlinecomb.xxlarge 
+	\conjoiningmacroncomb.xxlarge \breveinvertedcomb \doublemacroncomb ];
+
+table GDEF {
+  GlyphClassDef @GDEF_Simple, , @GDEF_Mark, ;
+
+} GDEF;
+

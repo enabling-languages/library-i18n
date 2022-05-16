@@ -1,0 +1,394 @@
+# GDEF Mark Attachment Sets
+@MarkSet0=[\uni07FD \uni07FD.narrow \uni07FD.wide \uni07FD.wideopen \uni07FD.wider 
+	\uni07FD.widest ];
+
+languagesystem nko  dflt;
+
+
+# GSUB 
+
+
+lookup finaTerminalFormsinNKolookup0 {
+  lookupflag IgnoreMarks;
+    sub \uni07CA by \uni07CA.fina ;
+    sub \uni07CB by \uni07CB.fina ;
+    sub \uni07CC by \uni07CC.fina ;
+    sub \uni07CD by \uni07CD.fina ;
+    sub \uni07CE by \uni07CE.fina ;
+    sub \uni07CF by \uni07CF.fina ;
+    sub \uni07D0 by \uni07D0.fina ;
+    sub \uni07D1 by \uni07D1.fina ;
+    sub \uni07D2 by \uni07D2.fina ;
+    sub \uni07D3 by \uni07D3.fina ;
+    sub \uni07D4 by \uni07D4.fina ;
+    sub \uni07D5 by \uni07D5.fina ;
+    sub \uni07D6 by \uni07D6.fina ;
+    sub \uni07D7 by \uni07D7.fina ;
+    sub \uni07D8 by \uni07D8.fina ;
+    sub \uni07D9 by \uni07D9.fina ;
+    sub \uni07DA by \uni07DA.fina ;
+    sub \uni07DB by \uni07DB.fina ;
+    sub \uni07DC by \uni07DC.fina ;
+    sub \uni07DD by \uni07DD.fina ;
+    sub \uni07DE by \uni07DE.fina ;
+    sub \uni07DF by \uni07DF.fina ;
+    sub \uni07E0 by \uni07E0.fina ;
+    sub \uni07E1 by \uni07E1.fina ;
+    sub \uni07E2 by \uni07E2.fina ;
+    sub \uni07E3 by \uni07E3.fina ;
+    sub \uni07E4 by \uni07E4.fina ;
+    sub \uni07E5 by \uni07E5.fina ;
+    sub \uni07E6 by \uni07E6.fina ;
+    sub \uni07E7 by \uni07E7.fina ;
+    sub \uni07E8 by \uni07E8.fina ;
+    sub \uni07E9 by \uni07E9.fina ;
+    sub \uni07EA by \uni07EA.fina ;
+} finaTerminalFormsinNKolookup0;
+
+lookup mediMedialFormsinNKolookup1 {
+  lookupflag IgnoreMarks;
+    sub \uni07CA by \uni07CA.medi ;
+    sub \uni07CB by \uni07CB.medi ;
+    sub \uni07CC by \uni07CC.medi ;
+    sub \uni07CD by \uni07CD.medi ;
+    sub \uni07CE by \uni07CE.medi ;
+    sub \uni07CF by \uni07CF.medi ;
+    sub \uni07D0 by \uni07D0.medi ;
+    sub \uni07D1 by \uni07D1.medi ;
+    sub \uni07D2 by \uni07D2.medi ;
+    sub \uni07D3 by \uni07D3.medi ;
+    sub \uni07D4 by \uni07D4.medi ;
+    sub \uni07D5 by \uni07D5.medi ;
+    sub \uni07D6 by \uni07D6.medi ;
+    sub \uni07D7 by \uni07D7.medi ;
+    sub \uni07D8 by \uni07D8.medi ;
+    sub \uni07D9 by \uni07D9.medi ;
+    sub \uni07DA by \uni07DA.medi ;
+    sub \uni07DB by \uni07DB.medi ;
+    sub \uni07DC by \uni07DC.medi ;
+    sub \uni07DD by \uni07DD.medi ;
+    sub \uni07DE by \uni07DE.medi ;
+    sub \uni07DF by \uni07DF.medi ;
+    sub \uni07E0 by \uni07E0.medi ;
+    sub \uni07E1 by \uni07E1.medi ;
+    sub \uni07E2 by \uni07E2.medi ;
+    sub \uni07E3 by \uni07E3.medi ;
+    sub \uni07E4 by \uni07E4.medi ;
+    sub \uni07E5 by \uni07E5.medi ;
+    sub \uni07E6 by \uni07E6.medi ;
+    sub \uni07E7 by \uni07E7.medi ;
+    sub \uni07E8 by \uni07E8.medi ;
+    sub \uni07E9 by \uni07E9.medi ;
+    sub \uni07EA by \uni07EA.medi ;
+} mediMedialFormsinNKolookup1;
+
+lookup initInitialFormsinNKolookup2 {
+  lookupflag IgnoreMarks;
+    sub \uni07CA by \uni07CA.init ;
+    sub \uni07CB by \uni07CB.init ;
+    sub \uni07CC by \uni07CC.init ;
+    sub \uni07CD by \uni07CD.init ;
+    sub \uni07CE by \uni07CE.init ;
+    sub \uni07CF by \uni07CF.init ;
+    sub \uni07D0 by \uni07D0.init ;
+    sub \uni07D1 by \uni07D1.init ;
+    sub \uni07D2 by \uni07D2.init ;
+    sub \uni07D3 by \uni07D3.init ;
+    sub \uni07D4 by \uni07D4.init ;
+    sub \uni07D5 by \uni07D5.init ;
+    sub \uni07D6 by \uni07D6.init ;
+    sub \uni07D7 by \uni07D7.init ;
+    sub \uni07D8 by \uni07D8.init ;
+    sub \uni07D9 by \uni07D9.init ;
+    sub \uni07DA by \uni07DA.init ;
+    sub \uni07DB by \uni07DB.init ;
+    sub \uni07DC by \uni07DC.init ;
+    sub \uni07DD by \uni07DD.init ;
+    sub \uni07DE by \uni07DE.init ;
+    sub \uni07DF by \uni07DF.init ;
+    sub \uni07E0 by \uni07E0.init ;
+    sub \uni07E1 by \uni07E1.init ;
+    sub \uni07E2 by \uni07E2.init ;
+    sub \uni07E3 by \uni07E3.init ;
+    sub \uni07E4 by \uni07E4.init ;
+    sub \uni07E5 by \uni07E5.init ;
+    sub \uni07E6 by \uni07E6.init ;
+    sub \uni07E7 by \uni07E7.init ;
+    sub \uni07E8 by \uni07E8.init ;
+    sub \uni07E9 by \uni07E9.init ;
+    sub \uni07EA by \uni07EA.init ;
+} initInitialFormsinNKolookup2;
+
+lookup ccmpGlyphCompositionDecompositioninNKolookup3 {
+  lookupflag UseMarkFilteringSet @MarkSet0;
+    @cc3_match_1 = [\uni07CA \uni07CA.fina \uni07CA.medi \uni07EA.fina ];
+    @cc3_match_2 = [];
+    @cc3_match_3 = [\uni07CC \uni07CE \uni07CF \uni07D1 \uni07D5 \uni07D6 \uni07DE \uni07DF \uni07E0 
+	\uni07E2 \uni07E3 \uni07E4 \uni07E5 \uni07E6 \uni07E7 \uni07E8 \uni07E9 
+	\uni07CC.fina \uni07CC.medi \uni07CE.fina \uni07CE.medi 
+	\uni07CF.fina \uni07CF.medi \uni07D5.fina \uni07D5.medi 
+	\uni07D6.fina \uni07DC.fina \uni07DE.fina \uni07DE.medi 
+	\uni07DF.fina \uni07DF.medi \uni07E2.fina \uni07E2.medi 
+	\uni07E3.fina \uni07E3.medi \uni07E4.fina \uni07E4.medi 
+	\uni07E5.fina \uni07E5.medi \uni07E6.fina \uni07E6.medi 
+	\uni07E7.fina \uni07E7.medi \uni07E8.fina \uni07E8.medi 
+	\uni07E9.fina \uni07E9.medi \uni25CC ];
+    @cc3_match_4 = [\uni07CD \uni07CD.fina \uni07CD.medi ];
+    @cc3_match_5 = [\uni07CB \uni07D0 \uni07D2 \uni07DA \uni07DC \uni07E1 \uni07CB.fina 
+	\uni07CB.medi \uni07D0.fina \uni07D0.medi \uni07D2.fina 
+	\uni07D2.medi \uni07DA.fina \uni07DA.medi \uni07DB.fina 
+	\uni07DB.medi \uni07DC.medi \uni07E1.fina ];
+    @cc3_match_6 = [\uni07D8 \uni07DB \uni07DD \uni07D8.fina \uni07D8.medi \uni07DD.fina 
+	\uni07DD.medi ];
+    @cc3_match_7 = [\uni07FD ];
+    sub @cc3_match_1' @cc3_match_7'  by [\uni07FD.narrow ] ;
+    sub @cc3_match_3' @cc3_match_7'  by [\uni07FD.wide ] ;
+    sub @cc3_match_4' @cc3_match_7'  by [\uni07FD.wideopen ] ;
+    sub @cc3_match_5' @cc3_match_7'  by [\uni07FD.wider ] ;
+    sub @cc3_match_6' @cc3_match_7'  by [\uni07FD.widest ] ;
+} ccmpGlyphCompositionDecompositioninNKolookup3;
+
+feature fina {
+
+ script nko ;
+     language dflt ;
+      lookup finaTerminalFormsinNKolookup0;
+} fina;
+
+feature medi {
+
+ script nko ;
+     language dflt ;
+      lookup mediMedialFormsinNKolookup1;
+} medi;
+
+feature init {
+
+ script nko ;
+     language dflt ;
+      lookup initInitialFormsinNKolookup2;
+} init;
+
+feature ccmp {
+
+ script nko ;
+     language dflt ;
+      lookup ccmpGlyphCompositionDecompositioninNKolookup3;
+} ccmp;
+
+# GPOS 
+
+
+lookup markMarkPositioninginNKolookup0 {
+  lookupflag 0;
+  markClass [\uni07EB \uni07EC \uni07ED \uni07EE \uni07EF \uni07F0 \uni07F1 \uni07F3 ] <anchor 0 795> @Anchor0;
+  pos base [\uni07C1 ] <anchor 297 796> mark @Anchor0;
+  pos base [\uni07CA \uni07D5 \uni07CA.fina \uni07CA.medi \uni07CA.init \uni07D5.fina \uni07D5.medi \uni07D5.init \uni07FF ] <anchor 136 795> mark @Anchor0;
+  pos base [\uni07CB \uni07CB.fina \uni07CB.medi \uni07CB.init ] <anchor 332 649> mark @Anchor0;
+  pos base [\uni07CC \uni07DF \uni07CC.fina \uni07CC.medi \uni07CC.init \uni07DF.fina \uni07DF.medi \uni07DF.init ] <anchor 214 795> mark @Anchor0;
+  pos base [\uni07CD \uni07CD.fina \uni07CD.medi \uni07CD.init ] <anchor 312 649> mark @Anchor0;
+  pos base [\uni07CE \uni07CE.fina \uni07CE.medi ] <anchor 292 649> mark @Anchor0;
+  pos base [\uni07CF \uni07CF.fina \uni07CF.medi ] <anchor 244 649> mark @Anchor0;
+  pos base [\uni07D0 \uni07DA \uni07D0.fina \uni07D0.medi \uni07DA.fina \uni07DA.medi \uni07DA.init ] <anchor 322 795> mark @Anchor0;
+  pos base [\uni07D1 \uni07E2 \uni07D1.fina \uni07D1.medi \uni07D1.init \uni07E2.fina \uni07E2.medi \uni07E2.init ] <anchor 253 795> mark @Anchor0;
+  pos base [\uni07D2 \uni07D2.fina \uni07D2.medi \uni07D2.init ] <anchor 224 795> mark @Anchor0;
+  pos base [\uni07D3 \uni07D3.fina \uni07D3.medi \uni07D3.init ] <anchor 219 795> mark @Anchor0;
+  pos base [\uni07D4 \uni07D9 \uni07D4.fina \uni07D4.medi \uni07D4.init \uni07D9.fina \uni07D9.medi \uni07D9.init ] <anchor 195 795> mark @Anchor0;
+  pos base [\uni07D6 \uni07D6.fina \uni07D6.medi \uni07D6.init ] <anchor 234 795> mark @Anchor0;
+  pos base [\uni07D7 \uni07D7.fina \uni07D7.medi \uni07D7.init ] <anchor 244 795> mark @Anchor0;
+  pos base [\uni07D8 \uni07D8.fina \uni07D8.medi \uni07D8.init ] <anchor 371 649> mark @Anchor0;
+  pos base [\uni07DB \uni07DB.fina \uni07DB.medi \uni07DB.init ] <anchor 351 649> mark @Anchor0;
+  pos base [\uni07DC \uni07DC.fina \uni07DC.medi \uni07DC.init ] <anchor 292 795> mark @Anchor0;
+  pos base [\uni07DD \uni07DD.fina \uni07DD.medi \uni07DD.init ] <anchor 371 795> mark @Anchor0;
+  pos base [\uni07DE \uni07E0 \uni07E3 \uni07E4 \uni07E5 \uni07E6 \uni07E7 \uni07DE.fina \uni07DE.medi \uni07DE.init \uni07E0.fina \uni07E0.medi \uni07E0.init \uni07E3.fina \uni07E3.medi \uni07E3.init \uni07E4.fina \uni07E4.medi \uni07E4.init \uni07E5.fina \uni07E5.medi \uni07E5.init \uni07E6.fina \uni07E6.medi \uni07E6.init \uni07E7.fina \uni07E7.medi \uni07E7.init ] <anchor 263 795> mark @Anchor0;
+  pos base [\uni07E1 \uni07E1.fina \uni07E1.medi \uni07E1.init ] <anchor 283 795> mark @Anchor0;
+  pos base [\uni07E8 \uni07E9 \uni07E8.fina \uni07E8.medi \uni07E8.init \uni07E9.fina \uni07E9.medi \uni07E9.init ] <anchor 292 454> mark @Anchor0;
+  pos base [\uni07EA \uni07EA.fina \uni07EA.medi \uni07EA.init ] <anchor 195 454> mark @Anchor0;
+  pos base [\uni07CE.init ] <anchor 297 649> mark @Anchor0;
+  pos base [\uni07CF.init ] <anchor 239 649> mark @Anchor0;
+  pos base [\uni07D0.init ] <anchor 323 795> mark @Anchor0;
+  pos base [\uni25CC ] <anchor 297 645> mark @Anchor0;
+} markMarkPositioninginNKolookup0;
+
+lookup markMarkPositioninginNKolookup1 {
+  lookupflag 0;
+  markClass [\uni07F2 ] <anchor 0 -49> @Anchor1;
+  pos base [\uni07C0 ] <anchor 270 -49> mark @Anchor1;
+  pos base [\uni07C2 ] <anchor 162 -49> mark @Anchor1;
+  pos base [\uni07C3 ] <anchor 281 -49> mark @Anchor1;
+  pos base [\uni07C4 ] <anchor 247 -49> mark @Anchor1;
+  pos base [\uni07C5 ] <anchor 188 -49> mark @Anchor1;
+  pos base [\uni07C6 ] <anchor 382 -49> mark @Anchor1;
+  pos base [\uni07C7 \uni07C8 ] <anchor 158 -49> mark @Anchor1;
+  pos base [\uni07C9 ] <anchor 277 -49> mark @Anchor1;
+  pos base [\uni07CA \uni07D3 \uni07CA.medi ] <anchor 136 -49> mark @Anchor1;
+  pos base [\uni07CB \uni07CB.fina \uni07CB.medi \uni07CB.init \uni07CC.fina ] <anchor 332 -49> mark @Anchor1;
+  pos base [\uni07CC \uni07CC.medi \uni07CC.init \uni07DE.medi ] <anchor 219 -49> mark @Anchor1;
+  pos base [\uni07CD \uni07CD.fina \uni07CD.medi \uni07CD.init ] <anchor 312 -49> mark @Anchor1;
+  pos base [\uni07CE \uni07DC \uni07CE.fina \uni07CE.medi \uni07D2.medi \uni07D2.init \uni07DC.medi ] <anchor 292 -49> mark @Anchor1;
+  pos base [\uni07CF \uni07D7 \uni07DD \uni07CF.fina \uni07CF.medi ] <anchor 244 -49> mark @Anchor1;
+  pos base [\uni07D0 \uni07D0.medi ] <anchor 322 -49> mark @Anchor1;
+  pos base [\uni07D1 \uni07E6 \uni07D1.fina \uni07D1.medi ] <anchor 253 -49> mark @Anchor1;
+  pos base [\uni07D2 ] <anchor 556 -49> mark @Anchor1;
+  pos base [\uni07D4 \uni07E1 \uni07D9.fina \uni07E1.fina \uni07E1.medi \uni07E1.init \uni07E2.medi ] <anchor 283 -49> mark @Anchor1;
+  pos base [\uni07D5 \uni07E7 \uni07D5.fina \uni07D5.medi \uni07D5.init \uni07E5.init \uni07E6.medi \uni07FF ] <anchor 263 -49> mark @Anchor1;
+  pos base [\uni07D6 ] <anchor 336 -49> mark @Anchor1;
+  pos base [\uni07D8 \uni07D8.fina \uni07D8.medi \uni07D8.init ] <anchor 375 -49> mark @Anchor1;
+  pos base [\uni07D9 \uni07CA.fina \uni07D9.medi ] <anchor 195 -49> mark @Anchor1;
+  pos base [\uni07DA \uni07DF \uni07DA.fina \uni07DA.medi ] <anchor 341 -49> mark @Anchor1;
+  pos base [\uni07DB \uni07D4.fina \uni07DB.fina \uni07DB.medi ] <anchor 351 -49> mark @Anchor1;
+  pos base [\uni07DE \uni07E3 \uni07E4 ] <anchor 410 -49> mark @Anchor1;
+  pos base [\uni07E0 \uni07E0.medi ] <anchor 258 -49> mark @Anchor1;
+  pos base [\uni07E2 ] <anchor 278 -49> mark @Anchor1;
+  pos base [\uni07E5 \uni07E5.fina \uni07E5.medi \uni07E7.medi ] <anchor 268 -49> mark @Anchor1;
+  pos base [\uni07E8 \uni07E9 \uni07E8.fina \uni07E8.medi \uni07E8.init \uni07E9.fina \uni07E9.medi \uni07E9.init ] <anchor 214 -303> mark @Anchor1;
+  pos base [\uni07EA \uni07EA.fina \uni07EA.medi \uni07EA.init ] <anchor 195 -303> mark @Anchor1;
+  pos base [\uni07CA.init ] <anchor 78 -49> mark @Anchor1;
+  pos base [\uni07CE.init \uni25CC ] <anchor 297 -49> mark @Anchor1;
+  pos base [\uni07CF.init \uni07D7.medi \uni07E3.medi \uni07E3.init ] <anchor 239 -49> mark @Anchor1;
+  pos base [\uni07D0.fina \uni07DE.fina ] <anchor 468 -49> mark @Anchor1;
+  pos base [\uni07D0.init ] <anchor 323 -49> mark @Anchor1;
+  pos base [\uni07D1.init ] <anchor 254 -49> mark @Anchor1;
+  pos base [\uni07D2.fina ] <anchor 620 -49> mark @Anchor1;
+  pos base [\uni07D3.fina ] <anchor 273 -49> mark @Anchor1;
+  pos base [\uni07D3.medi ] <anchor 146 -49> mark @Anchor1;
+  pos base [\uni07D3.init ] <anchor 133 -49> mark @Anchor1;
+  pos base [\uni07D4.medi ] <anchor 156 -49> mark @Anchor1;
+  pos base [\uni07D4.init ] <anchor 163 -49> mark @Anchor1;
+  pos base [\uni07D6.fina \uni07DD.fina \uni07DD.medi ] <anchor 405 -49> mark @Anchor1;
+  pos base [\uni07D6.medi ] <anchor 327 -49> mark @Anchor1;
+  pos base [\uni07D6.init ] <anchor 189 -49> mark @Anchor1;
+  pos base [\uni07D7.fina ] <anchor 302 -49> mark @Anchor1;
+  pos base [\uni07D7.init ] <anchor 139 -49> mark @Anchor1;
+  pos base [\uni07D9.init ] <anchor 176 -49> mark @Anchor1;
+  pos base [\uni07DA.init ] <anchor 325 -49> mark @Anchor1;
+  pos base [\uni07DB.init ] <anchor 354 -49> mark @Anchor1;
+  pos base [\uni07DC.fina ] <anchor 429 -49> mark @Anchor1;
+  pos base [\uni07DC.init ] <anchor 288 -49> mark @Anchor1;
+  pos base [\uni07DD.init ] <anchor 269 -49> mark @Anchor1;
+  pos base [\uni07DE.init ] <anchor 229 -49> mark @Anchor1;
+  pos base [\uni07DF.fina ] <anchor 463 -49> mark @Anchor1;
+  pos base [\uni07DF.medi ] <anchor 346 -49> mark @Anchor1;
+  pos base [\uni07DF.init ] <anchor 217 -49> mark @Anchor1;
+  pos base [\uni07E0.fina ] <anchor 380 -49> mark @Anchor1;
+  pos base [\uni07E0.init ] <anchor 231 -49> mark @Anchor1;
+  pos base [\uni07E2.fina ] <anchor 280 -49> mark @Anchor1;
+  pos base [\uni07E2.init ] <anchor 260 -49> mark @Anchor1;
+  pos base [\uni07E3.fina \uni07E4.fina ] <anchor 267 -49> mark @Anchor1;
+  pos base [\uni07E4.medi \uni07E4.init ] <anchor 234 -49> mark @Anchor1;
+  pos base [\uni07E6.fina ] <anchor 261 -49> mark @Anchor1;
+  pos base [\uni07E6.init ] <anchor 241 -49> mark @Anchor1;
+  pos base [\uni07E7.fina ] <anchor 265 -49> mark @Anchor1;
+  pos base [\uni07E7.init ] <anchor 245 -49> mark @Anchor1;
+} markMarkPositioninginNKolookup1;
+
+lookup markMarkPositioninginNKolookup2 {
+  lookupflag 0;
+  markClass [\uni07FD \uni07FD.narrow \uni07FD.wide \uni07FD.wideopen \uni07FD.wider \uni07FD.widest ] <anchor 0 -49> @Anchor2;
+  pos base [\uni07CA ] <anchor 132 -49> mark @Anchor2;
+  pos base [\uni07CB \uni07CB.fina \uni07CB.medi ] <anchor 330 -49> mark @Anchor2;
+  pos base [\uni07CC \uni07CC.medi ] <anchor 218 -49> mark @Anchor2;
+  pos base [\uni07CD \uni07CD.fina \uni07CD.medi \uni07CD.init ] <anchor 309 -49> mark @Anchor2;
+  pos base [\uni07CE ] <anchor 296 -49> mark @Anchor2;
+  pos base [\uni07CF ] <anchor 256 -49> mark @Anchor2;
+  pos base [\uni07D0 ] <anchor 322 -49> mark @Anchor2;
+  pos base [\uni07D1 \uni07E0.fina \uni07E0.medi ] <anchor 261 -49> mark @Anchor2;
+  pos base [\uni07D2 ] <anchor 341 -49> mark @Anchor2;
+  pos base [\uni07D3 \uni07CC.fina ] <anchor 219 -49> mark @Anchor2;
+  pos base [\uni07D4 ] <anchor 199 -49> mark @Anchor2;
+  pos base [\uni07D5 ] <anchor 290 -49> mark @Anchor2;
+  pos base [\uni07D6 \uni07D6.medi ] <anchor 238 -49> mark @Anchor2;
+  pos base [\uni07D7 ] <anchor 202 -49> mark @Anchor2;
+  pos base [\uni07D8 \uni07D8.fina \uni07D8.medi ] <anchor 396 -49> mark @Anchor2;
+  pos base [\uni07D9 \uni07EA ] <anchor 195 -49> mark @Anchor2;
+  pos base [\uni07DA \uni07DA.fina \uni07DA.medi ] <anchor 325 -49> mark @Anchor2;
+  pos base [\uni07DB \uni07DB.fina \uni07DB.medi ] <anchor 354 -49> mark @Anchor2;
+  pos base [\uni07DC \uni07E1 \uni07DC.fina \uni07DC.medi \uni07E1.fina \uni07E1.medi ] <anchor 288 -49> mark @Anchor2;
+  pos base [\uni07DD ] <anchor 366 -49> mark @Anchor2;
+  pos base [\uni07DE \uni07E3 \uni07E4 \uni07DE.fina \uni07E3.fina \uni07E3.medi \uni07E4.fina ] <anchor 267 -49> mark @Anchor2;
+  pos base [\uni07DF ] <anchor 292 -49> mark @Anchor2;
+  pos base [\uni07E0 \uni07E2 \uni07E6 ] <anchor 260 -49> mark @Anchor2;
+  pos base [\uni07E5 ] <anchor 262 -49> mark @Anchor2;
+  pos base [\uni07E7 ] <anchor 264 -49> mark @Anchor2;
+  pos base [\uni07E8 \uni07D6.fina \uni07E2.fina \uni07E2.medi ] <anchor 280 -49> mark @Anchor2;
+  pos base [\uni07E9 \uni07E4.medi ] <anchor 275 -49> mark @Anchor2;
+  pos base [\uni07CA.fina ] <anchor 133 -49> mark @Anchor2;
+  pos base [\uni07CA.medi ] <anchor 162 -49> mark @Anchor2;
+  pos base [\uni07CE.fina \uni07CE.medi \uni25CC ] <anchor 297 -49> mark @Anchor2;
+  pos base [\uni07CF.fina \uni07E5.fina ] <anchor 266 -49> mark @Anchor2;
+  pos base [\uni07CF.medi \uni07DE.medi ] <anchor 272 -49> mark @Anchor2;
+  pos base [\uni07D0.fina ] <anchor 323 -49> mark @Anchor2;
+  pos base [\uni07D0.medi ] <anchor 328 -49> mark @Anchor2;
+  pos base [\uni07D1.fina ] <anchor 249 -49> mark @Anchor2;
+  pos base [\uni07D1.medi ] <anchor 254 -49> mark @Anchor2;
+  pos base [\uni07D2.fina ] <anchor 382 -49> mark @Anchor2;
+  pos base [\uni07D2.medi ] <anchor 342 -49> mark @Anchor2;
+  pos base [\uni07D3.fina ] <anchor 220 -49> mark @Anchor2;
+  pos base [\uni07D3.medi ] <anchor 209 -49> mark @Anchor2;
+  pos base [\uni07D4.fina ] <anchor 200 -49> mark @Anchor2;
+  pos base [\uni07D4.medi ] <anchor 212 -49> mark @Anchor2;
+  pos base [\uni07D5.fina \uni07D5.medi ] <anchor 273 -49> mark @Anchor2;
+  pos base [\uni07D7.fina ] <anchor 223 -49> mark @Anchor2;
+  pos base [\uni07D7.medi ] <anchor 214 -49> mark @Anchor2;
+  pos base [\uni07D9.fina ] <anchor 206 -49> mark @Anchor2;
+  pos base [\uni07D9.medi \uni07EA.medi ] <anchor 215 -49> mark @Anchor2;
+  pos base [\uni07DD.fina \uni07DD.medi ] <anchor 386 -49> mark @Anchor2;
+  pos base [\uni07DF.fina \uni07DF.medi ] <anchor 293 -49> mark @Anchor2;
+  pos base [\uni07E5.medi ] <anchor 269 -49> mark @Anchor2;
+  pos base [\uni07E6.fina \uni07E6.medi \uni07E7.fina ] <anchor 271 -49> mark @Anchor2;
+  pos base [\uni07E7.medi ] <anchor 268 -49> mark @Anchor2;
+  pos base [\uni07E8.fina \uni07E9.fina ] <anchor 286 -49> mark @Anchor2;
+  pos base [\uni07E8.medi ] <anchor 284 -49> mark @Anchor2;
+  pos base [\uni07E9.medi ] <anchor 279 -49> mark @Anchor2;
+  pos base [\uni07EA.fina ] <anchor 188 -49> mark @Anchor2;
+} markMarkPositioninginNKolookup2;
+
+feature mark {
+
+ script nko ;
+     language dflt ;
+      lookup markMarkPositioninginNKolookup0;
+      lookup markMarkPositioninginNKolookup1;
+      lookup markMarkPositioninginNKolookup2;
+} mark;
+#Mark attachment classes (defined in GDEF, used in lookupflags)
+@MarkClass1 = [ uni07EB uni07EC uni07ED uni07EE uni07EF uni07F0 uni07F1 uni07F3 uni07FD ];
+@MarkClass2 = [ uni07F2 uni07FD.narrow uni07FD.wide uni07FD.wideopen uni07FD.wider uni07FD.widest ];
+
+@GDEF_Simple = [\.notdef \NULL \CR \space \uni060C \uni061B \uni061F \uni066A 
+	\uni07C0 \uni07C1 \uni07C2 \uni07C3 \uni07C4 \uni07C5 \uni07C6 \uni07C7 \uni07C8 
+	\uni07C9 \uni07CA \uni07CB \uni07CC \uni07CD \uni07CE \uni07CF \uni07D0 \uni07D1 
+	\uni07D2 \uni07D3 \uni07D4 \uni07D5 \uni07D6 \uni07D7 \uni07D8 \uni07D9 \uni07DA 
+	\uni07DB \uni07DC \uni07DD \uni07DE \uni07DF \uni07E0 \uni07E1 \uni07E2 \uni07E3 
+	\uni07E4 \uni07E5 \uni07E6 \uni07E7 \uni07E8 \uni07E9 \uni07EA \uni07F4 \uni07F5 
+	\uni07F6 \uni07F7 \uni07F8 \uni07F9 \uni07FA \uni07CA.fina \uni07CA.medi 
+	\uni07CA.init \uni07CB.fina \uni07CB.medi \uni07CB.init \uni07CC.fina 
+	\uni07CC.medi \uni07CC.init \uni07CD.fina \uni07CD.medi \uni07CD.init 
+	\uni07CE.fina \uni07CE.medi \uni07CE.init \uni07CF.fina \uni07CF.medi 
+	\uni07CF.init \uni07D0.fina \uni07D0.medi \uni07D0.init \uni07D1.fina 
+	\uni07D1.medi \uni07D1.init \uni07D2.fina \uni07D2.medi \uni07D2.init 
+	\uni07D3.fina \uni07D3.medi \uni07D3.init \uni07D4.fina \uni07D4.medi 
+	\uni07D4.init \uni07D5.fina \uni07D5.medi \uni07D5.init \uni07D6.fina 
+	\uni07D6.medi \uni07D6.init \uni07D7.fina \uni07D7.medi \uni07D7.init 
+	\uni07D8.fina \uni07D8.medi \uni07D8.init \uni07D9.fina \uni07D9.medi 
+	\uni07D9.init \uni07DA.fina \uni07DA.medi \uni07DA.init \uni07DB.fina 
+	\uni07DB.medi \uni07DB.init \uni07DC.fina \uni07DC.medi \uni07DC.init 
+	\uni07DD.fina \uni07DD.medi \uni07DD.init \uni07DE.fina \uni07DE.medi 
+	\uni07DE.init \uni07DF.fina \uni07DF.medi \uni07DF.init \uni07E0.fina 
+	\uni07E0.medi \uni07E0.init \uni07E1.fina \uni07E1.medi \uni07E1.init 
+	\uni07E2.fina \uni07E2.medi \uni07E2.init \uni07E3.fina \uni07E3.medi 
+	\uni07E3.init \uni07E4.fina \uni07E4.medi \uni07E4.init \uni07E5.fina 
+	\uni07E5.medi \uni07E5.init \uni07E6.fina \uni07E6.medi \uni07E6.init 
+	\uni07E7.fina \uni07E7.medi \uni07E7.init \uni07E8.fina \uni07E8.medi 
+	\uni07E8.init \uni07E9.fina \uni07E9.medi \uni07E9.init \uni07EA.fina 
+	\uni07EA.medi \uni07EA.init \uni200C \uni200D \uni200E \uni200F \uni25CC 
+	\uni2E1C \uni2E1D \uniFD3E \uniFD3F \uni00A0 \uni07FE \uni07FF ];
+@GDEF_Mark = [\uni07EB \uni07EC \uni07ED \uni07EE \uni07EF \uni07F0 \uni07F1 
+	\uni07F2 \uni07F3 \uni07FD \uni07FD.narrow \uni07FD.wide \uni07FD.wideopen 
+	\uni07FD.wider \uni07FD.widest ];
+
+table GDEF {
+  GlyphClassDef @GDEF_Simple, , @GDEF_Mark, ;
+
+} GDEF;
+

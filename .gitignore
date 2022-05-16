@@ -483,3 +483,4 @@ test_files/
 conf/
 *.xsl
 tests/
+data/

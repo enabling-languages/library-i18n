@@ -1,0 +1,153 @@
+languagesystem DFLT dflt;
+languagesystem bass dflt;
+
+
+# GSUB 
+
+
+lookup SingleSubstitutionlookup2 {
+  lookupflag 0;
+    sub \u16AF1 by \u16AF1.sm1 ;
+    sub \u16AF4 by \u16AF4.sm1 ;
+} SingleSubstitutionlookup2;
+
+lookup SingleSubstitutionlookup3 {
+  lookupflag 0;
+    sub \u16AF1 by \u16AF1.sm2 ;
+    sub \u16AF4 by \u16AF4.sm2 ;
+} SingleSubstitutionlookup3;
+
+lookup ccmpGlyphCompositionDecompositioninBassaVahlookup1 {
+  lookupflag 0;
+    sub [\u16AE8 \u16AEB \u16AED ] [\u16AF1 \u16AF2 \u16AF4 ]'  by [\u16AF1.sm \u16AF2.sm \u16AF4.sm ];
+    sub [\u16AE7 \u16AEA ] [\u16AF4 ]'lookup SingleSubstitutionlookup2  ;
+    sub [\u16AE7 \u16AEA ] [\u16AF1 ]'lookup SingleSubstitutionlookup2  ;
+    sub [\u16AEC ] [\u16AF4 ]'lookup SingleSubstitutionlookup3  ;
+    sub [\u16AEC ] [\u16AF1 ]'lookup SingleSubstitutionlookup3  ;
+} ccmpGlyphCompositionDecompositioninBassaVahlookup1;
+
+feature ccmp {
+
+ script bass;
+     language dflt ;
+      lookup ccmpGlyphCompositionDecompositioninBassaVahlookup1;
+} ccmp;
+
+# GPOS 
+
+
+lookup kernHorizontalKerninginBassaVahlookup0 {
+  lookupflag IgnoreMarks;
+    pos \u16AD2 \u16AE8 0;
+    pos \u16AD2 \u16AE6 0;
+    pos \u16AD2 \u16AE2 0;
+    pos \u16AD2 \u16ADE 0;
+    pos \u16AD2 \u16AD9 0;
+    pos \u16AD2 \u16AD3 0;
+    pos \u16AD9 \u16AE1 -30;
+    pos \u16ADB \u16AE8 -10;
+    pos \u16ADB \u16AE6 -10;
+    pos \u16ADB \u16AE2 -10;
+    pos \u16ADB \u16ADE -10;
+    pos \u16ADB \u16AD9 -10;
+    pos \u16ADB \u16AD3 -10;
+    pos \u16AEB \u16AE8 0;
+    pos \u16AEB \u16AE6 0;
+    pos \u16AEB \u16AE2 0;
+    pos \u16AEB \u16ADE 0;
+    pos \u16AEB \u16AD9 0;
+    pos \u16AEB \u16AD3 0;
+  subtable;
+    @kc9_first_0 = [\u16AD2 \u16ADA \u16ADB \u16ADE \u16AE1 \u16AE2 \u16AE6 \u16AE8 \u16AEB ];
+    @kc9_first_1 = [\u16AD3 \u16AD7 \u16AE7 \u16AED ];
+    @kc9_first_2 = [\u16ADC \u16AE9 \u16AEA ];
+    @kc9_first_3 = [\u16AE3 ];
+    @kc9_first_4 = [\u16AE0 ];
+    @kc9_first_5 = [\u16AD0 ];
+    @kc9_second_1 = [\u16AD3 \u16AD9 \u16ADE \u16AE2 \u16AE6 \u16AE8 ];
+    @kc9_second_2 = [\u16AD5 \u16AE9 \u16AEA ];
+    @kc9_second_3 = [\u16AEC ];
+    @kc9_second_4 = [\u16AE7 ];
+    @kc9_second_5 = [\u16AE5 ];
+    @kc9_second_6 = [\u16AE1 ];
+    @kc9_second_7 = [\u16AE0 ];
+    @kc9_second_8 = [\u16ADB ];
+    @kc9_second_9 = [\u16AD8 ];
+    pos @kc9_first_0 @kc9_second_1 -30;
+    pos @kc9_first_0 @kc9_second_4 -60;
+    pos @kc9_first_0 @kc9_second_5 -60;
+    pos @kc9_first_0 @kc9_second_7 -20;
+    pos @kc9_first_1 @kc9_second_4 -30;
+    pos @kc9_first_1 @kc9_second_5 -30;
+    pos @kc9_first_1 @kc9_second_6 -20;
+    pos @kc9_first_1 @kc9_second_7 -10;
+    pos @kc9_first_2 @kc9_second_4 -20;
+    pos @kc9_first_2 @kc9_second_5 -20;
+    pos @kc9_first_2 @kc9_second_7 -10;
+    pos @kc9_first_3 @kc9_second_1 -50;
+    pos @kc9_first_3 @kc9_second_2 -30;
+    pos @kc9_first_3 @kc9_second_3 -70;
+    pos @kc9_first_3 @kc9_second_4 -70;
+    pos @kc9_first_3 @kc9_second_5 -70;
+    pos @kc9_first_3 @kc9_second_8 -50;
+    pos @kc9_first_3 @kc9_second_9 -30;
+    pos @kc9_first_4 @kc9_second_2 -10;
+    pos @kc9_first_4 @kc9_second_6 -20;
+    pos @kc9_first_4 @kc9_second_8 -10;
+    pos @kc9_first_5 @kc9_second_7 -10;
+} kernHorizontalKerninginBassaVahlookup0;
+
+lookup markMarkPositioninginBassaVahlookup1 {
+  lookupflag 0;
+  markClass [\u16AF0 \u16AF2 ] <anchor 102 337> @Anchor0;
+  markClass [\u16AF1 \u16AF1.sm1 \u16AF1.sm2 ] <anchor 92 337> @Anchor0;
+  markClass [\u16AF3 ] <anchor 165 447> @Anchor0;
+  markClass [\u16AF4 ] <anchor 129 337> @Anchor0;
+  markClass [\u16AF1.sm ] <anchor 59 236> @Anchor0;
+  markClass [\u16AF2.sm ] <anchor 86 236> @Anchor0;
+  markClass [\u16AF4.sm ] <anchor 85 236> @Anchor0;
+  markClass [\u16AF4.sm1 \u16AF4.sm2 ] <anchor 148 337> @Anchor0;
+  pos base [\uni25CC ] <anchor 300 290> mark @Anchor0;
+  pos base [\u16AE7 ] <anchor 443 263> mark @Anchor0;
+  pos base [\u16AE8 ] <anchor 397 229> mark @Anchor0;
+  pos base [\u16AE9 ] <anchor 390 332> mark @Anchor0;
+  pos base [\u16AEA ] <anchor 705 341> mark @Anchor0;
+  pos base [\u16AEB ] <anchor 319 195> mark @Anchor0;
+  pos base [\u16AEC ] <anchor 597 337> mark @Anchor0;
+  pos base [\u16AED ] <anchor 306 220> mark @Anchor0;
+} markMarkPositioninginBassaVahlookup1;
+
+feature kern {
+
+ script DFLT;
+     language dflt ;
+      lookup kernHorizontalKerninginBassaVahlookup0;
+
+ script bass;
+     language dflt ;
+      lookup kernHorizontalKerninginBassaVahlookup0;
+} kern;
+
+feature mark {
+
+ script DFLT;
+     language dflt ;
+      lookup markMarkPositioninginBassaVahlookup1;
+
+ script bass;
+     language dflt ;
+      lookup markMarkPositioninginBassaVahlookup1;
+} mark;
+
+@GDEF_Simple = [\NULL \CR \space \uni00A0 \uni25CC \u16AD0 \u16AD1 \u16AD2 \u16AD3 
+	\u16AD4 \u16AD5 \u16AD6 \u16AD7 \u16AD8 \u16AD9 \u16ADA \u16ADB \u16ADC \u16ADD 
+	\u16ADE \u16ADF \u16AE0 \u16AE1 \u16AE2 \u16AE3 \u16AE4 \u16AE5 \u16AE6 \u16AE7 
+	\u16AE8 \u16AE9 \u16AEA \u16AEB \u16AEC \u16AED \u16AF5 ];
+@GDEF_Mark = [\u16AF0 \u16AF1 \u16AF2 \u16AF3 \u16AF4 \u16AF1.sm \u16AF2.sm 
+	\u16AF4.sm \u16AF1.sm1 \u16AF4.sm1 \u16AF1.sm2 \u16AF4.sm2 ];
+
+table GDEF {
+  GlyphClassDef @GDEF_Simple, , @GDEF_Mark, ;
+
+} GDEF;
+
