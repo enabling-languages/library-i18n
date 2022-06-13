@@ -1,8 +1,8 @@
 # Encoding issues in Thai and Lao romanisation
 
-## Left half ring Below vs Ogonek
+## Left half ring below vs ogonek
 
-Recently, I have been spending more and more time working with Lao and Thai bibliographic records. While exploring the data, it became apparent that there were divergent cataloguing practices relating to the Thai and Lao vowels that were romanised using either ǫ (o with Ogonek) or o̜ (o with combining Left Half Ring below):
+Recently, I have been spending more and more time working with Lao and Thai bibliographic records. While exploring the data, it became apparent that there were divergent cataloguing practices relating to the Thai and Lao vowels that were romanised using either ǫ (o with ogonek) or o̜ (o with combining Left Half Ring below):
 
 <table>
 <tr style="font-family: 'Bibliotheca LCG', 'Noto Sans'; font-size: 2.5em; text-align: center;">
@@ -59,6 +59,6 @@ The relevant section of the 2012 romanisation table:
 
 Likewise, the 2012 table uses ǫ (LATIN SMALL LETTER O WITH OGONEK) and ǭ (LATIN SMALL LETTER O WITH OGONEK AND MACRON) for Lao romanisation.
 
-The MARC-8 information, was stript out of the 2012 table, as it was with other existing romanisation tables, leaving cataloguers to infer charcater to be used from the glyph used in the table.
+The MARC-8 information, was script out of the 2012 table, as it was with other existing romanisation tables, leaving cataloguers to infer character to be used from the glyph used in the table.
 
-It appears that some cataloguers and insitutions continue to use U+031C, while other cataloguers, based on the 2012 table, use U+0328.
+It appears that some cataloguers and institutions continue to use U+031C, while other cataloguers, based on the 2012 table, use U+0328.
