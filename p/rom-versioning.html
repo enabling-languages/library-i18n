@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Reflections on romanisation tables and versioning</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/el.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<div id="logo"><img alt="" class="plain" src="assets/el-logo-white-large.png"></div>
+						<p>Andrew Cunningham</p>
+				</section>
+
+				<section>
+					<h1 class="r-fit-text">Reflections: <br>romanisation tables and versioning</h1>
+					<aside class="notes">
+						<p>Often the  ALA-LC Romanization tables are closer to being transcription systems, rather than transliteration systems. They sort of sit between the two approaches.</p>
+						<p>To interpret existing romanisation tables, it is necessary to review:</p>
+						<ul>
+							<li>the 1997 edition of the tables,</li>
+							<li>the MARC-8 to Unicode mapping,</li>
+							<li>changes to the mapping, and</li>
+							<li>relevant sections of the Unicode Standard.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Versioning</h2>
+					</section>
+					<section>
+						<h3>Issues</h3>
+						<ol>
+							<li class="fragment">BCP 47 language tags require identification of the table version.</li>
+							<li class="fragment">Lack of consistency in application of tables.</li>
+							<li class="fragment">Availability of information on which characters to use when tables are ambiguous.</li>
+						</ol>
+						<aside class="notes">
+							<ol>
+								<li>BCP 47 language tags require identification of version, when using the `t` extension combined with the `m0` subtag
+									<ul>
+										<li>ru-Latin-t-ru-Cyrl-m0-alaloc-1997</li>
+										<li>ru-Latin-t-ru-Cyrl-m0-alaloc-2012</li>
+										<li>bg-Latin-t-bg-Cyrl-m0-alaloc-1997</li>
+										<li>bg-Latin-t-bg-Cyrl-m0-alaloc-2011</li>
+										<li>bg-Latin-t-bg-Cyrl-m0-alaloc-2012</li>
+										<li>bg-Latin-t-bg-Cyrl-m0-alaloc-2013</li>
+									</ul>
+								</li>
+								<li><p>The key issue is the lack of consistency in the interpreting and implementation of romanisation, both between institutions and within an institution over time, i.e. cataloguers that have worked with the 1997 tables, or work within institutions whose internal guidelines are based on knowledge of 1997 tables, versus cataloguers unfamiliar with the 1997 tables and have based their cataloging on the revised tables alone.</p></li>
+								<li><p>There was a fundamental change between the 1997 tables and later tables. The 1997 tables included after the table a list of extended Latin characters used in the table, providing both the MARC-8 character name and the G1 byte used. These lists were drop from subsequent tables, and no guidance on appropriate Unicode characters were provided.</p></li>
+							</ol>
+						</aside>
+					</section>
+					<section>
+						<h3>Romanisation tables are not static, they change over time.</h3>
+						<ul>
+							<li class="fragment">Changes can be fundamental, with wide ranging effects, i.e. Wade-Giles to Pinyin migration.</li>
+							<li class="fragment">Others can be subtle, but result in divergent practices:
+								<ul>
+									<li class="fragment">Potentially inadvertent changes, e.g. Lao and Thai romanisation (combining left half ring below vs ogonek)</li>
+									<li class="fragment">Changes in advice on MARC-8 to Unicode mappings</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Lao example</h3>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th colspan="2">2012</th>
+									<th colspan="2">1997</th>
+								</tr>
+								<tr>
+									<th>ǫ</th>
+									<th>ǭ</th>
+									<th>o̜</th>
+									<th>ō̜</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>U+01EB</td>
+									<td>U+01ED</td>
+									<td>U+006F U+031C</td>
+									<td>U+014D U+031C</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h3>Non-Slavic Cyrillic examples</h3>
+					</section>
+					<section>
+						<h4>Low res bitmaps in table</h4>
+						<div class="container-flex">
+							<div class="column-flex">
+								<p><img src="assets/img/nsc1.png"></p>
+							</div>
+							<div class="column-flex">
+								<p><img src="assets/img/nsc2.png"></p>
+							</div>
+							<div class="column-flex">
+								<p><img src="assets/img/nsc3.png"></p>
+							</div>
+							<div class="column-flex">
+								<p><img src="assets/img/nsc3.png"></p>
+							</div>
+							<div class="column-flex">
+								<p><img src="assets/img/nsc5.png"></p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h4>Tie ligatures</h4>
+						<div class="container-flex">
+							<div class="column-flex">
+								<p class="sample" style="font-size: 2.0em; font-family: Andika;">t︠s︡</p>
+								<ul class="fragment">
+									<li>Two half diacritics</li>
+									<li>Original mapping</li>
+								</ul>
+							</div>
+							<div class="column-flex">
+								<p class="sample" style="font-size: 2.0em; font-family: Andika;">t͡s</p>
+								<ul class="fragment">
+									<li>Single diacritic</li>
+									<li>Mapping adopted in 2004</li>
+								</ul>
+							</div>
+						</div>
+						<p class="fragment">Divergent practices across libraries, half marks still have wide usage.</p>
+					</section>
+					<section>
+						<h4>Complex grapheme clusters</h4>
+						<p class="fragment sample" style="font-size: 2.0em;">t͡͏̇s</p>
+						<p class="fragment">U+0074 <span style="color:#FFCC33;" title="Combining Grapheme Joiner">U+0361</span> <span style="color: #CCFF66;">U+034F</span> <span style="color:#FFCC33;">U+0307</span> U+0073</p>
+
+					</section>
+					<section>
+						<h3>Alif and ayn</h3>
+						<ul>
+							<li class="fragment">Up to and including 1997, tables identified MARC-8 characters to use.</li>
+							<li class="fragment"><em>Ayn</em> MARC-8 to Unicode mapping changed in 1999.</li>
+							<li class="fragment"><em>Alif</em> MARC-8 to Unicode mapping changed in 2005.</li>
+							<li class="fragment"><em>Ayn</em> and <em>Alif</em> are names of MARC-8 characters, not Unicode characters.</li>
+							<li class="fragment">The references to <em>Ayn</em> and <em>Alif</em> in <em>Spacing Modifier Letters</em> chart refer to different Unicode characters.</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Sinopia editor issue</h4>
+						<p>A Sinopia editor issue illustrates misunderstandings that can occur:</p>
+						<pre style="white-space: pre-line;">
+							Arabic scripts
+							Alif: (Modifier letter right half ring) U+02BE officially
+							http://www.unicode-symbol.com/u/02BE.html
+							However, OCLC says:
+							"Use U+02BC (modifier letter apostrophe) to represent the alif character"
+							See OCLC table at: https://www.oclc.org/bibformats/en/onlinecataloging.html#characters
+						</pre>
+					</section>
+					<section>
+						<h4>Sinopia editor issue</h4>
+						<pre style="white-space: pre-line;">
+							Arabic and Hebrew scripts
+							Ayin/Ayn: (Modifier letter left half ring) U+02BF officially
+							http://www.unicode-symbol.com/u/02BE.html
+							However, OCLC says:
+							"Use U+02BB (modifier letter turned comma) to represent the ayn character"
+							See OCLC table at: https://www.oclc.org/bibformats/en/onlinecataloging.html#characters
+							02BB is also used in Hawaiian and Tongan, though it is hit and miss in cataloging
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Suggestions</h2>
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">Add Unicode codepoints to romanisation table.</li>
+							<li class="fragment">PDF and doc files include year in file name.</li>
+							<li class="fragment">Update fonts with more suitable fonts.</li>
+							<li class="fragment">Replace images of text with corresponding text.</li>
+							<li class="fragment">Older versions of tables also made available with versioning.</li>
+							<li class="fragment">Add changes document for each romanisation table.</li>
+							<li class="fragment">Consider including machine readable versions of the tables, although mapping would need to be unidirectional.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<div id="logo"><img alt="" class="plain" src="assets/elos-logo-white-large.png"></div>
+					<p><a href="https://github.com/enabling-languages/library-i18n">github.com/enabling-languages/library-i18n</a></p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

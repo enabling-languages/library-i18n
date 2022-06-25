@@ -1,0 +1,510 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Internationalization and libraries</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/el.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<div id="logo"><img alt="" class="plain" src="assets/el-logo-white-large.png"></div>
+						<p>Andrew Cunningham</p>
+				</section>
+				<section>
+					<h1 class="r-fit-text">Internationalization <br>and libraries</h1>
+					<aside class="notes">
+						<h3>Terminology</h3>
+						<dl>
+							<dt>Internationalization</dt>
+							<dd>The process of designing a software application or web service so that it can be adapted to various languages and regions without engineering changes.</dd>
+							<dd>Internationalisation is about the architecture of a web service,</dd>
+							<dt>Localization</dt>
+							<dd>The process of adapting software or web sites for a specific region or language by adding locale-specific components and translating text. Not just text. Localising design: images, color, layout, white space, text expansion, user interface mirroring, typesetting conventions</dd>
+							<dt>Globalization</dt>
+							<dd>Internationalisation + multiple localisations</dd>
+							<dd>World ready</dd>
+						</dl>
+						<h3>Audience</h3>
+						<p>It is critical to correctly identify the audience of the web service, app or data. Audience will impact on the information architecture and user experience. For libraries, there are two broad communities: library staff and library patrons.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Encodings and character sets</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Coded character sets</li>
+							<li>Character encodings</li>
+						</ul>
+					</section>
+					<section>
+						<h3>MARC-8 and EACC</h3>
+						<ul>
+							<li>Originally Latin script</li>
+							<li>JACKPHY &ndash; Japanese, Arabic, Chinese, Korean, Persian, Hebrew, and Yiddish</li>
+							<li>JACKPHY Plus &ndash; added Cyrillic and Greek</li>
+							<li>Variant of the ISO-2022 encoding</li>
+							<li>The combining characters and base characters are in a different order than used in Unicode.</li>
+							<li>A set of graphic character sets (SBCS and MBCS)</li>
+							<li>Invoked by means of a multiple byte escape sequence </li>
+						</ul>
+					</section>
+					<section>
+						<h3>Unicode</h3>
+						<ul>
+						<li>Enable the encoding, representation, and handling of text expressed in most of the world's writing systems (Both modern and historical).</li>
+						<li>Around 144,697 characters</li>
+						<li>159 modern and historic script</li>
+						<li>Multiple character encodings:  UTF-8, UTF-16, UTF-32, and others.</li>
+						<li>The Unicode code-space is divided into seventeen planes, numbered 0 to 16</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Unicode</h3>
+						<ul>
+							<li>Basic Multilingual Plane</li>
+							<li>Supplementary Multilingual Plane</li>
+							<li>Supplementary Ideographic Plane</li>
+							<li>Tertiary Ideographic Plane</li>
+						</ul>
+						
+					</section>
+					<section>
+						<p>MARC-8 and UTF-8 are the valid encodings for MARC21 records.</p>
+						<p>Tools and libraries that use or generate MARC21 data often <em>assume</em> all data is either MARC-8 or UTF-8.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Normalization</h2>
+					</section>
+					<section>
+						<h3>Examples</h3>
+						<div class="sample">Tiếng Vi<span class="fragment highlight-red">ệ</span>t</div>
+						<div class="container-flex">
+							<div class="column-flex">
+								<p class="fragment">&#x1EC7; <span class="fragment">&ndash; &#x1EC7; 1EC7</span></p>
+							</div>
+							<div class="column-flex">
+								<p class="fragment">&#x1EB9;&#x0302; <span class="fragment">&ndash; ẹ◌̂ 1EB9 0302</span></p>
+								<p class="fragment">&#x00EA;&#x0323; <span class="fragment">&ndash; ê◌̣ 00EA 0323</span></p>
+							</div>
+							<div class="column-flex">
+								<p class="fragment">&#x0065;&#x0302;&#x0323; <span class="fragment">&ndash; e◌̂◌̣ 0065 0302 0323</span></p>
+								<p class="fragment">&#x0065;&#x0323;&#x0302; <span class="fragment">&ndash; e◌̣◌̂ 0065 0323 0302</span></p>
+							</div>
+						</div>
+						<div class="fragment">
+							<p>All forms are canonically equivalent.</p>
+						</div>
+					</section>
+					<section>
+						<h3>Normalisation forms</h3>
+						<ul>
+							<li class="isolated-fragment fragment">Normalization Form Canonical Decomposition (NFD) &ndash; Characters are decomposed by canonical equivalence, and multiple combining characters are arranged in a specific order. </li>
+							<li class="isolated-fragment fragment fade-up">Normalization Form Compatibility Decomposition (NFKD) &ndash; Characters are decomposed by compatibility, and multiple combining characters are arranged in a specific order</li>
+							<li class="isolated-fragment fragment fade-up">Normalization Form Canonical Composition (NFC) &ndash; Characters are decomposed and then recomposed by canonical equivalence. </li>
+							<li class="isolated-fragment fragment fade-up">Normalization Form Compatibility Composition (NFKC) &ndash; Characters are decomposed by compatibility, then recomposed by canonical equivalence. 	</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Example</h3>
+						<div class="sample">lịch s<span class="fragment highlight-red">ử</span></div>
+						<div class="container-flex">
+							<div class="column-flex">
+								<p class="fragment">&#x1EED; <span class="fragment">&ndash; &#x1EED; 1EED</span> </p>
+							</div>
+							<div class="column-flex">
+								<p class="fragment">&#x01B0;&#x0309; <span class="fragment">&ndash; ư◌̉ 01B0 0309</span></p>
+								<p class="fragment">&#x1EE7;&#x031B; <span class="fragment">&ndash; ủ◌̛ 1EE7 031B</span></p>
+							</div>
+							<div class="column-flex">
+								<p class="fragment">&#x0075;&#x031B;&#x0309; <span class="fragment">&ndash; u◌̛◌̉ 0075 031B 0309</span></p>
+								<p class="fragment">&#x0075;&#x0309;&#x031B; <span class="fragment">&ndash; u◌̉◌̛ 0075 0309 031B</span></p>
+							</div>
+						</div>
+						<div class="fragment">
+							<p>&#x1EED; 1EED (NFC) <br> u◌̛◌̉ 0075 031B 0309 (NFD) <br> ư◌̉ 01B0 0309 (MARC-21)</p>
+						</div>
+					</section>
+					<section>
+						<h3>Latin divergences from NFD</h3>
+						<table>
+							<thead><tr>
+							<th>Character</th>
+							<th>MARC21</th>
+							<th>NFD</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+							<td>Ơ</td>
+							<td>U+01A0</td>
+							<td>U+004F U+031B</td>
+							</tr>
+							<tr>
+							<td>ơ</td>
+							<td>U+01A1</td>
+							<td>U+008F U+031B</td>
+							</tr>
+							<tr>
+							<td>Ư</td>
+							<td>U+01AF</td>
+							<td>U+0055 U+031B</td>
+							</tr>
+							<tr>
+							<td>ư</td>
+							<td>U+01B0</td>
+							<td>U+0075 U+031B</td>
+							</tr>
+							</tbody>
+							</table>
+							<p>Languages of Vietnam, and Thai and Lao romanisation</p>
+					</section>
+					<section>
+						<h3>Cyrillic divergences from NFD</h3>
+						<table>
+							<thead><tr>
+							<th>Character</th>
+							<th>MARC21</th>
+							<th>NFD</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+							<td>Ё</td>
+							<td>U+0401</td>
+							<td>U+0415 U+0308</td>
+							</tr>
+							<tr>
+							<td>ё</td>
+							<td>U+0451</td>
+							<td>U+0435 U+0308</td>
+							</tr>
+							<tr>
+							<td>Ѓ</td>
+							<td>U+0403</td>
+							<td>U+0413 U+0301</td>
+							</tr>
+							<tr>
+							<td>ѓ</td>
+							<td>U+0453</td>
+							<td>U+0433 U+0301</td>
+							</tr>
+							<tr>
+							<td>Ї</td>
+							<td>U+0407</td>
+							<td>U+0406 U+0308</td>
+							</tr>
+							<tr>
+							<td>ї</td>
+							<td>U+0457</td>
+							<td>U+0456 U+0308</td>
+							</tr>
+							</tbody>
+							</table>
+					</section>
+					<section>
+						<h3>Cyrillic divergences from NFD</h3>
+						<table>
+							<thead><tr>
+							<th>Character</th>
+							<th>MARC21</th>
+							<th>NFD</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+							<td>Ќ</td>
+							<td>U+040C</td>
+							<td>U+041A U+0301</td>
+							</tr>
+							<tr>
+							<td>ќ</td>
+							<td>U+045C</td>
+							<td>U+043A U+0301</td>
+							</tr>
+							<tr>
+							<td>Ў</td>
+							<td>U+040E</td>
+							<td>U+0423 U+0306</td>
+							</tr>
+							<tr>
+							<td>ў</td>
+							<td>U+045E</td>
+							<td>U+0443 U+0306</td>
+							</tr>
+							<tr>
+							<td>Й</td>
+							<td>U+0419</td>
+							<td>U+0418 U+0306</td>
+							</tr>
+							<tr>
+							<td>й</td>
+							<td>U+0439</td>
+							<td>U+0438 U+0306</td>
+							</tr>
+							</tbody>
+							</table>
+							<aside class="notes">
+								<p>Cyrillic script normalisation differences between NFD and the MARC21 Character repertoire impact a range of languages including Belarusian, Bulgarian, Macedonian, Russian and Ukrainian.</p>
+							</aside>
+					</section>
+					<section>
+						<h3>Arabic divergences from NFD</h3>
+						<table>
+							<thead>
+								<tr>
+									<th>Character</th>
+									<th>MARC21</th>
+									<th>NFD</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>آ</td>
+									<td>U+0622</td>
+									<td>U+0627 U+0653</td>
+								</tr>
+								<tr>
+									<td>أ</td>
+									<td>U+0623</td>
+									<td>U+0627 U+065</td>
+								</tr>
+								<tr>
+									<td>ؤ</td>
+									<td>U+0624</td>
+									<td>U+0648 U+0654</td>
+								</tr>
+								<tr>
+									<td>إ</td>
+									<td>U+0625</td>
+									<td>U+0627 U+0655</td>
+								</tr>
+								<tr>
+									<td>ئ</td>
+									<td>U+0626</td>
+									<td>U+064A U+0654</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Bidirectional support</h2>
+					</section>
+					<section>
+						<h3>Right-to-left scripts</h3>
+						<h4>Contemporary scripts</h4>
+						<p>Adlam, Arabic, Garay, Hanifi Rohingya, Hebrew, Mandaic, Mende Kikakui, N'Ko, Samaritan, Syriac, Thaana, and Yezidi.</p>
+					</section>
+					<section>
+						<h3>Right-to-left scripts</h3>
+						<h4>Historical scripts</h4>
+						<p>Indus script, Egyptian hieroglyphs, Cypriot syllabary, Phoenician alphabet, Imperial Aramaic, Old South Arabian, Old North Arabian, Pahlavi, Avestan, Hatran, Sogdian/Manichaean, Nabatean, Old Ge'ez, Kharosthi, Old Turkic runes (Orkhon runes), Old Hungarian runes, Old Italic alphabets (Early Etruscan), Lydian alphabet (RTL, LTR,  & boustrophedon)</p>
+					</section>
+					<section>
+						<h3>Text direction: HTML</h3>
+						<p>The <code>dir</code> global attribute indicates the directionality of the element's text. It can have the following values:</p>
+						<ul>
+							<li>ltr – left to right</li>
+							<li>rtl – right to left</li>
+							<li>auto – first strong direction </li>
+						</ul>
+						<pre><code data-trim data-noescape >
+							&lthtml lang="aii-Syrn" dir="rtl"&gt;
+							⋮
+							&lt;/html&gt;
+						</code></pre>
+						<aside class="notes">
+							<p>auto, uses a basic algorithm as it parses the characters inside the element until it finds a character with a strong directionality, then applies that directionality to the whole element.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Text direction: text strings</h3>
+						<p>In the first instance, rely on the <a href="">Unicode Bidirectional Algorithm</a> (UCA)</p>
+						<p>When default se directional formatting characters</p>
+					</section>
+					<section>
+						<p><img src="assets/img/arabic-1.png"/></p>
+						<p><img src="assets/img/arabic-1-corrected.png"/></p>
+						<aside class="notes">
+						<p>The image on the top details with the sites default settings (RTL). The image below it is from the same page, using a tampermonkey script, rewritng the page to use RTL.</p>
+							<p>Worldcat: <a href="http://www.worldcat.org/oclc/929494926">http://www.worldcat.org/oclc/929494926</a></p>
+						</aside>
+					</section>
+					<section>
+						<pre><code class="stretch" data-trim data-noescape data-line-numbers data-ln-start-from="11">
+							(function() {
+								'use strict';
+								document.body.style.fontFamily = "'Bibliotheca LCG', 'Noto Sans'";
+								document.querySelectorAll(".vernacular").forEach(vern => {
+									vern.setAttribute("dir", "auto")
+								});
+								/* Arabic - ar */
+								document.querySelectorAll(".vernacular:lang(ar)").forEach(vern => {
+									vern.setAttribute("dir", "rtl");
+									vern.style.fontFamily = "'Scheherazade New', Amiri";
+									vern.style.textAlign = "right";
+								});
+								/* Persian - fa */
+								document.querySelectorAll(".vernacular:lang(fa)").forEach(vern => {
+									vern.setAttribute("dir", "rtl");
+									vern.style.fontFamily = "'Scheherazade New', Amiri";
+									vern.style.textAlign = "right";
+								});
+								/* Russian - ru */
+								document.querySelectorAll(".vernacular:lang(ru)").forEach(vern => {
+									vern.setAttribute("dir", "ltr");
+									vern.parentElement.innerHTML = vern.parentElement.innerHTML.replaceAll("i︠a︡", "i͡a").replaceAll("i︠u︡", "i͡u").replaceAll("t︠s︡", "t͡s");
+								});
+							})();
+						</code></pre>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>Language tagging</h2>
+					</section>
+					<section>
+						<div><img src="assets/img/languages.png" /></div>
+						<ul>
+							<li class="fragment">Language(s) of resource</li>
+							<li class="fragment">Language(s) of metadata</li>
+							<li class="fragment">UI language</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ISO 639</h3>
+						<ul>
+							<li>ISO 639-1 &ndash; two character alphabetic code</li>
+							<li>ISO 639-2 &ndash; three character alphabetic code (Terminology and Bibliographic)</li>
+							<li>ISO 639-3 &ndash; three character alphabetic code for comprehensive coverage of languages</li>
+							<li>ISO 639-5 &ndash; three character alphabetic code for language families and groups</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Other standards</h3>
+						<ul>
+							<li>ISO 3166
+								<ul>
+									<li>ISO 3166-1 &ndash; including two-letter country codes, three-letter country codes, and three digit country codes</li>
+									<li>ISO 3166-2 &ndash; code for provinces, states, departments and regions of each country</li>
+								</ul>
+							</li>
+							<li>ISO 15924 &ndash; four-letter and three-digit codes for scripts (writing systems)</li>
+							<li>IETF BCP 47 &ndash; a standard for identifying languages on the internet</li>
+						</ul>
+					</section>
+					<section>
+						<h3>The anatomy of a BCP47 language tag</h3>
+						<p><span style="color: #E7E592;">language</span>-<del><span style="color: #C4DA8A;">extlang</span></del>-<span style="color: #84669B;">script</span>-<span style="color: #B16F9B;">region</span>-<span style="color: #FFFDBE;">variant</span>-<span style="color: #9A83AC;">extension</span>-<span style="color: #C391B3;">privateuse</span></p>
+						<ul>
+							<li class="fragment"><span style="color: #E7E592;">en</span>-<span style="color: #B16F9B;">AU</span>-<span style="color: #FFFDBE;">simple</span></li>
+							<li class="fragment"><span style="color: #E7E592;">zh</span>-<span style="color: #84669B;">Hans</span>-<span style="color: #B16F9B;">CN</span></li>
+							<li class="fragment"><span style="color: #E7E592;">zh</span>-<span style="color: #84669B;">Hans</span></li>
+							<li class="fragment"><span style="color: #E7E592;">ja</span></li>
+							<li class="fragment"><span style="color: #E7E592;">es</span>-<span style="color: #B16F9B;">419</span></li>
+							<li class="fragment"><span style="color: #E7E592;">pt</span>-<span style="color: #B16F9B;">BR</span></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>ALA-LC Romanization</h2>
+					</section>
+					<section>
+						<p>Transliteration versus transcription</p>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr><th colspan="2" class="centred">Ε<span class="fragment highlight-green" data-fragment-index="0">λλ</span><span class="fragment highlight-red" data-fragment-index="1">η</span>ν<span class="fragment highlight-red" data-fragment-index="1">ι</span>κ<span class="fragment highlight-red" data-fragment-index="1">ή</span> Δ<span class="fragment highlight-red" data-fragment-index="1">η</span>μοκρατ<span class="fragment highlight-red" data-fragment-index="1">ί</span>α</th></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>E<span class="fragment highlight-green" data-fragment-index="0">ll</span><span class="fragment highlight-red" data-fragment-index="1">ē</span>n<span class="fragment highlight-red" data-fragment-index="1">i</span>k<span class="fragment highlight-red" data-fragment-index="1">ḗ</span> D<span class="fragment highlight-red" data-fragment-index="1">ē</span>mokrat<span class="fragment highlight-red" data-fragment-index="1">í</span>a</td>
+
+									<td>e<span class="fragment highlight-green" data-fragment-index="0">l</span><span class="fragment highlight-red" data-fragment-index="1">i</span>n<span class="fragment highlight-red" data-fragment-index="1">i</span>k<span class="fragment highlight-red" data-fragment-index="1">í</span> ð<span class="fragment highlight-red" data-fragment-index="1">i</span>mokrat<span class="fragment highlight-red" data-fragment-index="1">í</span>a (IPA)</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p class="fragment" data-fragment-index="3"><span class="fragment highlight-blue" data-fragment-index="4">H</span>e<span class="fragment highlight-green" data-fragment-index="4">ll</span><span class="fragment highlight-red" data-fragment-index="4">ē</span>n<span class="fragment highlight-red" data-fragment-index="4">i</span>k<span class="fragment highlight-red" data-fragment-index="4">ē</span> D<span class="fragment highlight-red" data-fragment-index="4">ē</span>mokrat<span class="fragment highlight-red" data-fragment-index="4">i</span>a</p>
+					</section>
+
+					<section>
+						<p>ALA-LC Romanization isn't always one to one.</p>
+						<div class="container-flex">
+							<div class="column-flex">
+								<p>ໄຊ</p>
+								<p>ໄຊ້</p>
+								<p>ໄສ</p>
+								<p>ໄ໊ຊ</p>
+								<p>ໄສ່</p>
+								<p>ໄສ້</p>
+								<p>ໄ໋ຊ</p>
+							</div>
+							<div class="column-flex r-stack">
+								<p class="fragment" data-fragment-index="0">⇒ sai</p>
+							</div>
+						</div>
+						<p class="fragment" data-fragment-index="1">ໄ ⇒ ai ; ຊ ⇒ s ; ສ ⇒ s ; tones ⇒ ∅</p>
+						<aside class="notes">
+							<ul>
+								<li>Lossy, not easily reversible</li>
+								<li>Tables may change over time, inadequate versioning</li>
+								<li>Occasional subtle differences between table versions</li>
+								<li>Different cataloguers may make choices and decisions that differ with usages of other cataloguers</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section>
+					<h2>Fonts</h2>
+					<p>There are too many characters in Unicode for a single font. Require flexible approach to web typography.</p>
+					<ul>
+						<li>OpenType fonts</li>
+						<li>Variable fonts</li>
+						<li>Noto fonts</li>
+						<li>Font CDNs, e.g Google Fonts</li>
+					</ul>
+
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
