@@ -92,7 +92,7 @@ def main():
     # Parse the argument
     args = parser.parse_args()
 
-    jconfigfile = os.path.abspath("./conf.json")
+    jconfigfile = os.path.abspath("./voyager_conf.json")
     if os.path.isfile(jconfigfile):
         with open(jconfigfile, "r") as f:
             jconfig = f.read()

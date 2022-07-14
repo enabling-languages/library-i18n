@@ -57,11 +57,9 @@ def replace_all(text, pattern_dict):
 # Normalise to specified Unicode Normalisation Form, defaulting to NFC.
 # nf = NFC | NFKC | NFD | NFKD | NFM
 # NFM: Normalise strings according to MARC21 Character repetoire requirements
-# TODO:
-#    * Add support for NFKC_CF
 def normalise(nf, text):
     nf = nf.upper()
-    if nf not in ["NFC", "NFKC", "NFD", "NFKD", "NFM"]:
+    if nf not in ["NFC", "NFKC", "NFD", "NFKD", "NFM", "NFKC_CF"]:
         nf="NFC"
     # MNF (Marc Normalisation Form)
     def marc21_normalise(text):
@@ -107,6 +105,8 @@ def normalise(nf, text):
         return text
     if nf == "NFM":
         return marc21_normalise(text)
+    if nf =="NFKC_CF":
+        return NFKC_Casefold(text)
     return ud.normalize(nf, text)
 
 # codepoints in string

@@ -1,12 +1,14 @@
-# Utilities for Voyager
+# Miscellaneous python scripts
 
-## Working with characters in the Unicode supplementary planes
+## Unicode normalisation
+
+## Voyager &ndash; working with characters in the Unicode supplementary planes
 
 In Oracle, SQL `CHAR` data type columns use the database character set, while SQL `NCHAR` data type columns use the national character set. The `supplementary_planes.py` script was developed for Voyager installations where the Oracle database's database character set is `US7ASCII` and the national character set is `UTF8`. It is important to note that the Oracle character set `UTF8` is the `CESU-8` character encoding.
 
 For characters in the Basic Multilingual Plane (BMP) the byte sequences for BMP characters are the same (1 to 3 bytes). For UTF-8 characters in the supplementary planes are represented by four bytes, while `CESU-8` uses surrogate pairs (with each character represented by 2 × 3 bytes).
 
-MARC records exported from Voyager will be in the CESU-8 character encodings. Software designed for MARC21 records will assume recoreds are either encoded in UTF-8 or MARC-8. MARC records containing only characters in the BMP will be processed without errors, but records containing characters from the supplementary planes will generate encoding errors.
+MARC records exported from Voyager will be in the CESU-8 character encodings. Software designed for MARC21 records will assume records are either encoded in UTF-8 or MARC-8. MARC records containing only characters in the BMP will be processed without errors, but records containing characters from the supplementary planes will generate encoding errors.
 
 The `supplementary_planes.py` will read in a CESU-8 encoded binary MARC record and write a UTF-8 encoded version of the MARC record.
 
