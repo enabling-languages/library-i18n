@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import el_internationalisation as eli
-from pymarc import MARCReader, Subfield
+from pymarc import MARCReader, Subfield, TextWriter, XMLWriter
 import regex as re
 from pathlib import Path
 import html
@@ -72,10 +72,19 @@ def main():
     parser.add_argument('-f', '--fields', type=str, nargs='+', required=False, help='Space seperated list of fields in MARC record to process and clean. Should include all fields where you have native language strings in either romanised or native script. Overrides default configuration file.')
     parser.add_argument('-s', '--script_fields', type=str, nargs='+', required=False, help='Fields where native script strings occur. Overrides default configuration file.')
     parser.add_argument('-v', '--verbose', action="store_true", required=False, help='Print out configuartaion used')
+    parser.add_argument('-m', '--modes', type=str, nargs='+', required=False, help='')
     args = parser.parse_args()
 
     input_file = Path(args.input).resolve()
-    output_file = input_file.parent / (input_file.stem + '_updated' + input_file.suffix) 
+    mrc_output_file = input_file.parent / (input_file.stem + '_clean' + input_file.suffix) 
+    mrk_output_file = input_file.parent / (input_file.stem + '_clean.mrk') 
+    marcxml_output_file = input_file.parent / (input_file.stem + '_clean.xml') 
+    
+    # Set file names and file formats
+    
+    output_formats = ["mrc"]
+    if args.modes:
+        output_formats = args.modes
     
     # Set constants and variables
     scripts_to_repair = []
@@ -145,7 +154,8 @@ def main():
     marc_records = []
     with input_file.open('rb') as i_f:
         reader = MARCReader(i_f, to_unicode=True)
-        print(f"\nProcessing:")
+        if args.verbose:
+            print(f"\nProcessing:")
         for record in reader:
             if args.verbose:
                 print(f"\t{record['001'].value()}")
@@ -166,13 +176,29 @@ def main():
             marc_records.append(record)
 
     #
-    # Write output file
+    # Write output file(s)
     #
 
-    with output_file.open('wb') as o:
-        for record in marc_records:
-            o.write(record.as_marc())
-
+    for mode in output_formats:
+        if mode in ['mrc', 'mrk', 'marcxml']:
+            if mode == "mrc":
+                with mrc_output_file.open('wb') as o:
+                    for record in marc_records:
+                        o.write(record.as_marc())
+            elif mode == "mrk":
+                text_writer = TextWriter(open(mrk_output_file,'wt'))
+                for record in marc_records:
+                    text_writer.write(record)
+                text_writer.close()
+            elif mode == "marcxml":
+                marcxml_writer = XMLWriter(open(marcxml_output_file,'wb'))
+                for record in marc_records:
+                    marcxml_writer.write(record)
+                marcxml_writer.close()
+                pass    
+            
+            
+            
     # records = open_marc_record(args.input)
 
 if __name__ == '__main__':
