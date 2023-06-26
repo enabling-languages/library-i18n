@@ -5,60 +5,21 @@ from pymarc import MARCReader, Subfield, TextWriter, XMLWriter
 import regex as re
 from pathlib import Path
 import html
-import el_internationalisation as eli
 import json
 import argparse
+from io import BytesIO, StringIO
+import rdflib
+from lxml import etree
 
-# From CLI: python -m json.tool config.json
-
-# def open_marc_record(input_file):
-#     in_f = Path(input_file).resolve()
-#     out_f = in_f.parent / (in_f.stem + '_cleaned' + in_f.suffix)
-
-# def repair_smp(text: str, script: str) -> str:
-#     """Repair SMP characters in MARC-8 encoded records exported from Voyager LMS
-# 
-#     Supported scripts:
-#         adlm: Adlam - U+1E900–U+1E95F
-#         bamu: Bamum - U+A6A0–U+A6FF, U+16800–U+16A3F   ??
-#         bass: Bassa Vah - U+16AD0-U+16AFF              ??
-#         hmng: Pahawh Hmong - U+16B00-U+16B8F           ??
-#         mend: Mende - U+1E800-1E8DF                    ??
-#         palm: Palmyrene - U+10860-U+1087F
-#         rohg: Rohingya - U+10D00–U+10D3F
-#         xsux: Cuneiform - U+12000-U+123FF, U+12400-U+1247F, U+12480–U+1254F
-#         yezi: Yezidi - U+10E8D-U+10EBF                 ??
-#         
-#     Unsupported:
-#         shaw: Shavian - Voyager converts Shavian characters to U+FFFD (Replacement Character)
-# 
-#     Args:
-#         text (str): Subfield value to be repaired
-#         script (str): Writing system (script)
-# 
-#     Returns:
-#         str: Repaired subfield value, if it can be repaired, else original subfield value.
-#     """
-#     repair_data = {
-#         "adlm": (r'&#x[eE]9[0-5][0-9a-fA-F];', r'&#x[eE]9', r'&#x1e9'),
-#         "bamu": (r'&#x6[8-9Aa][0-9A-Fa-f][0-9A-Fa-f];', r'&#x6', r'&#x16'),
-#         "bass": (r'&#x6[aA][D-Fd-f][0-9A-Fa-f];', r'&#x6a', r'&#x16a'),
-#         "hmng": (r'&#x6[bB][0-8][0-9A-Fa-f];', r'&#x6[bB]' r'&#x16b'),
-#         "mend": (r'&#x[eE]8[0-9A-Da-d][0-9A-Fa-f];', r'&#x[eE]8', r'&#x1e8'),
-#         "palm": (r'&#x08[6-7][0-9A-Fa-f];', r'&#x08', r'&#x108'),
-#         "rohg": (r'&#x0[dD][0-3][0-9a-fA-F];', r'&#x0[dD]', r'&#x10d'),
-#         "xsux": (r'&#x2[0-5][0-9a-fA-F][0-9a-fA-F];', r'&#x2', r'&#x12'),
-#         "yezi": (r'&#x0[eE][8-9A-Ba-b][0-9A-Fa-f];', r'&#x0[eE]', r'&#x10e')
-#         
-#     }
-#     try:
-#         if re.match(repair_data[script][0], text):
-#             return re.sub(repair_data[script][1], repair_data[script][2], text)
-#         else:
-#             return text
-#     except KeyError:
-#         return text
-# repairable_scripts = ["adlm", "bamu", "bass", "hmng", "mend", "palm", "rohg", "xsux", "yezi"]
+# def xsl_transformation(xslfile, xmlfile = None, xmlstring = None, params={}):
+#     xslt_tree = etree.parse(xslfile)
+#     transform = etree.XSLT(xslt_tree)
+#     xml_contents = xmlstring
+#     if not xml_contents:
+#         if xmlfile:
+#             xml_contents = etree.parse(xmlfile)
+#     result = transform(xml_contents, **params)
+#     return result
 
 def main():
     
@@ -79,6 +40,7 @@ def main():
     mrc_output_file = input_file.parent / (input_file.stem + '_clean' + input_file.suffix) 
     mrk_output_file = input_file.parent / (input_file.stem + '_clean.mrk') 
     marcxml_output_file = input_file.parent / (input_file.stem + '_clean.xml') 
+    rdf_output_file = input_file.parent / (input_file.stem + '_clean.rdf') 
     
     # Set file names and file formats
     
@@ -180,7 +142,7 @@ def main():
     #
 
     for mode in output_formats:
-        if mode in ['mrc', 'mrk', 'marcxml']:
+        if mode in ['mrc', 'mrk', 'marcxml', 'rdf']:
             if mode == "mrc":
                 with mrc_output_file.open('wb') as o:
                     for record in marc_records:
@@ -195,11 +157,23 @@ def main():
                 for record in marc_records:
                     marcxml_writer.write(record)
                 marcxml_writer.close()
-                pass    
-            
-            
-            
-    # records = open_marc_record(args.input)
-
+            elif mode == "rdf":
+                memory = BytesIO()
+                rdf_writer = XMLWriter(memory)
+                for record in marc_records:
+                    # print(record)
+                    rdf_writer.write(record)
+                rdf_writer.close(close_fh=False) 
+                # print(memory.getvalue())
+                xslfile = 'xsl/marc2bibframe2.xsl'
+                marc2bibframe2 = etree.XSLT(etree.parse(xslfile))
+                
+                memory.seek(0)
+           
+                bibframe_contents = eli.xsl_transformation(xslfile=xslfile, xmlfile=memory)
+                # print(bibframe_contents)
+                with open(rdf_output_file, 'w') as doc:
+                    doc.write(etree.tostring(bibframe_contents, pretty_print = True, encoding='Unicode'))
+                
 if __name__ == '__main__':
     main()

@@ -566,7 +566,7 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks,flask,node,visualstudiocode,windows,macos,vim,linux,archives
 
-# Locale
+# Local
 
 docs/
 notes/
@@ -581,3 +581,4 @@ old/
 .idea/
 */.notes/*
 temp/
+xsl/*.xsl
