@@ -1,1 +1,1 @@
-{"normalisation":"NFC","thai_lao":"1997","cyrillic":false,"fields": ["880"]}
+{"normalisation":"NFD","file_types":["mrc"],"thai_lao":null,"cyrillic":false,"fields":["880"],"to_bibframe":{"baseuri":"","idfield":"","idsource":"","localfields":false,"pGenerationDatestamp":"","serialization":""}}

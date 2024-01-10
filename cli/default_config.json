@@ -1,6 +1,1 @@
-{
-  "normalisation":"NFD",
-  "thai_lao":"None",
-  "cyrillic":false,
-  "fields":["880"]
-}
+{"normalisation":"NFD","file_types":["mrc"],"thai_lao":"2011","cyrillic":false,"fields":["880"],"to_bibframe":{"baseuri":"'http://example.org.au/'","idfield":"'001'","idsource":"'http://id.loc.gov/vocabulary/organizations/cty'","localfields":false,"pGenerationDatestamp":"","serialization":""}}
