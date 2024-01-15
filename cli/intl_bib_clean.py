@@ -2,7 +2,7 @@
 
 import el_internationalisation as eli
 from pymarc import MARCReader, Subfield, TextWriter, XMLWriter
-import regex as re
+# import regex as re
 from pathlib import Path
 # import html
 import json
@@ -10,31 +10,31 @@ import argparse
 from io import BytesIO
 import rdflib
 from lxml import etree
-import unicodedata as ud
-import icu
+# import unicodedata as ud
+# import icu
 
-problem_chars_pattern = re.compile(r'[\p{Bidi_Control}\p{Cs}\p{Co}\p{Cn}\u0333\u3013\uFFFD]')
-# problem_chars_pattern = re.compile(r'[\p{Cf}\p{Cs}\p{Co}\p{Cn}\u0333\u3013\uFFFD]')
-problem_chars = ['\u0333', '\u3013', '\uFFFD']
-problem_chars.extend(list(icu.UnicodeSet(r'\p{Bidi_Control}')))
-# problem_chars.extend(list(icu.UnicodeSet(r'\p{Cf}')))
-problem_chars.extend(list(icu.UnicodeSet(r'\p{Cs}')))
-problem_chars.extend(list(icu.UnicodeSet(r'\p{Co}')))
-problem_chars.extend(list(icu.UnicodeSet(r'\p{Cn}')))
+# problem_chars_pattern = re.compile(r'[\p{Bidi_Control}\p{Cs}\p{Co}\p{Cn}\u0333\u3013\uFFFD]')
+# # problem_chars_pattern = re.compile(r'[\p{Cf}\p{Cs}\p{Co}\p{Cn}\u0333\u3013\uFFFD]')
+# problem_chars = ['\u0333', '\u3013', '\uFFFD']
+# problem_chars.extend(list(icu.UnicodeSet(r'\p{Bidi_Control}')))
+# # problem_chars.extend(list(icu.UnicodeSet(r'\p{Cf}')))
+# problem_chars.extend(list(icu.UnicodeSet(r'\p{Cs}')))
+# problem_chars.extend(list(icu.UnicodeSet(r'\p{Co}')))
+# problem_chars.extend(list(icu.UnicodeSet(r'\p{Cn}')))
 
-def detect_anomalies(text: str) -> set[str]:
-    problematic = set()
-    if re.search(problem_chars_pattern, text):
-        for char in problem_chars:
-            if char in text:
-                problematic.add(f"{eli.cp(char)} ({ud.name(char)})")
-    return problematic
+# def detect_anomalies(text: str) -> set[str]:
+#     problematic = set()
+#     if re.search(problem_chars_pattern, text):
+#         for char in problem_chars:
+#             if char in text:
+#                 problematic.add(f"{eli.cp(char)} ({ud.name(char)})")
+#     return problematic
 
-def register_anomalies(sub_field: str):
-    check = detect_anomalies(sub_field)
-    if check:
-        print(*sorted(check), sep="\n", end="\n\n")
-    return None
+# def register_anomalies(sub_field: str):
+#     check = detect_anomalies(sub_field)
+#     if check:
+#         print(*sorted(check), sep="\n", end="\n\n")
+#     return None
 
 # https://lxml.de/4.4/xpathxslt.html#xslt
 # def xsl_transformation(xslfile=None, xmlfile=None, xmlstring=None, transform_attributes={}):
@@ -52,7 +52,7 @@ def main():
     parser = argparse.ArgumentParser(description='Repair and clean internationalisation issues in MARC21 records.')
     parser.add_argument('-i', '--input', type=str, required=True, help='MARC file to be normalised and cleaned. File containing one or more records, Where records can be either MARC-8 or UTF-8 encoded records.')
     parser.add_argument('-o', '--options', type=str, help='Custom configuration file. Overrides default configuration file.')
-    parser.add_argument('-s', '--scripts', type=str, nargs='+', required=False, help='Space separated list of SMP scripts to be repaired. Use lowercase ISO 15924 script codes. Requires input file be a MARC-8 encoded file.')
+    # parser.add_argument('-s', '--scripts', type=str, nargs='+', required=False, help='Space separated list of SMP scripts to be repaired. Use lowercase ISO 15924 script codes. Requires input file be a MARC-8 encoded file.')
     parser.add_argument('-n', '--normalisation', type=str, required=False, choices=("NFC", "NFD", "NFM21"), help='Apply Unicode Normalisation Form to the record (NFC, NFD, NFM21). Overrides configuration file.')
     parser.add_argument('-c', '--cyrillic', type=str, required=False, choices=('True','False'), help='Diacritic normalisation (half marks to double diacritic (True or False). Overrides configuration file.')
     parser.add_argument('-t', '--thailao', type=str, choices=['1997', '2011', 'None'], required=False, help='Specify interpretation to use for Lao and Thai romanisation (1997 or 2011). Use None to turn off. Overrides configuration file.')
@@ -71,9 +71,9 @@ def main():
     nt_output_file = input_file.parent / (input_file.stem + '_clean.nt')                    # N-Triples
 
     # Set constants and variables
-    scripts_to_repair = []
-    if args.scripts:
-        scripts_to_repair = args.scripts
+    # scripts_to_repair = []
+    # if args.scripts:
+    #     scripts_to_repair = args.scripts
 
     # Read configuration file
     if args.options:
@@ -157,20 +157,19 @@ def main():
                 record_lang = record['041']['a']
             except KeyError:
                 record_lang = record['008'].value()[35:38]
-            if scripts_to_repair:
-                for script in scripts_to_repair:
-                    if script.lower() in eli.REPAIRABLE_SCRIPTS:
-                        for field in record.get_fields(*native_fields):
-                            for i in range(len(field.subfields)):
-                               field.subfields[i] = Subfield(field.subfields[i].code, eli.repair_smp(field.subfields[i].value, script.lower()))
+            # if scripts_to_repair:
+            #     for script in scripts_to_repair:
+            #         if script.lower() in eli.REPAIRABLE_SCRIPTS:
+            #             for field in record.get_fields(*native_fields):
+            #                 for i in range(len(field.subfields)):
+            #                    field.subfields[i] = Subfield(field.subfields[i].code, eli.repair_smp(field.subfields[i].value, script.lower()))
             record_fields = record.get_fields()
-            # print(record_fields)
             for field in record_fields:
                 if not field.is_control_field():
                     for i in range(len(field.subfields)):
                         # if args.verbose or args.verbose_terminal:
-                        #     register_anomalies(i)
-                        register_anomalies(i)
+                        #     eli.register_anomalies(i)
+                        eli.register_anomalies(i)
                         field.subfields[i] = Subfield(field.subfields[i].code, eli.clean_marc_subfield(field.subfields[i].value, record_lang, NORMALISE_DEFAULT, THAI_LAO_ROM, CYRILLIC_ROM))
             marc_records.append(record)
             if args.verbose_terminal:
@@ -211,8 +210,6 @@ def main():
 
                     bibframe_contents = eli.xsl_transformation(xslfile, memory, None, bf_params)
                     raw_contents = etree.tostring(bibframe_contents)
-                    # print(type(raw_contents))
-                    # print(raw_contents)
                     if mode == "rdfxml":
                         with open(rdf_output_file, 'w') as doc:
                             doc.write(etree.tostring(bibframe_contents, pretty_print = True, encoding='Unicode'))
