@@ -13,6 +13,9 @@ from lxml import etree
 # import unicodedata as ud
 # import icu
 
+
+
+
 # problem_chars_pattern = re.compile(r'[\p{Bidi_Control}\p{Cs}\p{Co}\p{Cn}\u0333\u3013\uFFFD]')
 # # problem_chars_pattern = re.compile(r'[\p{Cf}\p{Cs}\p{Co}\p{Cn}\u0333\u3013\uFFFD]')
 # problem_chars = ['\u0333', '\u3013', '\uFFFD']
@@ -152,7 +155,7 @@ def main():
         for record in reader:
             # if args.verbose or args.verbose_terminal:
             #     print(f"\nProcessing:\t{record['001'].value()}\n")
-            print(f"\nProcessing:\t{record['001'].value()}\n")
+            print(f"Processing:\t{record['001'].value()}")
             try:
                 record_lang = record['041']['a']
             except KeyError:
@@ -169,7 +172,7 @@ def main():
                     for i in range(len(field.subfields)):
                         # if args.verbose or args.verbose_terminal:
                         #     eli.register_anomalies(i)
-                        eli.register_anomalies(i)
+                        eli.register_anomalies(field.subfields[i].value)
                         field.subfields[i] = Subfield(field.subfields[i].code, eli.clean_marc_subfield(field.subfields[i].value, record_lang, NORMALISE_DEFAULT, THAI_LAO_ROM, CYRILLIC_ROM))
             marc_records.append(record)
             if args.verbose_terminal:
