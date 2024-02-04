@@ -12,6 +12,7 @@ import rdflib
 from lxml import etree
 # import unicodedata as ud
 # import icu
+import regex
 
 
 
@@ -62,7 +63,8 @@ def main():
     parser.add_argument('-f', '--fields', type=str, nargs='+', required=False, help='Fields where native script strings occur. Overrides default configuration file.')
     parser.add_argument('-v', '--verbose', action="store_true", required=False, help='Print out configuration used')
     parser.add_argument('-vt', '--verbose_terminal', action="store_true", required=False, help='Print out configuration used, out put records to STDOUT. No files generated.')
-    parser.add_argument('-ft', '--file_types', type=str, nargs='+', required=False, help='File formats to output: mrc (Binary MARC), mrk (MARC text), marcxml (MARCXML), rdfxml (bibframe2), ttl (Turtle), nt (N-Triples)')
+    parser.add_argument('-ft', '--file_types', type=str, nargs='+', required=False, help='File formats to output: mrc (Binary MARC), mrk (MARC text), marcxml (MARCXML), rdfxml (bibframe2), ttl (Turtle), nt (N-Triples. json_ld (JSON-LD))')
+    parser.add_argument('-l', '--logging', action="store_true", required=False, help='Generate a log file.')
     args = parser.parse_args()
 
     input_file = Path(args.input).resolve()
@@ -71,7 +73,9 @@ def main():
     marcxml_output_file = input_file.parent / (input_file.stem + '_clean.xml')              # MARCXML
     rdf_output_file = input_file.parent / (input_file.stem + '_clean.rdf')                  # RDF/XML
     ttl_output_file = input_file.parent / (input_file.stem + '_clean.ttl')                  # Turtle
+    jld_output_file = input_file.parent / (input_file.stem + '_clean.json')                 # JSON-LD
     nt_output_file = input_file.parent / (input_file.stem + '_clean.nt')                    # N-Triples
+    log_file =  input_file.parent / (input_file.stem + '.log')
 
     # Set constants and variables
     # scripts_to_repair = []
@@ -137,16 +141,21 @@ def main():
         if v:
             bf_params[k] = v
 
-    if args.verbose or args.verbose_terminal:
-        print("\nSettings:\n")
-        print(f"Normalisation form: {NORMALISE_DEFAULT}")
-        print(f"Output file formats: {output_formats}")
-        print(f"Cyrillic corrections: {CYRILLIC_ROM}")
-        print(f"Thai/Lao corrections: {THAI_LAO_ROM}")
-        print(f"Native script fields: {native_fields}")
-        print("\nBibframe2 parameters:\n")
+    log_data = ""
+
+    if args.verbose or args.verbose_terminal or args.logging:
+        log_data += "Settings:\n"
+        log_data += f"\tNormalisation form: {NORMALISE_DEFAULT}\n"
+        log_data += f"\tOutput file formats: {output_formats}\n"
+        log_data += f"\tCyrillic corrections: {CYRILLIC_ROM}\n"
+        log_data += f"\tThai/Lao corrections: {THAI_LAO_ROM}\n"
+        log_data += f"\tNative script fields: {native_fields}\n"
+        log_data += "\tBibframe2 parameters:\n"
         for k, v in bf_params.items():
-            print(f"{k}: {v}")
+            log_data += f"\t\t{k}: {v}\n"
+        log_data += "\n"
+        if args.verbose or args.verbose_terminal:
+            print(log_data)
 
     # Process the records:
     marc_records = []
@@ -155,11 +164,45 @@ def main():
         for record in reader:
             # if args.verbose or args.verbose_terminal:
             #     print(f"\nProcessing:\t{record['001'].value()}\n")
-            print(f"Processing:\t{record['001'].value()}")
-            try:
-                record_lang = record['041']['a']
-            except KeyError:
-                record_lang = record['008'].value()[35:38]
+            record_id = f"Processing:\t{record['001'].value()}"
+            # print(f"Processing:\t{record['001'].value()}")
+            print(record_id)
+            if args.logging:
+                log_data += f"{record_id}\n"
+            # try:
+            #     record_lang = record['041']['a']
+            #     if len(record_lang) != 3:
+            #         print("\tCheck value in 041$a")
+            #         record_lang = record_lang[0:3]
+            # except KeyError:
+            #     record_lang = record['008'].value()[35:38]
+            record_langs = []
+            if record['008'].value()[35:38] not in ["###", "zxx"]:
+                record_langs = [record['008'].value()[35:38]]
+            else:
+                langs = record.get_fields('041')
+                for lang in langs:
+                    recorded_langs = lang.get_subfields('a')
+                    record_langs = record_langs + recorded_langs
+
+            print(f"\t{record_langs}")
+            record_lang = record_langs[0]
+
+            for field in record.get_fields(*native_fields):
+                linkage = field.get_subfields('6')
+                # linking_tag, occurrence_number, script, rtl_status = linkage[0].split('-/')
+                linkage_elements = regex.split('[-/]', linkage[0])
+                linking_tag = linkage_elements[0]
+                occurrence_number = linkage_elements[1]
+                if "/" in linkage[0]:
+                    script = linkage_elements[2]
+                    rtl_indicator = linkage_elements[3] if len(linkage_elements) > 3 else ""
+                rtl_flag = True if rtl_indicator == "r" else False
+                print(f"Linking tag: {linking_tag}")
+                print(f"Occurrence number: {occurrence_number}")
+                print(f"Script: {script}")
+                print(f"RTL flagL: {rtl_flag}")
+
             # if scripts_to_repair:
             #     for script in scripts_to_repair:
             #         if script.lower() in eli.REPAIRABLE_SCRIPTS:
@@ -170,8 +213,6 @@ def main():
             for field in record_fields:
                 if not field.is_control_field():
                     for i in range(len(field.subfields)):
-                        # if args.verbose or args.verbose_terminal:
-                        #     eli.register_anomalies(i)
                         eli.register_anomalies(field.subfields[i].value)
                         field.subfields[i] = Subfield(field.subfields[i].code, eli.clean_marc_subfield(field.subfields[i].value, record_lang, NORMALISE_DEFAULT, THAI_LAO_ROM, CYRILLIC_ROM))
             marc_records.append(record)
@@ -183,7 +224,7 @@ def main():
     #
     if not args.verbose_terminal:
         for mode in output_formats:
-            if mode in ['mrc', 'mrk', 'marcxml', 'rdfxml', 'ttl', 'nt']:
+            if mode in ['mrc', 'mrk', 'marcxml', 'rdfxml', 'ttl', 'nt', 'json_ld']:
                 if mode == "mrc":
                     with mrc_output_file.open('wb') as o:
                         for record in marc_records:
@@ -198,7 +239,7 @@ def main():
                     for record in marc_records:
                         marcxml_writer.write(record)
                     marcxml_writer.close()
-                elif mode in ["rdfxml", "ttl", "nt"]:
+                elif mode in ["rdfxml", "ttl", "nt", 'json_ld']:
                     memory = BytesIO()
                     rdf_writer = XMLWriter(memory)
                     for record in marc_records:
@@ -216,7 +257,7 @@ def main():
                     if mode == "rdfxml":
                         with open(rdf_output_file, 'w') as doc:
                             doc.write(etree.tostring(bibframe_contents, pretty_print = True, encoding='Unicode'))
-                    elif mode in ["ttl", "nt"]:
+                    elif mode in ["ttl", "nt", "json_ld"]:
                         graph = rdflib.Graph()
                         graph.parse(data=raw_contents, format='xml')
                         if mode == "ttl":
@@ -226,6 +267,9 @@ def main():
                         if mode == "nt":
                             with open(nt_output_file, 'w') as doc:
                                 doc.write(graph.serialize(format="nt"))
+                        if mode == "json_ld":
+                            with open(jld_output_file, 'w') as doc:
+                                doc.write(graph.serialize(format="json-ld"))
 
 if __name__ == '__main__':
     main()
