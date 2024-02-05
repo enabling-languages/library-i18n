@@ -9,7 +9,7 @@
 		  https://www.loc.gov/catdir/cpso/romanization/nonslav.pdf
 		-->
 			<tRule><![CDATA[
-:: NFC ;
+:: NFC (NFC) ;
 $upper = [[:Cyrillic:]&[\p{UppercaseLetter}]] ;
 $lower = [[:Cyrillic:]&[\p{LowercaseLetter}]] ;
 Ч } $lower <> Ch ;
@@ -68,8 +68,8 @@ $lower = [[:Cyrillic:]&[\p{LowercaseLetter}]] ;
 д <> d ;
 Е <> E ;
 е <> e ;
-Ё <> Ё ;
-ё <> ё ;
+Ё <> Ë ;
+ё <> ë ;
 З <> Z ;
 з <> z ;
 И <> I ;
@@ -86,10 +86,10 @@ $lower = [[:Cyrillic:]&[\p{LowercaseLetter}]] ;
 м <> m ;
 Н <> N ;
 н <> n ;
-О <> O ;
-о <> o ;
 Ө <> Ȯ ;
 ө <> ȯ ;
+О <> O ;
+о <> o ;
 П <> P ;
 п <> p ;
 Р <> R ;
@@ -118,7 +118,7 @@ $lower = [[:Cyrillic:]&[\p{LowercaseLetter}]] ;
 ь <> ʹ ;
 Э <> Ė ;
 э <> ė ;
-:: NFC ;
+:: NFC (NFC) ;
 			]]></tRule>
 		</transform>
 	</transforms>
